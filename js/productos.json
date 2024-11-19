@@ -1,0 +1,553 @@
+[
+    {
+        "id": "lenceria-01",
+        "titulo": "Mamá Noel",
+        "imagen": "./img/disfraces/1.png",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 119900
+    },
+    {
+        "id": "lenceria-02",
+        "titulo": "Muñeca de nieve",
+        "imagen": "./img/disfraces/2.png",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 119900
+    },
+    {
+        "id": "lenceria-03",
+        "titulo": "Reno sexy",
+        "imagen": "./img/disfraces/3.png",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 119900
+    },
+    {
+        "id": "lenceria-04",
+        "titulo": "Duende navideño",
+        "imagen": "./img/disfraces/4.png",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 119900
+    },
+    {
+        "id": "lenceria-05",
+        "titulo": "Chica Policia",
+        "imagen": "./img/disfraces/5.png",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 84900
+    },
+    {
+        "id": "lenceria-06",
+        "titulo": "Mucama Sexy",
+        "imagen": "./img/disfraces/6.png",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 84900
+    },
+    {
+        "id": "lenceria-07",
+        "titulo": "Demonia Sexy",
+        "imagen": "./img/disfraces/7.png",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 74900
+    },
+    {
+        "id": "lenceria-08",
+        "titulo": "Batichica",
+        "imagen": "./img/disfraces/8.png",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 74900
+    },
+    {
+        "id": "lenceria-09",
+        "titulo": "Mujer Maravilla",
+        "imagen": "./img/disfraces/9.png",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 74900
+    },
+    {
+        "id": "lenceria-10",
+        "titulo": "Colegiala Sexy",
+        "imagen": "./img/disfraces/10.png",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 74900
+    },
+    {
+        "id": "lenceria-11",
+        "titulo": "Enfermera Sexy",
+        "imagen": "./img/disfraces/11.png",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 84900
+    },
+    {
+        "id": "juego-01",
+        "titulo": "Dados luminosos motel",
+        "imagen": "./img/juegos/1.png",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 12900
+    },
+    {
+        "id": "juego-02",
+        "titulo": "Dados luminosos eroticos",
+        "imagen": "./img/juegos/2.png",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 10000
+    },
+    {
+        "id": "juego-03",
+        "titulo": "Dados luminosos posiciones",
+        "imagen": "./img/juegos/3.png",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 10000
+    },
+    {
+        "id": "juego-04",
+        "titulo": "Baraja tantrica",
+        "imagen": "./img/juegos/4.png",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 19900
+    },
+    {
+        "id": "juego-05",
+        "titulo": "Escalera tantrica",
+        "imagen": "./img/juegos/5.png",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 25900
+    },
+    {
+        "id": "juego-06",
+        "titulo": "Oral Sex",
+        "imagen": "./img/juegos/6.png",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 44900
+    },
+    {
+        "id": "juego-09",
+        "titulo": "Anal Sex Game",
+        "imagen": "./img/juegos/9.png",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 44900
+    },
+    {
+        "id": "juego-08",
+        "titulo": "Ruleta 3 juegos en uno",
+        "imagen": "./img/juegos/8.png",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 27900
+    },
+    {
+        "id": "juego-07",
+        "titulo": "Verdad o se atreve",
+        "imagen": "./img/juegos/7.png",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 27990
+    },
+    {
+        "id": "juego-10",
+        "titulo": "Juego de fiesta hot drinks",
+        "imagen": "./img/juegos/10.png",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 34900
+    },
+    {
+        "id": "juguetes-01",
+        "titulo": "Anillo vibrador Zeus",
+        "imagen": "./img/juguetes/1.png",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 49900
+    },
+    {
+        "id": "juguetes-02",
+        "titulo": "Anillo vibrador reusable",
+        "imagen": "./img/juguetes/2.png",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 15900
+    },
+    {
+        "id": "juguetes-03",
+        "titulo": "Funda real",
+        "imagen": "./img/juguetes/3.png",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 39900
+    },
+    {
+        "id": "juguetes-04",
+        "titulo": "Funda perseo",
+        "imagen": "./img/juguetes/4.png",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 27000
+    },
+    {
+        "id": "juguetes-05",
+        "titulo": "Labial vibrador",
+        "imagen": "./img/juguetes/5.png",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 27900
+    },
+    {
+        "id": "juguetes-06",
+        "titulo": "Rosa Lotus",
+        "imagen": "./img/juguetes/6.png",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 219900
+    },
+    {
+        "id": "juguetes-07",
+        "titulo": "Vibrador manejo app larga distancia",
+        "imagen": "./img/juguetes/7.png",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 209900
+    },
+    {
+        "id": "juguetes-08",
+        "titulo": "Sucionador Nyla",
+        "imagen": "./img/juguetes/8.png",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 84900
+    },
+    {
+        "id": "juguetes-09",
+        "titulo": "Bala recargable usb",
+        "imagen": "./img/juguetes/9.png",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 64900
+    },
+    {
+        "id": "bondage-01",
+        "titulo": "Mordaza y pezoneras",
+        "imagen": "./img/bondage/1.png",
+        "categoria": {
+            "nombre": "Bondage",
+            "id": "Bondage"
+        },
+        "precio": 47900
+    },
+    {
+        "id": "bondage-02",
+        "titulo": "Antifas bondage",
+        "imagen": "./img/bondage/2.png",
+        "categoria": {
+            "nombre": "Bondage",
+            "id": "Bondage"
+        },
+        "precio": 15900
+    },
+    {
+        "id": "bondage-03",
+        "titulo": "Kit bondage sado",
+        "imagen": "./img/bondage/3.png",
+        "categoria": {
+            "nombre": "Bondage",
+            "id": "Bondage"
+        },
+        "precio": 109990
+    },
+    {
+        "id": "bondage-04",
+        "titulo": "Plug´s anales X unidad",
+        "imagen": "./img/bondage/4.png",
+        "categoria": {
+            "nombre": "Bondage",
+            "id": "Bondage"
+        },
+        "precio": 5000
+    },
+    {
+        "id": "lubricante-01",
+        "titulo": "Lubricante neutro",
+        "imagen": "./img/lubricantes/1.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio":  23900
+
+    },
+    {
+        "id": "lubricante-02",
+        "titulo": "Lubricante menta",
+        "imagen": "./img/lubricantes/2.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "lubricante-03",
+        "titulo": "Lubricante tequila",
+        "imagen": "./img/lubricantes/3.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "lubricante-04",
+        "titulo": "Lubricante whisky",
+        "imagen": "./img/lubricantes/4.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "lubricante-05",
+        "titulo": "Lubricante cereza",
+        "imagen": "./img/lubricantes/5.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 22500
+    },
+    {
+        "id": "lubricante-06",
+        "titulo": "Lubricante frambuesa",
+        "imagen": "./img/lubricantes/6.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 21900
+    },
+    {
+        "id": "lubricante-07",
+        "titulo": "Lubricante cereza",
+        "imagen": "./img/lubricantes/7.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 21900
+    },
+    {
+        "id": "lubricante-08",
+        "titulo": "Lubricante fresa",
+        "imagen": "./img/lubricantes/8.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 21900
+    },
+    {
+        "id": "lubricante-09",
+        "titulo": "Lubricante cafe moka",
+        "imagen": "./img/lubricantes/9.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 24900
+    },
+    {
+        "id": "lubricante-10",
+        "titulo": "Lubricante euforia",
+        "imagen": "./img/lubricantes/10.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 36900
+    },
+    {
+        "id": "lubricante-11",
+        "titulo": "Lubricante silicona",
+        "imagen": "./img/lubricantes/11.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 39900
+    },
+    {
+        "id": "lubricante-12",
+        "titulo": "Lubricante Calor y frio",
+        "imagen": "./img/lubricantes/12.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 36900
+    },
+    {
+        "id": "lubricante-14",
+        "titulo": "Lubricante anal desensiblizante",
+        "imagen": "./img/lubricantes/14.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 36900
+    },
+    {
+        "id": "lubricante-15",
+        "titulo": "Lubricante mango",
+        "imagen": "./img/lubricantes/15.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 38900
+    },
+    {
+        "id": "lubricante-16",
+        "titulo": "Lubricante multiorgasmos",
+        "imagen": "./img/lubricantes/16.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 36900
+    },
+    {
+        "id": "lubricante-17",
+        "titulo": "Lubricante lychee",
+        "imagen": "./img/lubricantes/17.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 38900
+    },
+    {
+        "id": "lubricante-18",
+        "titulo": "Crema besable",
+        "imagen": "./img/lubricantes/18.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 24900
+    },
+    {
+        "id": "lubricante-13",
+        "titulo": "Lubricante anal desensiblizante",
+        "imagen": "./img/lubricantes/13.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 36900
+    },
+    {
+        "id": "lubricante-19",
+        "titulo": "Lubricante after sex",
+        "imagen": "./img/lubricantes/19.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 42900
+    },
+    {
+        "id": "lubricante-20",
+        "titulo": "Despigmentante intimo",
+        "imagen": "./img/lubricantes/20.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 44900
+    },
+    {
+        "id": "lubricante-21",
+        "titulo": "Garganta profunda",
+        "imagen": "./img/lubricantes/21.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 36900
+    }
+]
