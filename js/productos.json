@@ -358,7 +358,7 @@
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
-        "precio": 1000
+        "precio": 24900
     },
     {
         "id": "lubricante-03",
@@ -368,7 +368,7 @@
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
-        "precio": 1000
+        "precio": 38900
     },
     {
         "id": "lubricante-04",
@@ -378,7 +378,7 @@
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
-        "precio": 1000
+        "precio": 38900
     },
     {
         "id": "lubricante-05",
