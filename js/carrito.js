@@ -145,7 +145,7 @@ function comprarCarrito() {
 
     // Convertir el mensaje a formato URL
     const mensajeCodificado = encodeURIComponent(mensaje);
-    const numeroWhatsApp = "573150338545"; // Reemplaza con tu número de WhatsApp
+    const numeroWhatsApp = "573150338545";
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
 
     // Abrir WhatsApp
