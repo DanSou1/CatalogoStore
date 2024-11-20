@@ -63,7 +63,14 @@
             </div>
         </main>
     </div>
-    
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('./js/sw.js')
+                .then(() => console.log('Service Worker registrado correctamente.'))
+                .catch(err => console.error('Error al registrar el Service Worker:', err));
+        }
+    </script>        
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/menu.js"></script>
