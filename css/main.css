@@ -194,6 +194,13 @@ main {
     color: var(--clr-white);
 }
 
+.promociones {
+    background-color: rgb(27, 26, 26);
+    border-radius: 10px 0px 0px 20px;
+}
+.promociones:hover{
+    background-color: rgb(230, 82, 82);
+}
 
 /** CARRITO **/
 

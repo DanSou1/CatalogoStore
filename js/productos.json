@@ -549,5 +549,85 @@
             "id": "Lubricantes"
         },
         "precio": 36900
+    },
+    {
+        "id": "lubricante-05",
+        "titulo": "Lubricante cereza",
+        "imagen": "./img/lubricantes/5.png",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 22500
+    },
+    {
+        "id": "bondage-02",
+        "titulo": "Antifas bondage",
+        "imagen": "./img/bondage/2.png",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 15900
+    },
+    {
+        "id": "lenceria-11",
+        "titulo": "Enfermera Sexy",
+        "imagen": "./img/disfraces/11.png",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 65000
+    },
+    {
+        "id": "lenceria-08",
+        "titulo": "Batichica",
+        "imagen": "./img/disfraces/8.png",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 65000
+    },
+    {
+        "id": "lenceria-01",
+        "titulo": "Mamá Noel",
+        "imagen": "./img/disfraces/1.png",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 90000
+    },
+    {
+        "id": "lenceria-02",
+        "titulo": "Muñeca de nieve",
+        "imagen": "./img/disfraces/2.png",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 90000
+    },
+    {
+        "id": "lenceria-03",
+        "titulo": "Reno sexy",
+        "imagen": "./img/disfraces/3.png",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 90000
+    },
+    {
+        "id": "lenceria-04",
+        "titulo": "Duende navideño",
+        "imagen": "./img/disfraces/4.png",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 90000
     }
 ]
