@@ -7,7 +7,7 @@
             "nombre": "Lencería",
             "id": "lenceria"
         },
-        "precio": 119900
+        "precio": 90000
     },
     {
         "id": "lenceria-02",
@@ -17,7 +17,7 @@
             "nombre": "Lencería",
             "id": "lenceria"
         },
-        "precio": 119900
+        "precio": 90000
     },
     {
         "id": "lenceria-03",
@@ -27,7 +27,7 @@
             "nombre": "Lencería",
             "id": "lenceria"
         },
-        "precio": 119900
+        "precio": 90000
     },
     {
         "id": "lenceria-04",
@@ -37,7 +37,7 @@
             "nombre": "Lencería",
             "id": "lenceria"
         },
-        "precio": 119900
+        "precio": 90000
     },
     {
         "id": "lenceria-05",
