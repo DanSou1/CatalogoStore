@@ -2,47 +2,47 @@
     {
         "id": "lenceria-01",
         "titulo": "Mamá Noel",
-        "imagen": "./img/disfraces/1.png",
+        "imagen": "./img/disfraces/1.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
         },
-        "precio": 90000
+        "precio": 119900
     },
     {
         "id": "lenceria-02",
         "titulo": "Muñeca de nieve",
-        "imagen": "./img/disfraces/2.png",
+        "imagen": "./img/disfraces/2.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
         },
-        "precio": 90000
+        "precio": 119900
     },
     {
         "id": "lenceria-03",
         "titulo": "Reno sexy",
-        "imagen": "./img/disfraces/3.png",
+        "imagen": "./img/disfraces/3.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
         },
-        "precio": 90000
+        "precio": 119900
     },
     {
         "id": "lenceria-04",
         "titulo": "Duende navideño",
-        "imagen": "./img/disfraces/4.png",
+        "imagen": "./img/disfraces/4.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
         },
-        "precio": 90000
+        "precio": 119900
     },
     {
         "id": "lenceria-05",
         "titulo": "Chica Policia",
-        "imagen": "./img/disfraces/5.png",
+        "imagen": "./img/disfraces/5.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
@@ -52,7 +52,7 @@
     {
         "id": "lenceria-06",
         "titulo": "Mucama Sexy",
-        "imagen": "./img/disfraces/6.png",
+        "imagen": "./img/disfraces/6.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
@@ -62,7 +62,7 @@
     {
         "id": "lenceria-07",
         "titulo": "Demonia Sexy",
-        "imagen": "./img/disfraces/7.png",
+        "imagen": "./img/disfraces/7.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
@@ -72,7 +72,7 @@
     {
         "id": "lenceria-08",
         "titulo": "Batichica",
-        "imagen": "./img/disfraces/8.png",
+        "imagen": "./img/disfraces/8.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
@@ -82,7 +82,7 @@
     {
         "id": "lenceria-09",
         "titulo": "Mujer Maravilla",
-        "imagen": "./img/disfraces/9.png",
+        "imagen": "./img/disfraces/9.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
@@ -92,7 +92,7 @@
     {
         "id": "lenceria-10",
         "titulo": "Colegiala Sexy",
-        "imagen": "./img/disfraces/10.png",
+        "imagen": "./img/disfraces/10.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
@@ -102,7 +102,7 @@
     {
         "id": "lenceria-11",
         "titulo": "Enfermera Sexy",
-        "imagen": "./img/disfraces/11.png",
+        "imagen": "./img/disfraces/11.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
@@ -563,7 +563,7 @@
     {
         "id": "bondage-02",
         "titulo": "Antifas bondage",
-        "imagen": "./img/bondage/2.png",
+        "imagen": "./img/bondage/2.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -573,7 +573,7 @@
     {
         "id": "lenceria-11",
         "titulo": "Enfermera Sexy",
-        "imagen": "./img/disfraces/11.png",
+        "imagen": "./img/disfraces/11.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -583,51 +583,11 @@
     {
         "id": "lenceria-08",
         "titulo": "Batichica",
-        "imagen": "./img/disfraces/8.png",
+        "imagen": "./img/disfraces/8.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
         },
         "precio": 65000
-    },
-    {
-        "id": "lenceria-01",
-        "titulo": "Mamá Noel",
-        "imagen": "./img/disfraces/1.png",
-        "categoria": {
-            "nombre": "Promociones",
-            "id": "Promociones"
-        },
-        "precio": 90000
-    },
-    {
-        "id": "lenceria-02",
-        "titulo": "Muñeca de nieve",
-        "imagen": "./img/disfraces/2.png",
-        "categoria": {
-            "nombre": "Promociones",
-            "id": "Promociones"
-        },
-        "precio": 90000
-    },
-    {
-        "id": "lenceria-03",
-        "titulo": "Reno sexy",
-        "imagen": "./img/disfraces/3.png",
-        "categoria": {
-            "nombre": "Promociones",
-            "id": "Promociones"
-        },
-        "precio": 90000
-    },
-    {
-        "id": "lenceria-04",
-        "titulo": "Duende navideño",
-        "imagen": "./img/disfraces/4.png",
-        "categoria": {
-            "nombre": "Promociones",
-            "id": "Promociones"
-        },
-        "precio": 90000
     }
 ]
