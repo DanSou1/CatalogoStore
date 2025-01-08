@@ -110,6 +110,36 @@
         "precio": 84900
     },
     {
+        "id": "cosmeticos-01",
+        "titulo": "Despigmentante intimo",
+        "imagen": "./img/lubricantes/20.png",
+        "categoria": {
+            "nombre": "cosmeticos",
+            "id": "cosmeticos"
+        },
+        "precio": 44900
+    },
+    {
+        "id": "cosmeticos-02",
+        "titulo": "Lubricante after sex",
+        "imagen": "./img/lubricantes/19.png",
+        "categoria": {
+            "nombre": "cosmeticos",
+            "id": "cosmeticos"
+        },
+        "precio": 42900
+    },
+    {
+        "id": "cosmeticos-03",
+        "titulo": "Labial con fermonoas",
+        "imagen": "./img/lubricantes/19.png",
+        "categoria": {
+            "nombre": "cosmeticos",
+            "id": "cosmeticos"
+        },
+        "precio": 42900
+    },
+    {
         "id": "juego-01",
         "titulo": "Dados luminosos motel",
         "imagen": "./img/juegos/1.png",
@@ -519,26 +549,6 @@
             "id": "Lubricantes"
         },
         "precio": 36900
-    },
-    {
-        "id": "lubricante-19",
-        "titulo": "Lubricante after sex",
-        "imagen": "./img/lubricantes/19.png",
-        "categoria": {
-            "nombre": "Lubricantes",
-            "id": "Lubricantes"
-        },
-        "precio": 42900
-    },
-    {
-        "id": "lubricante-20",
-        "titulo": "Despigmentante intimo",
-        "imagen": "./img/lubricantes/20.png",
-        "categoria": {
-            "nombre": "Lubricantes",
-            "id": "Lubricantes"
-        },
-        "precio": 44900
     },
     {
         "id": "lubricante-21",
