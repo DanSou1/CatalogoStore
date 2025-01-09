@@ -1,53 +1,23 @@
 [
     {
         "id": "lenceria-01",
-        "titulo": "Mamá Noel",
-        "imagen": "./img/disfraces/1.webp",
+        "titulo": "Lenceria cadenas negro",
+        "imagen": "./img/disfraces/01.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
         },
-        "precio": 119900
+        "precio": 80000
     },
     {
         "id": "lenceria-02",
-        "titulo": "Muñeca de nieve",
-        "imagen": "./img/disfraces/2.webp",
+        "titulo": "lenceria cadenas blanco",
+        "imagen": "./img/disfraces/02.webp",
         "categoria": {
             "nombre": "Lencería",
             "id": "lenceria"
         },
-        "precio": 119900
-    },
-    {
-        "id": "lenceria-03",
-        "titulo": "Reno sexy",
-        "imagen": "./img/disfraces/3.webp",
-        "categoria": {
-            "nombre": "Lencería",
-            "id": "lenceria"
-        },
-        "precio": 119900
-    },
-    {
-        "id": "lenceria-04",
-        "titulo": "Duende navideño",
-        "imagen": "./img/disfraces/4.webp",
-        "categoria": {
-            "nombre": "Lencería",
-            "id": "lenceria"
-        },
-        "precio": 119900
-    },
-    {
-        "id": "lenceria-05",
-        "titulo": "Chica Policia",
-        "imagen": "./img/disfraces/5.webp",
-        "categoria": {
-            "nombre": "Lencería",
-            "id": "lenceria"
-        },
-        "precio": 84900
+        "precio": 80000
     },
     {
         "id": "lenceria-06",
@@ -59,6 +29,17 @@
         },
         "precio": 84900
     },
+    {
+        "id": "lenceria-05",
+        "titulo": "Chica Policia",
+        "imagen": "./img/disfraces/5.webp",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 84900
+    },
+    
     {
         "id": "lenceria-07",
         "titulo": "Demonia Sexy",
@@ -132,12 +113,74 @@
     {
         "id": "cosmeticos-03",
         "titulo": "Labial con fermonoas",
-        "imagen": "./img/lubricantes/19.png",
+        "imagen": "./img/cosmeticos/1.webp",
         "categoria": {
             "nombre": "cosmeticos",
             "id": "cosmeticos"
         },
-        "precio": 42900
+        "precio": 14000
+    },
+    {
+        "id": "cosmeticos-04",
+        "titulo": "Perfume feromonas concentradas mujer",
+        "imagen": "./img/cosmeticos/2.webp",
+        "categoria": {
+            "nombre": "cosmeticos",
+            "id": "cosmeticos"
+        },
+        "precio": 42500
+    },
+    {
+        "id": "cosmeticos-05",
+        "titulo": "Perfume feromonas concentradas hombre",
+        "imagen": "./img/cosmeticos/3.webp",
+        "categoria": {
+            "nombre": "cosmeticos",
+            "id": "cosmeticos"
+        },
+        "precio": 49900
+    },
+    {
+        "id": "cosmeticos-06",
+        "titulo": "Gel anti acné",
+        "imagen": "./img/cosmeticos/4.webp",
+        "categoria": {
+            "nombre": "cosmeticos",
+            "id": "cosmeticos"
+        },
+        "precio": 35000
+    },
+    {
+        "id": "cosmeticos-07",
+        "titulo": "Crema aclarante de piel",
+        "imagen": "./img/cosmeticos/5.webp",
+        "categoria": {
+            "nombre": "cosmeticos",
+            "id": "cosmeticos"
+        },
+        "precio": 49900
+    },
+    
+    {
+        "id": "cosmeticos-08",
+        "titulo": "Aceite corporal con feromonas",
+        "imagen": "./img/cosmeticos/6.webp",
+        "categoria": {
+            "nombre": "cosmeticos",
+            "id": "cosmeticos"
+        },
+        "precio": 45000
+    },
+    
+    {
+        "id": "cosmeticos-09",
+        "titulo": "CUM Sensitive",
+        "imagen": "./img/cosmeticos/7.webp",
+        "categoria": {
+            "nombre": "cosmeticos",
+            "id": "cosmeticos"
+        },
+        "precio": 50000
     },
     {
         "id": "juego-01",
@@ -559,6 +602,66 @@
             "id": "Lubricantes"
         },
         "precio": 36900
+    },
+    {
+        "id": "sachet-01",
+        "titulo": "Anal electrizante",
+        "imagen": "./img/lubricantes/sachets/3.webp",
+        "categoria": {
+            "nombre": "Sachet",
+            "id": "Sachet"
+        },
+        "precio": 10000
+    },
+    {
+        "id": "sachet-02",
+        "titulo": "Lubricante caramelo",
+        "imagen": "./img/lubricantes/sachets/4.webp",
+        "categoria": {
+            "nombre": "Sachet",
+            "id": "Sachet"
+        },
+        "precio": 10000
+    },
+    {
+        "id": "sachet-03",
+        "titulo": "Lubricante euforia",
+        "imagen": "./img/lubricantes/sachets/5.webp",
+        "categoria": {
+            "nombre": "Sachet",
+            "id": "Sachet"
+        },
+        "precio": 10000
+    },
+    {
+        "id": "sachet-04",
+        "titulo": "Estrechante",
+        "imagen": "./img/lubricantes/sachets/7.webp",
+        "categoria": {
+            "nombre": "Sachet",
+            "id": "Sachet"
+        },
+        "precio": 10000
+    },
+    {
+        "id": "sachet-05",
+        "titulo": "Ejaculation Delay retardante",
+        "imagen": "./img/lubricantes/sachets/8.webp",
+        "categoria": {
+            "nombre": "Sachet",
+            "id": "Sachet"
+        },
+        "precio": 10000
+    },
+    {
+        "id": "sachet-06",
+        "titulo": "Crema de whisky",
+        "imagen": "./img/lubricantes/sachets/9.webp",
+        "categoria": {
+            "nombre": "Sachet",
+            "id": "Sachet"
+        },
+        "precio": 10000
     },
     {
         "id": "lubricante-05",
