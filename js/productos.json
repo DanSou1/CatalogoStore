@@ -20,6 +20,16 @@
         "precio": 80000
     },
     {
+        "id": "lenceria-12",
+        "titulo": "Body arnes cuero",
+        "imagen": "./img/disfraces/12.webp",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 117900
+    },
+    {
         "id": "lenceria-06",
         "titulo": "Mucama Sexy",
         "imagen": "./img/disfraces/6.webp",
@@ -59,6 +69,26 @@
             "id": "lenceria"
         },
         "precio": 74900
+    },
+    {
+        "id": "lenceria-13",
+        "titulo": "Guantes largos rojo ",
+        "imagen": "./img/disfraces/13.webp",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 30000
+    },
+    {
+        "id": "lenceria-14",
+        "titulo": "Guantes largos velo",
+        "imagen": "./img/disfraces/14.webp",
+        "categoria": {
+            "nombre": "Lencería",
+            "id": "lenceria"
+        },
+        "precio": 30000
     },
     {
         "id": "lenceria-09",
@@ -283,6 +313,26 @@
         "precio": 34900
     },
     {
+        "id": "juego-11",
+        "titulo": "Juego triki lesbico",
+        "imagen": "./img/juegos/11.webp",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 18000
+    },
+    {
+        "id": "juego-12",
+        "titulo": "Sexopolys",
+        "imagen": "./img/juegos/12.webp",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 62900
+    },
+    {
         "id": "juguetes-01",
         "titulo": "Anillo vibrador Zeus",
         "imagen": "./img/juguetes/1.png",
@@ -373,6 +423,36 @@
         "precio": 64900
     },
     {
+        "id": "juguetes-11",
+        "titulo": "Vipe egg vibrador bluetooth",
+        "imagen": "./img/juguetes/10.webp",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 197800
+    },
+    {
+        "id": "juguetes-12",
+        "titulo": "Funda para pene forma de dragón",
+        "imagen": "./img/juguetes/11.webp",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 39900
+    },
+    {
+        "id": "juguetes-13",
+        "titulo": "Anillo Vibrador Rabbit",
+        "imagen": "./img/juguetes/12.webp",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "Juguetes"
+        },
+        "precio": 26900
+    },
+    {
         "id": "bondage-01",
         "titulo": "Mordaza y pezoneras",
         "imagen": "./img/bondage/1.webp",
@@ -411,6 +491,66 @@
             "id": "Bondage"
         },
         "precio": 5000
+    },
+    {
+        "id": "bondage-05",
+        "titulo": "Paleta de estrella",
+        "imagen": "./img/bondage/5.webp",
+        "categoria": {
+            "nombre": "Bondage",
+            "id": "Bondage"
+        },
+        "precio": 33900
+    },
+    {
+        "id": "bondage-06",
+        "titulo": "Pinzas para pezones",
+        "imagen": "./img/bondage/6.webp",
+        "categoria": {
+            "nombre": "Bondage",
+            "id": "Bondage"
+        },
+        "precio": 17900
+    },
+    {
+        "id": "bondage-07",
+        "titulo": "Esposas basicas",
+        "imagen": "./img/bondage/7.webp",
+        "categoria": {
+            "nombre": "Bondage",
+            "id": "Bondage"
+        },
+        "precio": 57900
+    },
+    {
+        "id": "bondage-08",
+        "titulo": "pinzas pezones cadena clitoris",
+        "imagen": "./img/bondage/8.webp",
+        "categoria": {
+            "nombre": "Bondage",
+            "id": "Bondage"
+        },
+        "precio": 32900
+    },
+    {
+        "id": "bondage-09",
+        "titulo": "Esposas para cama",
+        "imagen": "./img/bondage/9.webp",
+        "categoria": {
+            "nombre": "Bondage",
+            "id": "Bondage"
+        },
+        "precio": 117900
+    },
+    {
+        "id": "bondage-10",
+        "titulo": "Columpio  Sex Extreme",
+        "imagen": "./img/bondage/10.webp",
+        "categoria": {
+            "nombre": "Bondage",
+            "id": "Bondage"
+        },
+        "precio": 126000
     },
     {
         "id": "lubricante-01",
@@ -541,6 +681,16 @@
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
+        "precio": 35900
+    },
+    {
+        "id": "lubricante-23",
+        "titulo": "Lubricante anal electrizante",
+        "imagen": "./img/lubricantes/23.png",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
         "precio": 36900
     },
     {
@@ -602,6 +752,16 @@
             "id": "Lubricantes"
         },
         "precio": 36900
+    },
+    {
+        "id": "lubricante-22",
+        "titulo": "Lubricante trio",
+        "imagen": "./img/lubricantes/22.webp",
+        "categoria": {
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
+        },
+        "precio": 29900
     },
     {
         "id": "sachet-01",
@@ -702,5 +862,25 @@
             "id": "Promociones"
         },
         "precio": 65000
+    },
+    {
+        "id": "promocion-05",
+        "titulo": "Gomitas afrodiciacas",
+        "imagen": "./img/promociones/2.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 10000
+    },
+    {
+        "id": "promocion-06",
+        "titulo": "Combo WebCam",
+        "imagen": "./img/promociones/1.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 134900
     }
 ]
