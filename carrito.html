@@ -5,36 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ExperienceStore</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
 
     <div class="wrapper">
+        <a href="./carrito.html" class="boton-carrito-flotante activo" aria-label="Carrito">
+            <span class="material-symbols-outlined">shopping_cart</span>
+        </a>
         <header class="header-mobile">
             <h1 class="logo">ExperienceLove</h1>
-            <button class="open-menu" id="open-menu">
-                <i class="bi bi-list"></i>
-            </button>
+            <div class="header-mobile-acciones">
+                <a href="./carrito.html" class="boton-carrito-icono activo" aria-label="Carrito">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </a>
+                <button class="open-menu" id="open-menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
         </header>
         <aside>
             <button class="close-menu" id="close-menu">
-                <i class="bi bi-x"></i>
+                <span class="material-symbols-outlined">close</span>
             </button>
             <header>
-                <h1 class="logo">ExperienceLove.</h1>
+                <a class="logo" href="index.html">
+                    <img src="img/logo.png" alt="Experience Love">
+                    <h1 class="logo-text">Experience Love</h1>
+                    <p class="logo-sub">Premium Boutique</p>
+                </a>
             </header>
             <nav>
-                <ul>
+                <ul class="menu">
                     <li>
                         <a class="boton-menu boton-volver" href="./index.html">
-                            <i class="bi bi-arrow-return-left"></i> Seguir comprando
-                        </a>
-                    </li>
-                    <li>
-                        <a class="boton-menu boton-carrito active" href="./carrito.html">
-                            <i class="bi bi-cart-fill"></i> Carrito
+                            <span class="material-symbols-outlined">arrow_back</span> Seguir comprando
                         </a>
                     </li>
                 </ul>
@@ -44,33 +52,56 @@
             </footer>
         </aside>
         <main>
-            <h2 class="titulo-principal">Carrito</h2>
+            <h2 class="titulo-principal">Tu Carrito</h2>
             <div class="contenedor-carrito">
-                <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío. <i class="bi bi-emoji-frown"></i></p>
 
-                <div id="carrito-productos" class="carrito-productos disabled">
-                    <!-- Esto se va a completar con el JS -->
+                <div id="carrito-vacio" class="estado-carrito">
+                    <div class="estado-icono">
+                        <span class="material-symbols-outlined">shopping_bag</span>
+                    </div>
+                    <h3>Tu carrito está vacío</h3>
+                    <p>Explora nuestro catálogo y encuentra tu producto favorito.</p>
+                    <a href="./index.html" class="estado-boton">
+                        Seguir comprando
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
                 </div>
 
-                <div id="carrito-acciones" class="carrito-acciones disabled">
-                    <div class="carrito-acciones-izquierda">
-                        <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+                <div class="carrito-grid disabled" id="carrito-grid">
+                    <div id="carrito-productos" class="carrito-productos">
+                        <!-- Esto se va a completar con el JS -->
                     </div>
-                    <div class="carrito-acciones-derecha">
+
+                    <div id="carrito-acciones" class="carrito-resumen">
+                        <h3>Resumen de pedido</h3>
                         <div class="carrito-acciones-total">
-                            <p>Total:</p>
+                            <p>Total</p>
                             <p id="total"></p>
                         </div>
-                        <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar ahora</button>
+                        <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">
+                            Comprar ahora
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                        <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
                     </div>
                 </div>
 
-                <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra. <i class="bi bi-emoji-laughing"></i></p>
+                <div id="carrito-comprado" class="estado-carrito disabled">
+                    <div class="estado-icono estado-icono-exito">
+                        <span class="material-symbols-outlined">check_circle</span>
+                    </div>
+                    <h3>Muchas gracias por tu compra</h3>
+                    <p>Te contactaremos por WhatsApp para coordinar el envío.</p>
+                    <a href="./index.html" class="estado-boton">
+                        Volver al catálogo
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
 
             </div>
         </main>
     </div>
-    
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/carrito.js"></script>

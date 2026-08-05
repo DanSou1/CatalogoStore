@@ -12,7 +12,7 @@ const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
 const tituloPrincipal = document.querySelector("#titulo-principal");
 let botonesAgregar = document.querySelectorAll(".producto-agregar");
-const numerito = document.querySelector("#numerito");
+const numeritos = document.querySelectorAll(".numerito");
 
 
 botonesCategorias.forEach(boton => boton.addEventListener("click", () => {
@@ -92,14 +92,14 @@ function agregarAlCarrito(e) {
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-          background: "linear-gradient(to right, #4b33a8, #785ce9)",
+          background: "linear-gradient(to right, #832062, #1B1A1A)",
           borderRadius: "2rem",
           textTransform: "uppercase",
           fontSize: ".75rem"
         },
         offset: {
             x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+            y: '5.5rem' // vertical axis - clears the floating cart button in the top-right corner
           },
         onClick: function(){} // Callback after click
       }).showToast();
@@ -122,5 +122,5 @@ function agregarAlCarrito(e) {
 
 function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-    numerito.innerText = nuevoNumerito;
+    numeritos.forEach(numerito => numerito.innerText = nuevoNumerito);
 }
