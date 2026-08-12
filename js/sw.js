@@ -8,6 +8,7 @@ const urlsToCache = [
     './css/main.css',     // Archivo CSS
     './js/carrito.js',    // Script carrito
     './js/main.js',       // Script principal
+    './js/detalle.js',    // Script modal de detalle de producto
     './js/menu.js',       // Script para el menú
 ];
 
