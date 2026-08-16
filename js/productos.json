@@ -7,7 +7,7 @@
             "nombre": "cosmeticos",
             "id": "cosmeticos"
         },
-        "precio": 44900,
+        "precio": 49900,
         "descripcion": "Crema de uso tópico pensada para el cuidado de la piel en la zona íntima, formulada para ayudar a unificar el tono con aplicaciones constantes. Textura liviana y de fácil absorción, en presentación de bolsillo ideal para sumar a tu rutina diaria de cuidado personal e higiene íntima.",
         "medidas": "Caja de 60 ml (2.0 fl oz).",
         "recomendacionesSalud": "Uso tópico externo, exclusivamente en la zona indicada. No ingerir. Realizá una prueba de alergia en una pequeña zona de piel antes del primer uso y esperá 24 horas. Evitá el contacto con ojos y mucosas. Si notás irritación, enrojecimiento o molestia, suspendé el uso. Conservar en lugar fresco y seco, fuera del alcance de los niños."
@@ -20,7 +20,7 @@
             "nombre": "cosmeticos",
             "id": "cosmeticos"
         },
-        "precio": 42900,
+        "precio": 49900,
         "descripcion": "Lubricante íntimo formulado especialmente para después del encuentro, pensado para renovar la sensación de frescura y comodidad en la piel. Textura suave que se desliza con facilidad, en frasco de 75 ml fácil de dosificar. Un aliado para cerrar el momento con la misma comodidad con la que empezó.",
         "medidas": "Frasco de 75 ml (2.5 fl oz).",
         "recomendacionesSalud": "Aplicar sobre la zona deseada según necesidad. Verificá compatibilidad si vas a usarlo junto con preservativos de látex o juguetes de silicona. No usar como método anticonceptivo. Evitá el contacto con ojos y oídos. Si hay irritación, suspendé el uso y lavá la zona con agua. Conservar bien tapado, en lugar fresco y seco, fuera del alcance de los niños."
@@ -33,8 +33,21 @@
             "nombre": "cosmeticos",
             "id": "cosmeticos"
         },
-        "precio": 14000,
+        "precio": 15000,
         "descripcion": "Bálsamo labial con toque de color y esencia seductora, en un estuche compacto tipo potecito, ideal para llevar en la cartera. Hidrata los labios mientras suma un aroma envolvente pensado para potenciar la conexión en tus encuentros. Fórmula suave que deja un acabado natural con un ligero brillo.",
+        "medidas": "Aprox. 10 g.",
+        "recomendacionesSalud": "Aplicar directamente sobre los labios con la yema del dedo o aplicador. Realizá una prueba de alergia en una pequeña zona de piel antes del primer uso. Evitá el contacto con los ojos. No usar sobre piel irritada o lastimada. Si aparece ardor o enrojecimiento, suspendé el uso. Conservar bien cerrado, en lugar fresco y seco."
+    },
+    {
+         "id": "cosmeticos-03",
+        "titulo": "Brillo labial con fermonoas",
+        "imagen": "./img/cosmeticos/8.webp",
+        "categoria": {
+            "nombre": "cosmeticos",
+            "id": "cosmeticos"
+        },
+        "precio": 26500,
+        "descripcion": "Bálsamo labial con toque de color y esencia seductora. Hidrata los labios mientras suma un aroma envolvente pensado para potenciar la conexión en tus encuentros. Fórmula suave que deja un acabado natural con un ligero brillo.",
         "medidas": "Aprox. 10 g.",
         "recomendacionesSalud": "Aplicar directamente sobre los labios con la yema del dedo o aplicador. Realizá una prueba de alergia en una pequeña zona de piel antes del primer uso. Evitá el contacto con los ojos. No usar sobre piel irritada o lastimada. Si aparece ardor o enrojecimiento, suspendé el uso. Conservar bien cerrado, en lugar fresco y seco."
     },
@@ -46,9 +59,9 @@
             "nombre": "cosmeticos",
             "id": "cosmeticos"
         },
-        "precio": 42500,
-        "descripcion": "Perfume roll-on con feromonas concentradas, formulado para dama, en frasco de 10 ml de fácil aplicación directa sobre la piel. Fragancia diseñada para realzar tu presencia y aumentar la confianza en cada salida. Formato pequeño y discreto, ideal para llevar en la cartera y retocar cuando quieras.",
-        "medidas": "Roll-on de 10 ml (0.33 fl oz).",
+        "precio": 42900,
+        "descripcion": "Perfume gotero con feromonas concentradas, formulado para dama, en frasco de 10 ml de fácil aplicación directa sobre la piel. Fragancia diseñada para realzar tu presencia y aumentar la confianza en cada salida. Formato pequeño y discreto, ideal para llevar en la cartera y retocar cuando quieras.",
+        "medidas": "Gotero de 10 ml (0.33 fl oz).",
         "recomendacionesSalud": "Aplicar sobre puntos de pulso (muñecas, cuello) con el aplicador roll-on. Realizá una prueba de alergia en una pequeña zona de piel antes del primer uso. Evitá el contacto con ojos y mucosas. No aplicar sobre piel irritada o recién depilada. Si notás molestia, lavar la zona y suspender el uso. Conservar en lugar fresco, alejado de la luz directa."
     },
     {
@@ -59,7 +72,7 @@
             "nombre": "cosmeticos",
             "id": "cosmeticos"
         },
-        "precio": 49900,
+        "precio": 39900,
         "descripcion": "Perfume roll-on con feromonas concentradas para hombre, en frasco de 10 ml de aplicación directa y discreta. Fragancia intensa pensada para dejar una impresión duradera. Estuche negro elegante, ideal para llevar contigo y aplicar antes de una salida o encuentro especial.",
         "medidas": "Roll-on de 10 ml (0.33 fl oz).",
         "recomendacionesSalud": "Aplicar sobre puntos de pulso (muñecas, cuello) con el aplicador roll-on. Realizá una prueba de alergia en una pequeña zona de piel antes del primer uso. Evitá el contacto con ojos y mucosas. No aplicar sobre piel irritada o recién afeitada. Si notás molestia, lavar la zona y suspender el uso. Conservar en lugar fresco, alejado de la luz directa."
@@ -98,14 +111,14 @@
             "nombre": "cosmeticos",
             "id": "cosmeticos"
         },
-        "precio": 45000,
+        "precio": 54900,
         "descripcion": "Aceite corporal en formato spray, pensado para masajes y aromaterapia, con un toque de feromonas que suma sensualidad al momento. Frasco de 250 ml con gatillo pulverizador, ideal para cubrir buena parte del cuerpo sin desperdiciar producto. Textura sedosa que facilita el deslizamiento de las manos sobre la piel.",
         "medidas": "Frasco de 250 ml (8.45 fl oz).",
         "recomendacionesSalud": "Aplicar sobre piel limpia, evitando ojos, mucosas y zonas con heridas o irritación. Realizá una prueba de alergia en una pequeña zona de piel antes del primer uso. Puede dejar la piel resbaladiza, tené precaución en superficies duras. No es apto para uso interno. Si aparece irritación, lavar con agua y suspender el uso."
     },
     {
         "id": "cosmeticos-09",
-        "titulo": "CUM Sensitive",
+        "titulo": "CUM Sensitive 250 ml",
         "imagen": "./img/cosmeticos/7.webp",
         "categoria": {
             "nombre": "cosmeticos",
@@ -124,7 +137,7 @@
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 12900,
+        "precio": 16000,
         "descripcion": "Set de 3 dados luminosos temática \"Motel\", que brillan en la oscuridad. Cada dado indica una acción, una zona y un lugar para poner en juego la imaginación en pareja: se lanzan los tres y la combinación arma el reto a seguir. Ideal para una noche de motel, una escapada de aniversario o para romper la rutina en casa. Fácil de llevar, sin reglas complicadas — solo lanzar y jugar.",
         "medidas": "Set de 3 dados, Aprox. 2,5 cm de lado cada uno. Presentación en caja individual."
     },
@@ -136,7 +149,7 @@
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 10000,
+        "precio": 15000,
         "descripcion": "Dados luminosos eróticos para jugar en pareja: se lanzan los 2 dados y la combinación de acción y zona del cuerpo marca el siguiente movimiento del juego. Brillan en la oscuridad para sumar ambiente. Perfecto para una cita nocturna, San Valentín o cualquier noche en la que quieran salir de la rutina con humor y complicidad.",
         "medidas": "Set de 2 dados, Aprox. 2,5 cm de lado cada uno."
     },
@@ -148,7 +161,7 @@
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 10000,
+        "precio": 15000,
         "descripcion": "Juego de 2 dados luminosos: uno marca el lugar de la casa (alcoba, baño, comedor) y el otro una posición ilustrada, así la combinación arma el reto de la ronda. Brillan en la oscuridad y no requieren instrucciones largas — se lanzan y se sigue el resultado. Pensado para parejas que buscan una forma divertida y espontánea de darle variedad a sus noches.",
         "medidas": "Set de 2 dados, Aprox. 2,5 cm de lado cada uno."
     },
@@ -160,7 +173,7 @@
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 19900,
+        "precio": 30000,
         "descripcion": "Baraja de naipes ilustrados con temática tántrica: cada carta representa una postura o dinámica para explorar en pareja, siguiendo las reglas clásicas de un juego de cartas. Viene en estuche compacto, fácil de llevar en un viaje o guardar en la mesa de noche. Una alternativa distinta a los juegos de dados o tableros, pensada para sumar picante a una noche en pareja.",
         "medidas": "Aprox. 54 cartas ilustradas, presentación en estuche plegable tipo caja de naipes."
     },
@@ -185,34 +198,9 @@
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 44900,
+        "precio": 59900,
         "descripcion": "Juego de mesa tipo \"escalera\" con temática oral, para jugar en pareja: se avanza por el tablero numerado con dado y fichas, sumando y bajando casillas según el reto de turno. Incluye tablero, cartas de reto, dado, fichas e instructivo. Pensado para una noche divertida en casa, con la dinámica simple de un juego de mesa clásico pero con picante entre los dos.",
         "medidas": "Incluye tablero, dado, fichas, cartas de reto e instructivo. Presentación en caja."
-    },
-    {
-        "id": "juego-09",
-        "titulo": "Anal Sex Game",
-        "imagen": "./img/juegos/9.png",
-        "categoria": {
-            "nombre": "Juegos",
-            "id": "Juegos"
-        },
-        "precio": 44900,
-        "descripcion": "Juego de mesa tipo escalera con temática anal para parejas: se avanza por el tablero con dado y ficha, siguiendo retos de intensidad suave o fuerte según la carta que salga. El set trae de regalo un plug anal, bolas anales y un anillo, pensados para llevar el juego a la práctica. Ideal para parejas con experiencia previa que buscan sumar variedad.",
-        "medidas": "Incluye tablero, dado, cartas \"suave/duro\", 1 plug anal, bolas anales y 1 anillo.",
-        "recomendacionesSalud": "Los accesorios de uso corporal (plug anal y bolas anales) requieren lubricante a base de agua, limpieza con jabón neutro o limpiador de juguetes antes y después de cada uso, y no deben compartirse sin protección de barrera entre personas."
-    },
-    {
-        "id": "juego-08",
-        "titulo": "Ruleta 3 juegos en uno",
-        "imagen": "./img/juegos/8.png",
-        "categoria": {
-            "nombre": "Juegos",
-            "id": "Juegos"
-        },
-        "precio": 27900,
-        "descripcion": "Ruleta giratoria con 3 juegos en uno: posiciones, prendas y penitencias. Se hace girar el disco central y el resultado que queda a la vista marca la dinámica de la ronda — variedad sin necesitar dados ni cartas aparte. Pensada para fiestas en pareja o encuentros más atrevidos entre adultos, con formato compacto y fácil de guardar.",
-        "medidas": "Ruleta circular giratoria, Aprox. 20 cm de diámetro."
     },
     {
         "id": "juego-07",
@@ -222,21 +210,9 @@
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 27990,
+        "precio": 30000,
         "descripcion": "El clásico \"verdad o reto\" en versión para adultos: un mazo de cartas con preguntas atrevidas y retos para animar una noche en pareja o entre amigos. Se juega por turnos, cada quien elige verdad o reto y sigue lo que indica la carta. Presentación en caja rígida tipo estuche, fácil de guardar y transportar. Recomendado 18+.",
         "medidas": "Mazo de cartas, presentación en caja rígida tipo estuche."
-    },
-    {
-        "id": "juego-10",
-        "titulo": "Juego de fiesta hot drinks",
-        "imagen": "./img/juegos/10.png",
-        "categoria": {
-            "nombre": "Juegos",
-            "id": "Juegos"
-        },
-        "precio": 34900,
-        "descripcion": "Juego de fiesta para adultos con temática de tragos: cartas con retos y preguntas para animar una noche entre amigos o en pareja, ideal para previas, despedidas de soltero/a o reuniones nocturnas. Formato compacto en caja, fácil de llevar a cualquier plan. Recomendado solo para mayores de 18 años que consuman alcohol de forma responsable.",
-        "medidas": "Mazo de cartas de reto, presentación en caja. Aprox. 8 x 11 cm."
     },
     {
         "id": "juego-11",
@@ -246,7 +222,7 @@
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 18000,
+        "precio": 20900,
         "descripcion": "Versión atrevida del clásico triki (tres en raya) pensada para parejas de mujeres: cada casilla que se marca trae un reto o dinámica distinta, y quien completa la línea gana el derecho a elegir la siguiente actividad. Formato de tablero compacto, fácil de jugar en cualquier momento de la noche. Una forma divertida y directa de sumar complicidad en la pareja.",
         "medidas": "Tablero de juego, Aprox. 20 x 20 cm."
     },
@@ -277,16 +253,16 @@
     },
     {
         "id": "juguetes-02",
-        "titulo": "Anillo vibrador reusable",
+        "titulo": "Anillo vibrador desechable",
         "imagen": "./img/juguetes/2.png",
         "categoria": {
             "nombre": "Juguetes",
             "id": "Juguetes"
         },
-        "precio": 15900,
-        "descripcion": "Anillo vibrador reusable con motor bala desmontable: al agotarse la pila solo se reemplaza la cápsula motora, sin desechar el anillo completo. Cuerpo de silicona suave con textura en relieve para estimulación añadida durante el encuentro en pareja. Empaque \"Sen Íntimo\" tipo masajeador personal, discreto y compacto para guardar fácilmente.",
+        "precio": 17900,
+        "descripcion": "Anillo vibrador desechable: Cuerpo de silicona suave con textura en relieve para estimulación añadida durante el encuentro en pareja. Empaque \"Sen Íntimo\" tipo masajeador personal, discreto y compacto para guardar fácilmente.",
         "medidas": "Aprox. 4 cm de diámetro interno (anillo elástico), motor bala aprox. 5 cm.",
-        "recomendacionesSalud": "Usar lubricante a base de agua. Motor bala desmontable: retirarlo antes de sumergir el anillo en agua y limpiarlo solo con un paño húmedo. Lavar el anillo con agua tibia y jabón neutro antes y después de cada uso, secar bien antes de guardar. No dejarlo puesto por tiempo prolongado ni ajustarlo demasiado, para evitar presión excesiva o cortar la circulación."
+        "recomendacionesSalud": "Usar lubricante a base de agua: retirarlo antes de sumergir el anillo en agua y limpiarlo solo con un paño húmedo. Lavar el anillo con agua tibia y jabón neutro antes y después de cada uso, secar bien antes de guardar. No dejarlo puesto por tiempo prolongado ni ajustarlo demasiado, para evitar presión excesiva o cortar la circulación."
     },
     {
         "id": "juguetes-03",
@@ -309,7 +285,7 @@
             "nombre": "Juguetes",
             "id": "Juguetes"
         },
-        "precio": 27000,
+        "precio": 29900,
         "descripcion": "Funda vibradora de uso externo, en material transparente con relieve de nervaduras y protuberancias pensado para intensificar la estimulación de ambos integrantes de la pareja. Incorpora un motor bala removible en la base, de fácil encendido. Se estira para adaptarse a distintos tamaños, talla única. Ideal para sumar textura y vibración sin cambiar la rutina habitual.",
         "medidas": "Aprox. 15 cm de largo x 4 cm de diámetro interno, talla única extensible.",
         "recomendacionesSalud": "Material transparente tipo TPE con motor bala removible: retirarlo antes de lavar la funda con agua tibia y jabón neutro, y limpiar el motor solo con un paño húmedo (no sumergir). Usar lubricante a base de agua. Al ser de uso externo, revisar que no quede demasiado ajustada ni se use por tiempo prolongado, para evitar presión excesiva o cortar la circulación."
@@ -400,7 +376,7 @@
             "nombre": "Juguetes",
             "id": "Juguetes"
         },
-        "precio": 39900,
+        "precio": 35900,
         "descripcion": "Funda de uso externo \"Black Power\" con textura de escamas y relieve inspirado en piel de dragón, pensada para sumar sensaciones extra durante el encuentro en pareja. Material suave y flexible, reutilizable, que se estira para adaptarse a distintos tamaños. Incorpora un motor bala vibrador removible en la base. Transparente, permite ver el diseño texturizado por fuera.",
         "medidas": "Aprox. 15 cm de largo x 4 cm de diámetro interno, talla única extensible.",
         "recomendacionesSalud": "Material transparente tipo TPE, reutilizable: lavar con agua tibia y jabón neutro antes y después de cada uso, secar bien y guardar en un lugar seco sin contacto prolongado con otros juguetes de silicona. Motor bala removible: retirarlo antes de lavar la funda y limpiarlo solo con un paño húmedo, sin sumergir. Usar lubricante a base de agua. No usar por tiempo prolongado ni ajustar demasiado, para evitar presión excesiva."
