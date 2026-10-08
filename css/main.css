@@ -132,6 +132,7 @@ aside > header {
 nav {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .menu {
@@ -399,6 +400,59 @@ main {
     background-color: var(--clr-charcoal);
     border-color: var(--clr-charcoal);
     color: var(--clr-surface);
+}
+
+.producto-agregar:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.producto-agregar:disabled:hover {
+    background-color: var(--clr-surface);
+    border-color: var(--clr-surface);
+    color: var(--clr-plum);
+}
+
+.producto-imagen-wrapper {
+    position: relative;
+}
+
+.producto-badge-descuento {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    z-index: 1;
+    background-color: var(--clr-charcoal);
+    color: var(--clr-surface);
+    font-size: .65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: .25rem .5rem;
+    border-radius: var(--radius-full);
+}
+
+.producto-precios {
+    display: flex;
+    align-items: baseline;
+    gap: .4rem;
+}
+
+.producto-precio-anterior {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, .6);
+    font-size: .85rem;
+}
+
+.producto-stock {
+    font-size: .7rem;
+    font-weight: 700;
+    color: #ffd6d6;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+
+.producto-stock-agotado {
+    color: #ffb3b3;
 }
 
 /*** CARRITO ***/
@@ -707,7 +761,7 @@ main {
 }
 
 .disabled {
-    display: none;
+    display: none !important;
 }
 
 /*** MEDIA QUERIES ***/
@@ -825,4 +879,95 @@ main {
     .contenedor-productos {
         grid-template-columns: 1fr;
     }
+}
+
+/*** TEMA HALLOWEEN (activado/desactivado desde js/temporada.js) ***/
+
+html.tema-halloween {
+    --clr-plum: #d9550c;
+    --clr-plum-dark: #b8430a;
+    --clr-charcoal: #1f1326;
+    --clr-bg: #fff6ec;
+    --clr-surface-container: #ffe8d1;
+    --clr-surface-container-low: #fff1e2;
+}
+
+html.tema-halloween #hero-destacado {
+    position: relative;
+    overflow: hidden;
+}
+
+html.tema-halloween #hero-destacado::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, .07) 0, transparent 45%),
+                        radial-gradient(circle at 85% 80%, rgba(255, 255, 255, .06) 0, transparent 40%);
+}
+
+html.tema-halloween .logo-sub::after {
+    content: " 🎃";
+}
+
+html.tema-halloween .promociones {
+    position: relative;
+}
+
+html.tema-halloween .promociones::after {
+    content: "🎃";
+    position: absolute;
+    right: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: .9rem;
+    pointer-events: none;
+}
+
+html.tema-halloween .producto {
+    border-style: dashed;
+    border-color: var(--clr-plum);
+}
+
+#barra-halloween {
+    display: none;
+}
+
+html.tema-halloween #barra-halloween {
+    display: flex;
+}
+
+.producto-badge-halloween {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    z-index: 1;
+    background-color: var(--clr-charcoal);
+    color: var(--clr-surface);
+    font-size: .65rem;
+    font-weight: 800;
+    padding: .25rem .5rem;
+    border-radius: var(--radius-full);
+}
+
+/*** CARRUSEL DE PROMOCIONES ***/
+
+#hero-carrusel-dots {
+    display: flex;
+}
+
+.hero-carrusel-dot {
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    border: 0;
+    padding: 0;
+    background-color: var(--clr-outline-variant);
+    cursor: pointer;
+    transition: background-color .2s, transform .2s;
+}
+
+.hero-carrusel-dot.active {
+    background-color: var(--clr-plum);
+    transform: scale(1.2);
 }

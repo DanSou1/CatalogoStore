@@ -1,14 +1,21 @@
-const CACHE_NAME = 'mi-cache-v1';
+const CACHE_NAME = 'mi-cache-v3';
 
 // Archivos esenciales para cachear
 const urlsToCache = [
-    './',                 // Página principal
-    './index.html',       // Archivo HTML principal
-    './carrito.html',     // Otro archivo HTML
-    './css/main.css',     // Archivo CSS
-    './js/carrito.js',    // Script carrito
-    './js/main.js',       // Script principal
-    './js/menu.js',       // Script para el menú
+    './',                        // Página principal
+    './index.html',              // Archivo HTML principal
+    './carrito.html',            // Otro archivo HTML
+    './css/main.css',            // Archivo CSS
+    './js/carrito-storage.js',   // Capa compartida de carrito
+    './js/carrito.js',           // Script carrito
+    './js/main.js',              // Script principal
+    './js/menu.js',              // Script para el menú
+    './js/drawer.js',            // Panel lateral de carrito
+    './js/promo.js',             // Barra de countdown
+    './js/testimonios.js',       // Testimonios
+    './js/faq.js',                // Acordeón FAQ
+    './js/tailwind-config.js',   // Configuración de Tailwind
+    './js/temporada.js',         // Toggle de temporada (Halloween, etc.)
 ];
 
 // Instalar el Service Worker y cachear los archivos esenciales

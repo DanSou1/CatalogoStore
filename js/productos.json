@@ -723,7 +723,7 @@
         "precio": 15900
     },
     {
-        "id": "lenceria-11",
+        "id": "lenceria-11.halloween",
         "titulo": "Enfermera Sexy",
         "imagen": "./img/disfraces/11.webp",
         "categoria": {
@@ -733,7 +733,7 @@
         "precio": 65000
     },
     {
-        "id": "lenceria-08",
+        "id": "lenceria-08.halloween",
         "titulo": "Batichica",
         "imagen": "./img/disfraces/8.webp",
         "categoria": {
@@ -760,6 +760,9 @@
             "nombre": "Promociones",
             "id": "Promociones"
         },
-        "precio": 134900
+        "precio": 134900,
+        "precioAnterior": 169900,
+        "stock": 3,
+        "destacado": true
     }
 ]
