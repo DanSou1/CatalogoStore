@@ -53,6 +53,10 @@ function cargarProductos(productosElegidos) {
                     ${tieneDescuento ? `<span class="producto-precio-anterior">$${producto.precioAnterior}</span>` : ""}
                     <p class="producto-precio">$${producto.precio}</p>
                 </div>
+                <button class="producto-ver-mas" type="button" data-id="${producto.id}">
+                    <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+                    Ver más información
+                </button>
                 <button class="producto-agregar" id="${producto.id}" ${agotado ? "disabled" : ""}>${textoAgregar}</button>
             </div>
         `;
@@ -91,12 +95,22 @@ function actualizarBotonesAgregar() {
     });
 }
 
+contenedorProductos.addEventListener("click", (e) => {
+    const botonVerMas = e.target.closest(".producto-ver-mas");
+    if (botonVerMas) {
+        abrirModal(botonVerMas.dataset.id);
+    }
+});
+
 let productosEnCarrito = leerCarrito();
 actualizarNumerito();
 
 function agregarAlCarrito(e) {
 
-    Toastify({
+    const idBoton = e.currentTarget.dataset.id || e.currentTarget.id;
+    const enModal = e.currentTarget.closest("#modal-producto");
+
+    const opcionesToast = {
         text: "Producto agregado",
         duration: 3000,
         close: true,
@@ -114,9 +128,17 @@ function agregarAlCarrito(e) {
             y: '5.5rem' // vertical axis - clears the floating cart button in the top-right corner
           },
         onClick: function(){} // Callback after click
-      }).showToast();
+      };
 
-    const idBoton = e.currentTarget.id;
+    // El <dialog> pinta en el top layer del navegador, por encima de cualquier
+    // z-index: si el toast se monta en <body> (default de Toastify) queda
+    // detrás del ::backdrop del modal. Montarlo dentro del propio dialog lo evita.
+    if (enModal) {
+        opcionesToast.selector = "modal-producto";
+    }
+
+    Toastify(opcionesToast).showToast();
+
     const productoAgregado = productos.find(producto => producto.id === idBoton);
 
     agregarProductoAlCarrito(productosEnCarrito, productoAgregado);

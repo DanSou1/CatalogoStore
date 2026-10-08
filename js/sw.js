@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mi-cache-v3';
+const CACHE_NAME = 'mi-cache-v4';
 
 // Archivos esenciales para cachear
 const urlsToCache = [
@@ -9,6 +9,7 @@ const urlsToCache = [
     './js/carrito-storage.js',   // Capa compartida de carrito
     './js/carrito.js',           // Script carrito
     './js/main.js',              // Script principal
+    './js/detalle.js',           // Script modal de detalle de producto
     './js/menu.js',              // Script para el menú
     './js/drawer.js',            // Panel lateral de carrito
     './js/promo.js',             // Barra de countdown

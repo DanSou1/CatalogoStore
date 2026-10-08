@@ -207,6 +207,42 @@
         </div>
     </div>
 
+    <dialog id="modal-producto" class="modal-producto" aria-labelledby="modal-producto-titulo">
+        <div class="modal-panel">
+            <span class="modal-handle" aria-hidden="true"></span>
+            <button class="modal-cerrar" type="button" aria-label="Cerrar" autofocus>
+                <span class="material-symbols-outlined" aria-hidden="true">close</span>
+            </button>
+            <div class="modal-media">
+                <img class="modal-imagen" src="" alt="" width="440" height="550">
+            </div>
+            <div class="modal-contenido">
+                <div class="modal-cuerpo">
+                    <p class="modal-categoria"></p>
+                    <h2 class="modal-titulo" id="modal-producto-titulo"></h2>
+                    <p class="modal-precio"></p>
+                    <p class="modal-descripcion" id="modal-producto-descripcion"></p>
+                    <div class="modal-fichas">
+                        <dl class="modal-ficha">
+                            <dt><span class="material-symbols-outlined" aria-hidden="true">straighten</span>Medidas</dt>
+                            <dd></dd>
+                        </dl>
+                        <div class="modal-nota">
+                            <p class="modal-nota-titulo">
+                                <span class="material-symbols-outlined" aria-hidden="true">health_and_safety</span>Cuidado y uso
+                            </p>
+                            <p class="modal-nota-texto"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-pie">
+                    <button class="modal-agregar" type="button" data-id="">
+                        <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span><span class="modal-agregar-texto">Agregar al carrito</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </dialog>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker
@@ -218,6 +254,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/carrito-storage.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/detalle.js"></script>
     <script src="./js/drawer.js"></script>
     <script src="./js/promo.js"></script>
     <script src="./js/testimonios.js"></script>
