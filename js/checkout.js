@@ -12,6 +12,9 @@ const contenedorErrorPago = document.querySelector("#carrito-error-pago");
 const formDatosEnvio = document.querySelector("#form-datos-envio");
 const campoDocumento = document.querySelector("#campo-documento");
 const inputDocumento = document.querySelector("#envio-documento");
+const campoCiudadOtra = document.querySelector("#campo-ciudad-otra");
+const inputCiudadOtra = document.querySelector("#envio-ciudad-otra");
+const inputCorreo = document.querySelector("#envio-correo");
 const selectCiudad = document.querySelector("#envio-ciudad");
 const botonVolverDatosEnvio = document.querySelector("#datos-envio-volver");
 const botonReintentarPago = document.querySelector("#error-pago-reintentar");
@@ -22,7 +25,8 @@ function obtenerFlete() {
 }
 
 function obtenerCiudadLegible() {
-    return selectCiudad.value === "bogota" ? "Bogotá D.C." : "Otra ciudad";
+    if (selectCiudad.value === "bogota") return "Bogotá D.C.";
+    return inputCiudadOtra.value.trim() || "Otra ciudad";
 }
 
 function actualizarCampoDocumento() {
@@ -30,6 +34,13 @@ function actualizarCampoDocumento() {
     campoDocumento.classList.toggle("disabled", !fueraDeBogota);
     inputDocumento.required = fueraDeBogota;
     if (!fueraDeBogota) inputDocumento.value = "";
+}
+
+function actualizarCampoCiudadOtra() {
+    const fueraDeBogota = selectCiudad.value !== "bogota";
+    campoCiudadOtra.classList.toggle("disabled", !fueraDeBogota);
+    inputCiudadOtra.required = fueraDeBogota;
+    if (!fueraDeBogota) inputCiudadOtra.value = "";
 }
 
 function actualizarResumenEnvio() {
@@ -43,11 +54,15 @@ function actualizarResumenEnvio() {
 
 selectCiudad.addEventListener("change", () => {
     actualizarCampoDocumento();
+    actualizarCampoCiudadOtra();
     actualizarResumenEnvio();
 });
 
+inputCiudadOtra.addEventListener("input", actualizarResumenEnvio);
+
 botonComprarAhora.addEventListener("click", () => {
     actualizarCampoDocumento();
+    actualizarCampoCiudadOtra();
     actualizarResumenEnvio();
     contenedorCarritoGrid.classList.add("disabled");
     contenedorDatosEnvio.classList.remove("disabled");
@@ -84,6 +99,7 @@ function leerDatosEnvioFormulario() {
     return {
         nombre: document.querySelector("#envio-nombre").value.trim(),
         contacto: document.querySelector("#envio-contacto").value.trim(),
+        correo: inputCorreo.value.trim(),
         ciudad: obtenerCiudadLegible(),
         direccion: document.querySelector("#envio-direccion").value.trim(),
         documento: inputDocumento.value.trim(),
@@ -124,6 +140,7 @@ async function iniciarPago() {
             publicKey: WOMPI_PUBLIC_KEY,
             signature: { integrity: firma },
             customerData: {
+                email: datosEnvio.correo,
                 fullName: datosEnvio.nombre,
                 phoneNumber: datosEnvio.contacto,
                 phoneNumberPrefix: "+57",
@@ -177,6 +194,7 @@ function finalizarPedidoPorWhatsApp({ referencia, subtotal, flete, total, datosE
     mensaje += `\n\nDatos de envío:`;
     mensaje += `\nNombre: ${datosEnvio.nombre}`;
     mensaje += `\nContacto: ${datosEnvio.contacto}`;
+    mensaje += `\nCorreo (para la guía): ${datosEnvio.correo}`;
     mensaje += `\nCiudad: ${datosEnvio.ciudad}`;
     mensaje += `\nDirección: ${datosEnvio.direccion}`;
     if (datosEnvio.documento) mensaje += `\nDocumento: ${datosEnvio.documento}`;
