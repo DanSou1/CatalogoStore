@@ -22,7 +22,7 @@ function abrirModal(id) {
     modalImagen.alt = "";
     modalCategoria.textContent = producto.categoria.nombre;
     modalTitulo.textContent = producto.titulo;
-    modalPrecio.textContent = `$${producto.precio}`;
+    modalPrecio.textContent = `$${formatearPrecio(producto.precio)}`;
 
     if (producto.descripcion) {
         modalDescripcion.textContent = producto.descripcion;

@@ -6,7 +6,6 @@ const contenedorCarritoProductos = document.querySelector("#carrito-productos");
 const contenedorCarritoComprado = document.querySelector("#carrito-comprado");
 const botonVaciar = document.querySelector("#carrito-acciones-vaciar");
 const contenedorTotal = document.querySelector("#total");
-const botonComprar = document.querySelector("#carrito-acciones-comprar");
 
 
 function cargarProductosCarrito() {
@@ -39,7 +38,7 @@ function cargarProductosCarrito() {
                             <span class="carrito-producto-cantidad-numero">${producto.cantidad}</span>
                             <button class="carrito-producto-sumar" data-id="${producto.id}" aria-label="Sumar"><span class="material-symbols-outlined">add</span></button>
                         </div>
-                        <p class="carrito-producto-precio">$${producto.precio * producto.cantidad}</p>
+                        <p class="carrito-producto-precio">$${formatearPrecio(producto.precio * producto.cantidad)}</p>
                     </div>
                 </div>
             `;
@@ -140,36 +139,9 @@ function vaciarCarrito() {
 
 
 function actualizarTotal() {
-    total.innerText = `$${calcularTotalPrecio(productosEnCarrito)}`;
+    total.innerText = `$${formatearPrecio(calcularTotalPrecio(productosEnCarrito))}`;
 }
 
-botonComprar.addEventListener("click", comprarCarrito);
-
-function comprarCarrito() {
-    if (productosEnCarrito.length === 0) {
-        alert("El carrito está vacío.");
-        return;
-    }
-
-    // Crear un mensaje con los productos
-    let mensaje = "¡Hola! Estos son los productos de mi carrito:\n\n";
-    productosEnCarrito.forEach(producto => {
-        mensaje += `- ${producto.titulo} x${producto.cantidad}: $${producto.precio * producto.cantidad}\n`;
-    });
-    mensaje += `\nTotal: $${productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0)}`;
-
-    // Convertir el mensaje a formato URL
-    const mensajeCodificado = encodeURIComponent(mensaje);
-    const numeroWhatsApp = "573150338545";
-    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
-
-    // Abrir WhatsApp
-    window.open(urlWhatsApp, "_blank");
-
-    // Vaciar el carrito
-    vaciarArregloCarrito(productosEnCarrito);
-
-    contenedorCarritoVacio.classList.add("disabled");
-    contenedorCarritoGrid.classList.add("disabled");
-    contenedorCarritoComprado.classList.remove("disabled");
-}
+// El botón "Comprar ahora" (#carrito-acciones-comprar) ya no dispara el envío
+// directo a WhatsApp desde aquí — ahora abre el formulario de datos de envío
+// y el flujo de pago con Wompi, manejados por js/checkout.js.

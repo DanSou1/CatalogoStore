@@ -50,8 +50,8 @@ function cargarProductos(productosElegidos) {
                     ? `<p class="producto-stock ${agotado ? "producto-stock-agotado" : ""}">${agotado ? "Agotado" : "Solo quedan " + producto.stock}</p>`
                     : ""}
                 <div class="producto-precios">
-                    ${tieneDescuento ? `<span class="producto-precio-anterior">$${producto.precioAnterior}</span>` : ""}
-                    <p class="producto-precio">$${producto.precio}</p>
+                    ${tieneDescuento ? `<span class="producto-precio-anterior">$${formatearPrecio(producto.precioAnterior)}</span>` : ""}
+                    <p class="producto-precio">$${formatearPrecio(producto.precio)}</p>
                 </div>
                 <button class="producto-ver-mas" type="button" data-id="${producto.id}">
                     <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
@@ -83,6 +83,8 @@ botonesCategorias.forEach(boton => {
             tituloPrincipal.innerText = "Todos los productos";
             cargarProductos(productos);
         }
+
+        tituloPrincipal.scrollIntoView({ behavior: "smooth", block: "start" });
 
     })
 });
@@ -212,10 +214,10 @@ function mostrarSlideCarrusel(index) {
     heroImagen.src = producto.imagen;
     heroImagen.alt = producto.titulo;
     heroTitulo.innerText = producto.titulo;
-    heroPrecio.innerText = `$${producto.precio}`;
+    heroPrecio.innerText = `$${formatearPrecio(producto.precio)}`;
 
     if (producto.precioAnterior && producto.precioAnterior > producto.precio) {
-        heroPrecioAnterior.innerText = `$${producto.precioAnterior}`;
+        heroPrecioAnterior.innerText = `$${formatearPrecio(producto.precioAnterior)}`;
         heroPrecioAnterior.classList.remove("disabled");
     } else {
         heroPrecioAnterior.classList.add("disabled");

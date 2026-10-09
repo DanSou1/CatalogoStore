@@ -991,6 +991,88 @@ main {
     color: var(--clr-surface);
 }
 
+/*** DATOS DE ENVÍO ***/
+
+.estado-datos-envio {
+    max-width: 480px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: var(--clr-surface);
+    border: 1px solid var(--clr-outline-variant);
+    border-radius: var(--radius-lg);
+}
+
+.estado-datos-envio h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--clr-charcoal);
+    margin-bottom: 1.5rem;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    margin-bottom: 1.25rem;
+}
+
+.campo-formulario label {
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--clr-on-surface-variant);
+}
+
+.campo-formulario input,
+.campo-formulario select {
+    padding: .75rem .9rem;
+    border: 1px solid var(--clr-outline-variant);
+    border-radius: var(--radius-md);
+    font-size: .95rem;
+    color: var(--clr-on-surface);
+    background-color: var(--clr-surface);
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus {
+    outline: 2px solid var(--clr-plum);
+    outline-offset: 1px;
+}
+
+.datos-envio-resumen {
+    border-top: 1px solid var(--clr-outline-variant);
+    padding-top: 1rem;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.datos-envio-linea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .9rem;
+    color: var(--clr-on-surface-variant);
+}
+
+#datos-envio-flete-nota {
+    display: block;
+    font-size: .7rem;
+    color: var(--clr-outline);
+}
+
+.datos-envio-total {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--clr-charcoal);
+    padding-top: .5rem;
+    border-top: 1px solid var(--clr-outline-variant);
+}
+
+.datos-envio-total #datos-envio-total {
+    color: var(--clr-plum);
+}
+
 .header-mobile {
     display: none;
 }
@@ -1104,6 +1186,10 @@ main {
         position: sticky;
         top: 0;
         z-index: 5;
+    }
+
+    .titulo-principal {
+        scroll-margin-top: 70px;
     }
 
     .boton-carrito-flotante {

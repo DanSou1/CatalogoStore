@@ -35,7 +35,7 @@ function renderDrawer() {
                         <span class="text-xs font-bold px-1">${producto.cantidad}</span>
                         <button class="w-6 h-6 text-xs" data-accion="sumar" data-id="${producto.id}" aria-label="Sumar">+</button>
                     </div>
-                    <span class="font-bold text-xs text-plum">$${producto.precio * producto.cantidad}</span>
+                    <span class="font-bold text-xs text-plum">$${formatearPrecio(producto.precio * producto.cantidad)}</span>
                 </div>
             </div>
             <button class="text-on-surface-variant hover:text-error" data-accion="eliminar" data-id="${producto.id}" aria-label="Eliminar">
@@ -45,7 +45,7 @@ function renderDrawer() {
         lista.append(div);
     });
 
-    document.querySelector("#carrito-drawer-total").innerText = `$${calcularTotalPrecio(productosEnCarrito)}`;
+    document.querySelector("#carrito-drawer-total").innerText = `$${formatearPrecio(calcularTotalPrecio(productosEnCarrito))}`;
     lista.querySelectorAll("[data-accion]").forEach(boton => boton.addEventListener("click", manejarAccionDrawer));
 }
 

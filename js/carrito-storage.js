@@ -61,3 +61,9 @@ function calcularCantidadTotal(productosEnCarrito) {
 function calcularTotalPrecio(productosEnCarrito) {
     return productosEnCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
 }
+
+// Formatea un número a pesos colombianos con separador de miles (ej. 62000 -> "62.000").
+// Solo para mostrar: nunca usar el resultado en cálculos, siempre el número crudo.
+function formatearPrecio(valor) {
+    return Math.round(valor).toLocaleString("es-CO");
+}
