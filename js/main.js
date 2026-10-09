@@ -104,7 +104,6 @@ contenedorProductos.addEventListener("click", (e) => {
     }
 });
 
-let productosEnCarrito = leerCarrito();
 actualizarNumerito();
 
 function agregarAlCarrito(e) {
@@ -143,6 +142,12 @@ function agregarAlCarrito(e) {
 
     const productoAgregado = productos.find(producto => producto.id === idBoton);
 
+    // Siempre se lee el carrito justo antes de modificarlo (en vez de reusar
+    // una copia guardada al cargar la página), porque el panel lateral
+    // (drawer.js) puede eliminar/cambiar productos mientras tanto — si se
+    // reusara una copia vieja, un producto ya eliminado podía "revivir" al
+    // sobrescribir el localStorage con esa copia desactualizada.
+    const productosEnCarrito = leerCarrito();
     agregarProductoAlCarrito(productosEnCarrito, productoAgregado);
 
     actualizarNumerito();
