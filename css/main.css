@@ -1233,6 +1233,20 @@ main {
     }
 }
 
+/*** MODAL DE PAGO DE WOMPI ***/
+
+/* Wompi fija el modal del widget a 847x1112px vía estilo en línea/su propia
+   hoja de estilos. Se reduce ~10% para que se sienta menos apretado en
+   pantallas grandes, sin tocar su posición/scroll (ya trae overflow:auto) ni
+   el comportamiento responsivo propio de Wompi en pantallas chicas — por eso
+   queda detrás de un min-width, para no interferir con su CSS en celular. */
+@media screen and (min-width: 768px) {
+    .waybox-modal {
+        height: 760px !important;
+        width: 1000px !important;
+    }
+}
+
 /*** TEMA HALLOWEEN (activado/desactivado desde js/temporada.js) ***/
 
 html.tema-halloween {
