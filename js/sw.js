@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mi-cache-v5';
+const CACHE_NAME = 'mi-cache-v6';
 
 // Archivos esenciales para cachear
 const urlsToCache = [
@@ -10,6 +10,7 @@ const urlsToCache = [
     './js/carrito.js',           // Script carrito
     './js/checkout.js',          // Datos de envío, flete y pago con Wompi
     './js/wompi-config.js',      // Configuración de Wompi
+    './js/web3forms-config.js',  // Configuración de notificación por correo
     './js/main.js',              // Script principal
     './js/detalle.js',           // Script modal de detalle de producto
     './js/menu.js',              // Script para el menú

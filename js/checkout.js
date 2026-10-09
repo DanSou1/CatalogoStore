@@ -1,9 +1,9 @@
-// Checkout: formulario de datos de envío + flete + pago con Wompi.
-// Depende de los globals de carrito.js (productosEnCarrito, contenedorCarritoVacio,
-// contenedorCarritoGrid, contenedorCarritoComprado) y de carrito-storage.js
-// (calcularTotalPrecio, formatearPrecio, vaciarArregloCarrito).
+// Checkout: formulario de datos de envío + flete + pago con Wompi + aviso
+// automático por correo. Depende de los globals de carrito.js
+// (productosEnCarrito, contenedorCarritoVacio, contenedorCarritoGrid,
+// contenedorCarritoComprado) y de carrito-storage.js (calcularTotalPrecio,
+// formatearPrecio, vaciarArregloCarrito).
 
-const NUMERO_WHATSAPP = "573150338545";
 const FLETE_BOGOTA = 10000;
 const FLETE_OTRA_CIUDAD = 15000;
 
@@ -86,7 +86,7 @@ formDatosEnvio.addEventListener("submit", (e) => {
 
 // Mientras no se configuren WOMPI_PUBLIC_KEY / WOMPI_SIGNATURE_ENDPOINT en
 // js/wompi-config.js (ver ese archivo), el checkout sigue funcionando: el
-// pedido se registra igual por WhatsApp, solo que marcado como pendiente de
+// pedido se registra igual por correo, solo que marcado como pendiente de
 // coordinar el pago, en vez de abrir el widget de Wompi. Así el sitio nunca
 // queda roto mientras Daniel completa su cuenta de Wompi y despliega el
 // servidor de firma (ver server/wompi-signature.js).
@@ -116,7 +116,7 @@ async function iniciarPago() {
     const referencia = `EL-${Date.now()}`;
 
     if (!wompiEstaConfigurado()) {
-        finalizarPedidoPorWhatsApp({ referencia, subtotal, flete, total, datosEnvio, estado: "PENDIENTE_CONFIGURACION" });
+        finalizarPedido({ referencia, subtotal, flete, total, datosEnvio, estado: "PENDIENTE_CONFIGURACION" });
         return;
     }
 
@@ -157,7 +157,7 @@ async function iniciarPago() {
         checkout.open((resultado) => {
             const estado = resultado && resultado.transaction && resultado.transaction.status;
             if (estado === "APPROVED" || estado === "PENDING") {
-                finalizarPedidoPorWhatsApp({ referencia, subtotal, flete, total, datosEnvio, estado });
+                finalizarPedido({ referencia, subtotal, flete, total, datosEnvio, estado });
             } else {
                 mostrarErrorPago();
             }
@@ -183,28 +183,46 @@ async function obtenerFirma(referencia, amountInCents, currency) {
     return datos.signature;
 }
 
-function finalizarPedidoPorWhatsApp({ referencia, subtotal, flete, total, datosEnvio, estado }) {
-    let mensaje = "¡Hola! Acabo de completar mi pedido:\n\n";
-    productosEnCarrito.forEach(producto => {
-        mensaje += `- ${producto.titulo} x${producto.cantidad}: $${formatearPrecio(producto.precio * producto.cantidad)}\n`;
-    });
-    mensaje += `\nSubtotal: $${formatearPrecio(subtotal)}`;
-    mensaje += `\nFlete (${datosEnvio.ciudad}): $${formatearPrecio(flete)}`;
-    mensaje += `\nTotal: $${formatearPrecio(total)}`;
-    mensaje += `\n\nDatos de envío:`;
-    mensaje += `\nNombre: ${datosEnvio.nombre}`;
-    mensaje += `\nContacto: ${datosEnvio.contacto}`;
-    mensaje += `\nCorreo (para la guía): ${datosEnvio.correo}`;
-    mensaje += `\nCiudad: ${datosEnvio.ciudad}`;
-    mensaje += `\nDirección: ${datosEnvio.direccion}`;
-    if (datosEnvio.documento) mensaje += `\nDocumento: ${datosEnvio.documento}`;
-    mensaje += `\n\nReferencia de pedido: ${referencia}`;
-    mensaje += estado === "PENDIENTE_CONFIGURACION"
-        ? `\nPago: por coordinar directamente (checkout en línea aún no disponible)`
-        : `\nEstado del pago: ${estado === "APPROVED" ? "Aprobado" : "Pendiente de confirmación"}`;
+function correoEstaConfigurado() {
+    return typeof WEB3FORMS_ACCESS_KEY === "string" && !WEB3FORMS_ACCESS_KEY.startsWith("TU_");
+}
 
-    const mensajeCodificado = encodeURIComponent(mensaje);
-    window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${mensajeCodificado}`, "_blank");
+function enviarCorreoNotificacion({ referencia, subtotal, flete, total, datosEnvio, estado }) {
+    if (!correoEstaConfigurado()) return;
+
+    const listaProductos = productosEnCarrito
+        .map(producto => `${producto.titulo} x${producto.cantidad}: $${formatearPrecio(producto.precio * producto.cantidad)}`)
+        .join("\n");
+
+    // Envío "fire and forget": si falla (red, servicio caído), no debe
+    // interrumpir el flujo de compra del cliente — es la única notificación
+    // automática del pedido, pero una falla aquí no debe bloquear al cliente
+    // ni impedir que el pago/pedido se confirme en pantalla.
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+            access_key: WEB3FORMS_ACCESS_KEY,
+            subject: `Nuevo pedido ${referencia} — $${formatearPrecio(total)}`,
+            from_name: "ExperienceLove - Pedidos",
+            Referencia: referencia,
+            "Estado del pago": estado === "PENDIENTE_CONFIGURACION" ? "Por coordinar (checkout sin Wompi)" : estado,
+            Productos: listaProductos,
+            Subtotal: `$${formatearPrecio(subtotal)}`,
+            "Flete": `$${formatearPrecio(flete)} (${datosEnvio.ciudad})`,
+            Total: `$${formatearPrecio(total)}`,
+            Nombre: datosEnvio.nombre,
+            Contacto: datosEnvio.contacto,
+            "Correo del cliente": datosEnvio.correo,
+            Ciudad: datosEnvio.ciudad,
+            Direccion: datosEnvio.direccion,
+            Documento: datosEnvio.documento || "No aplica",
+        }),
+    }).catch(error => console.error("No se pudo enviar la notificación por correo:", error));
+}
+
+function finalizarPedido({ referencia, subtotal, flete, total, datosEnvio, estado }) {
+    enviarCorreoNotificacion({ referencia, subtotal, flete, total, datosEnvio, estado });
 
     vaciarArregloCarrito(productosEnCarrito);
 
