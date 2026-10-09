@@ -1038,6 +1038,29 @@ main {
     outline-offset: 1px;
 }
 
+.metodo-pago-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.metodo-pago-opcion {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .95rem;
+    font-weight: 400;
+    color: var(--clr-on-surface);
+    padding: .65rem .9rem;
+    border: 1px solid var(--clr-outline-variant);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.metodo-pago-opcion input {
+    accent-color: var(--clr-plum);
+}
+
 .datos-envio-resumen {
     border-top: 1px solid var(--clr-outline-variant);
     padding-top: 1rem;

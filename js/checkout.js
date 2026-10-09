@@ -16,6 +16,8 @@ const campoCiudadOtra = document.querySelector("#campo-ciudad-otra");
 const inputCiudadOtra = document.querySelector("#envio-ciudad-otra");
 const inputCorreo = document.querySelector("#envio-correo");
 const selectCiudad = document.querySelector("#envio-ciudad");
+const campoMetodoPago = document.querySelector("#campo-metodo-pago");
+const radiosMetodoPago = document.querySelectorAll('input[name="metodoPago"]');
 const botonVolverDatosEnvio = document.querySelector("#datos-envio-volver");
 const botonReintentarPago = document.querySelector("#error-pago-reintentar");
 const botonComprarAhora = document.querySelector("#carrito-acciones-comprar");
@@ -43,6 +45,19 @@ function actualizarCampoCiudadOtra() {
     if (!fueraDeBogota) inputCiudadOtra.value = "";
 }
 
+function obtenerMetodoPago() {
+    return document.querySelector('input[name="metodoPago"]:checked').value;
+}
+
+// Pago contra entrega solo aplica a Bogotá; fuera de Bogotá se oculta el
+// campo y se fuerza de vuelta a "online" para no dejar seleccionada una
+// opción que ya no es válida.
+function actualizarCampoMetodoPago() {
+    const esBogota = selectCiudad.value === "bogota";
+    campoMetodoPago.classList.toggle("disabled", !esBogota);
+    if (!esBogota) radiosMetodoPago[0].checked = true;
+}
+
 function actualizarResumenEnvio() {
     const subtotal = calcularTotalPrecio(productosEnCarrito);
     const flete = obtenerFlete();
@@ -55,6 +70,7 @@ function actualizarResumenEnvio() {
 selectCiudad.addEventListener("change", () => {
     actualizarCampoDocumento();
     actualizarCampoCiudadOtra();
+    actualizarCampoMetodoPago();
     actualizarResumenEnvio();
 });
 
@@ -63,6 +79,7 @@ inputCiudadOtra.addEventListener("input", actualizarResumenEnvio);
 botonComprarAhora.addEventListener("click", () => {
     actualizarCampoDocumento();
     actualizarCampoCiudadOtra();
+    actualizarCampoMetodoPago();
     actualizarResumenEnvio();
     contenedorCarritoGrid.classList.add("disabled");
     contenedorDatosEnvio.classList.remove("disabled");
@@ -103,6 +120,7 @@ function leerDatosEnvioFormulario() {
         ciudad: obtenerCiudadLegible(),
         direccion: document.querySelector("#envio-direccion").value.trim(),
         documento: inputDocumento.value.trim(),
+        metodoPago: obtenerMetodoPago(),
     };
 }
 
@@ -114,6 +132,11 @@ async function iniciarPago() {
     const flete = obtenerFlete();
     const total = subtotal + flete;
     const referencia = `EL-${Date.now()}`;
+
+    if (datosEnvio.metodoPago === "contra-entrega") {
+        finalizarPedido({ referencia, subtotal, flete, total, datosEnvio, estado: "CONTRA_ENTREGA" });
+        return;
+    }
 
     if (!wompiEstaConfigurado()) {
         finalizarPedido({ referencia, subtotal, flete, total, datosEnvio, estado: "PENDIENTE_CONFIGURACION" });
@@ -187,6 +210,12 @@ function correoEstaConfigurado() {
     return typeof WEB3FORMS_ACCESS_KEY === "string" && !WEB3FORMS_ACCESS_KEY.startsWith("TU_");
 }
 
+function etiquetaEstadoPago(estado) {
+    if (estado === "PENDIENTE_CONFIGURACION") return "Por coordinar (checkout sin Wompi)";
+    if (estado === "CONTRA_ENTREGA") return "Contra entrega (se paga al recibir)";
+    return estado;
+}
+
 function enviarCorreoNotificacion({ referencia, subtotal, flete, total, datosEnvio, estado }) {
     if (!correoEstaConfigurado()) return;
 
@@ -206,7 +235,7 @@ function enviarCorreoNotificacion({ referencia, subtotal, flete, total, datosEnv
             subject: `Nuevo pedido ${referencia} — $${formatearPrecio(total)}`,
             from_name: "ExperienceLove - Pedidos",
             Referencia: referencia,
-            "Estado del pago": estado === "PENDIENTE_CONFIGURACION" ? "Por coordinar (checkout sin Wompi)" : estado,
+            "Estado del pago": etiquetaEstadoPago(estado),
             Productos: listaProductos,
             Subtotal: `$${formatearPrecio(subtotal)}`,
             "Flete": `$${formatearPrecio(flete)} (${datosEnvio.ciudad})`,

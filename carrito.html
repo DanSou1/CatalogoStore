@@ -113,6 +113,19 @@
                             <label for="envio-ciudad-otra">¿Cuál ciudad?</label>
                             <input type="text" id="envio-ciudad-otra" name="ciudadOtra" autocomplete="address-level2" placeholder="Ej: Medellín, Cali, Barranquilla...">
                         </div>
+                        <div class="campo-formulario disabled" id="campo-metodo-pago">
+                            <label>Método de pago</label>
+                            <div class="metodo-pago-opciones">
+                                <label class="metodo-pago-opcion">
+                                    <input type="radio" name="metodoPago" value="online" checked>
+                                    Pago en línea
+                                </label>
+                                <label class="metodo-pago-opcion">
+                                    <input type="radio" name="metodoPago" value="contra-entrega">
+                                    Pago contra entrega
+                                </label>
+                            </div>
+                        </div>
                         <div class="campo-formulario">
                             <label for="envio-direccion">Dirección</label>
                             <input type="text" id="envio-direccion" name="direccion" autocomplete="street-address" required>
