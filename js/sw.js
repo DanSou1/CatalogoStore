@@ -1,10 +1,11 @@
-const CACHE_NAME = 'mi-cache-v9';
+const CACHE_NAME = 'mi-cache-v10';
 
 // Archivos esenciales para cachear
 const urlsToCache = [
     './',                        // Página principal
     './index.html',              // Archivo HTML principal
     './carrito.html',            // Otro archivo HTML
+    './css/tailwind.css',
     './css/main.css',            // Archivo CSS
     './js/carrito-storage.js',   // Capa compartida de carrito
     './js/carrito.js',           // Script carrito
