@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mi-cache-v8';
+const CACHE_NAME = 'mi-cache-v9';
 
 // Archivos esenciales para cachear
 const urlsToCache = [
@@ -28,7 +28,7 @@ self.addEventListener('install', event => {
         caches.open(CACHE_NAME).then(cache => {
             console.log('Archivos esenciales cacheados');
             return cache.addAll(urlsToCache);
-        })
+        }).then(() => self.skipWaiting())
     );
 });
 
@@ -62,7 +62,9 @@ self.addEventListener('fetch', event => {
     );
 });
 
-// Activar el Service Worker y limpiar cachés antiguas
+// Activar el Service Worker, limpiar cachés antiguas y tomar control
+// inmediato de las pestañas ya abiertas (sin esto, una pestaña abierta
+// sigue viendo la versión vieja hasta que se cierra por completo).
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches.keys().then(cacheNames => {
@@ -74,6 +76,6 @@ self.addEventListener('activate', event => {
                     }
                 })
             );
-        })
+        }).then(() => self.clients.claim())
     );
 });
