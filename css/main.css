@@ -1233,6 +1233,26 @@ main {
     }
 }
 
+/*** MODAL DE PAGO DE WOMPI ***/
+
+/* Wompi fija el modal del widget a una altura rígida vía estilo en línea
+   (height:847px), sin adaptarla al tamaño real de la pantalla — en
+   pantallas más cortas (portátiles, celulares) el formulario de pago queda
+   cortado y no se puede llegar al botón de confirmar. Se sobreescribe con
+   !important (necesario para ganarle al estilo en línea) para que el modal
+   siempre quede centrado y limitado a la altura visible, usando su propio
+   scroll interno (ya trae overflow:auto) en vez de una altura fija. */
+.waybox-modal {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    height: auto !important;
+    max-height: 92vh !important;
+    width: min(1112px, 94vw) !important;
+    max-width: 94vw !important;
+}
+
 /*** TEMA HALLOWEEN (activado/desactivado desde js/temporada.js) ***/
 
 html.tema-halloween {
