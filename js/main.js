@@ -5,6 +5,7 @@ fetch("./js/productos.json")
     .then(data => {
         productos = data;
         cargarProductos(productos);
+        renderCarruselPromociones(productos);
     })
 
 
@@ -24,20 +25,39 @@ function cargarProductos(productosElegidos) {
 
     contenedorProductos.innerHTML = "";
 
-    productosElegidos.forEach(producto => {
+    const temporada = temporadaActiva();
+    const textoAgregar = temporada === "halloween" ? "Agregar 🎃" : "Agregar";
+
+    ordenarPorTemporada(productosElegidos).forEach(producto => {
 
         const div = document.createElement("div");
         div.classList.add("producto");
+
+        const tieneDescuento = producto.precioAnterior && producto.precioAnterior > producto.precio;
+        const descuentoPct = tieneDescuento ? Math.round((1 - producto.precio / producto.precioAnterior) * 100) : 0;
+        const agotado = producto.stock === 0;
+        const esDeTemporada = temporada === "halloween" && esProductoDeTemporada(producto, "halloween");
+
         div.innerHTML = `
-            <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
+            <div class="producto-imagen-wrapper">
+                ${tieneDescuento ? `<span class="producto-badge-descuento">-${descuentoPct}%</span>` : ""}
+                ${esDeTemporada ? `<span class="producto-badge-halloween">🎃 Halloween</span>` : ""}
+                <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
+            </div>
             <div class="producto-detalles">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
-                <p class="producto-precio">$${producto.precio}</p>
+                ${producto.stock !== undefined && producto.stock <= 5
+                    ? `<p class="producto-stock ${agotado ? "producto-stock-agotado" : ""}">${agotado ? "Agotado" : "Solo quedan " + producto.stock}</p>`
+                    : ""}
+                <div class="producto-precios">
+                    ${tieneDescuento ? `<span class="producto-precio-anterior">$${formatearPrecio(producto.precioAnterior)}</span>` : ""}
+                    <p class="producto-precio">$${formatearPrecio(producto.precio)}</p>
+                </div>
                 <button class="producto-ver-mas" type="button" data-id="${producto.id}">
                     <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
                     Ver más información
                 </button>
-                <button class="producto-agregar" id="${producto.id}">Agregar</button>
+                <button class="producto-agregar" id="${producto.id}" ${agotado ? "disabled" : ""}>${textoAgregar}</button>
             </div>
         `;
 
@@ -64,6 +84,8 @@ botonesCategorias.forEach(boton => {
             cargarProductos(productos);
         }
 
+        tituloPrincipal.scrollIntoView({ behavior: "smooth", block: "start" });
+
     })
 });
 
@@ -82,16 +104,7 @@ contenedorProductos.addEventListener("click", (e) => {
     }
 });
 
-let productosEnCarrito;
-
-let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
-
-if (productosEnCarritoLS) {
-    productosEnCarrito = JSON.parse(productosEnCarritoLS);
-    actualizarNumerito();
-} else {
-    productosEnCarrito = [];
-}
+actualizarNumerito();
 
 function agregarAlCarrito(e) {
 
@@ -129,20 +142,97 @@ function agregarAlCarrito(e) {
 
     const productoAgregado = productos.find(producto => producto.id === idBoton);
 
-    if(productosEnCarrito.some(producto => producto.id === idBoton)) {
-        const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
-        productosEnCarrito[index].cantidad++;
-    } else {
-        productoAgregado.cantidad = 1;
-        productosEnCarrito.push(productoAgregado);
-    }
+    // Siempre se lee el carrito justo antes de modificarlo (en vez de reusar
+    // una copia guardada al cargar la página), porque el panel lateral
+    // (drawer.js) puede eliminar/cambiar productos mientras tanto — si se
+    // reusara una copia vieja, un producto ya eliminado podía "revivir" al
+    // sobrescribir el localStorage con esa copia desactualizada.
+    const productosEnCarrito = leerCarrito();
+    agregarProductoAlCarrito(productosEnCarrito, productoAgregado);
 
     actualizarNumerito();
-
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+    document.dispatchEvent(new CustomEvent("carrito:actualizado"));
 }
 
 function actualizarNumerito() {
-    let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-    numeritos.forEach(numerito => numerito.innerText = nuevoNumerito);
+    const cantidad = calcularCantidadTotal(leerCarrito());
+    numeritos.forEach(numerito => numerito.innerText = cantidad);
+}
+
+let carruselProductos = [];
+let carruselIndex = 0;
+let carruselInterval = null;
+
+function renderCarruselPromociones(productos) {
+    const heroSection = document.querySelector("#hero-destacado");
+    const dotsContenedor = document.querySelector("#hero-carrusel-dots");
+    if (!heroSection || !dotsContenedor) return;
+
+    carruselProductos = ordenarPorTemporada(productos.filter(p => p.categoria.id === "Promociones"));
+
+    if (!carruselProductos.length) {
+        heroSection.classList.add("disabled");
+        return;
+    }
+
+    heroSection.classList.remove("disabled");
+
+    dotsContenedor.innerHTML = "";
+    carruselProductos.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "hero-carrusel-dot";
+        dot.setAttribute("aria-label", `Ver promoción ${index + 1}`);
+        dot.addEventListener("click", () => mostrarSlideCarrusel(index));
+        dotsContenedor.append(dot);
+    });
+
+    mostrarSlideCarrusel(0);
+
+    if (carruselProductos.length > 1) {
+        heroSection.addEventListener("mouseenter", () => clearInterval(carruselInterval));
+        heroSection.addEventListener("mouseleave", iniciarAutoRotacionCarrusel);
+    }
+    iniciarAutoRotacionCarrusel();
+}
+
+function iniciarAutoRotacionCarrusel() {
+    clearInterval(carruselInterval);
+    if (carruselProductos.length <= 1) return;
+    carruselInterval = setInterval(() => {
+        mostrarSlideCarrusel((carruselIndex + 1) % carruselProductos.length);
+    }, 4500);
+}
+
+function mostrarSlideCarrusel(index) {
+    const producto = carruselProductos[index];
+    if (!producto) return;
+    carruselIndex = index;
+
+    const heroImagen = document.querySelector("#hero-producto-imagen");
+    const heroTitulo = document.querySelector("#hero-producto-titulo");
+    const heroPrecio = document.querySelector("#hero-producto-precio");
+    const heroPrecioAnterior = document.querySelector("#hero-producto-precio-anterior");
+    const heroBoton = document.querySelector('[data-rol="hero-agregar"]');
+    if (!heroImagen || !heroTitulo || !heroPrecio || !heroBoton) return;
+
+    heroImagen.src = producto.imagen;
+    heroImagen.alt = producto.titulo;
+    heroTitulo.innerText = producto.titulo;
+    heroPrecio.innerText = `$${formatearPrecio(producto.precio)}`;
+
+    if (producto.precioAnterior && producto.precioAnterior > producto.precio) {
+        heroPrecioAnterior.innerText = `$${formatearPrecio(producto.precioAnterior)}`;
+        heroPrecioAnterior.classList.remove("disabled");
+    } else {
+        heroPrecioAnterior.classList.add("disabled");
+    }
+
+    heroBoton.id = producto.id;
+    heroBoton.innerText = temporadaActiva() === "halloween" ? "Agregar 🎃" : "Agregar";
+    actualizarBotonesAgregar();
+
+    document.querySelectorAll(".hero-carrusel-dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+    });
 }

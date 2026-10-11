@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ExperienceStore</title>
+    <script src="./js/temporada.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -86,12 +87,95 @@
                     </div>
                 </div>
 
+                <div id="carrito-datos-envio" class="estado-datos-envio disabled">
+                    <h3>Datos de envío</h3>
+                    <form id="form-datos-envio" novalidate>
+                        <div class="campo-formulario">
+                            <label for="envio-nombre">Nombre de quien recibe</label>
+                            <input type="text" id="envio-nombre" name="nombre" autocomplete="name" required>
+                        </div>
+                        <div class="campo-formulario">
+                            <label for="envio-contacto">Número de contacto</label>
+                            <input type="tel" id="envio-contacto" name="contacto" autocomplete="tel" required>
+                        </div>
+                        <div class="campo-formulario">
+                            <label for="envio-correo">Correo electrónico (para enviarte la guía)</label>
+                            <input type="email" id="envio-correo" name="correo" autocomplete="email" required>
+                        </div>
+                        <div class="campo-formulario">
+                            <label for="envio-ciudad">Ciudad</label>
+                            <select id="envio-ciudad" name="ciudad" required>
+                                <option value="bogota">Bogotá D.C.</option>
+                                <option value="otra">Otra ciudad</option>
+                            </select>
+                        </div>
+                        <div class="campo-formulario disabled" id="campo-ciudad-otra">
+                            <label for="envio-ciudad-otra">¿Cuál ciudad?</label>
+                            <input type="text" id="envio-ciudad-otra" name="ciudadOtra" autocomplete="address-level2" placeholder="Ej: Medellín, Cali, Barranquilla...">
+                        </div>
+                        <div class="campo-formulario disabled" id="campo-metodo-pago">
+                            <label>Método de pago</label>
+                            <div class="metodo-pago-opciones">
+                                <label class="metodo-pago-opcion">
+                                    <input type="radio" name="metodoPago" value="online" checked>
+                                    Pago en línea
+                                </label>
+                                <label class="metodo-pago-opcion">
+                                    <input type="radio" name="metodoPago" value="contra-entrega">
+                                    Pago contra entrega
+                                </label>
+                            </div>
+                        </div>
+                        <div class="campo-formulario">
+                            <label for="envio-direccion">Dirección</label>
+                            <input type="text" id="envio-direccion" name="direccion" autocomplete="street-address" required>
+                        </div>
+                        <div class="campo-formulario disabled" id="campo-documento">
+                            <label for="envio-documento">Documento de identificación</label>
+                            <input type="text" id="envio-documento" name="documento">
+                        </div>
+
+                        <div class="datos-envio-resumen">
+                            <div class="datos-envio-linea">
+                                <p>Subtotal</p>
+                                <p id="datos-envio-subtotal"></p>
+                            </div>
+                            <div class="datos-envio-linea">
+                                <p>Flete<span id="datos-envio-flete-nota"></span></p>
+                                <p id="datos-envio-flete"></p>
+                            </div>
+                            <div class="datos-envio-linea datos-envio-total">
+                                <p>Total</p>
+                                <p id="datos-envio-total"></p>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="datos-envio-continuar" class="carrito-acciones-comprar">
+                            Continuar al pago
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                        <button type="button" id="datos-envio-volver" class="carrito-acciones-vaciar">Volver al carrito</button>
+                    </form>
+                </div>
+
+                <div id="carrito-error-pago" class="estado-carrito disabled">
+                    <div class="estado-icono">
+                        <span class="material-symbols-outlined">error</span>
+                    </div>
+                    <h3>No pudimos procesar tu pago</h3>
+                    <p>Puedes intentarlo de nuevo o escribirnos directamente por WhatsApp para coordinar tu pedido.</p>
+                    <button type="button" id="error-pago-reintentar" class="estado-boton">
+                        Intentar de nuevo
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+
                 <div id="carrito-comprado" class="estado-carrito disabled">
                     <div class="estado-icono estado-icono-exito">
                         <span class="material-symbols-outlined">check_circle</span>
                     </div>
                     <h3>Muchas gracias por tu compra</h3>
-                    <p>Te contactaremos por WhatsApp para coordinar el envío.</p>
+                    <p>Hemos recibido los datos de tu pedido y te contactaremos pronto para coordinar el envío.</p>
                     <a href="./index.html" class="estado-boton">
                         Volver al catálogo
                         <span class="material-symbols-outlined">arrow_forward</span>
@@ -104,7 +188,12 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://checkout.wompi.co/widget.js"></script>
+    <script src="./js/carrito-storage.js"></script>
     <script src="./js/carrito.js"></script>
+    <script src="./js/wompi-config.js"></script>
+    <script src="./js/web3forms-config.js"></script>
+    <script src="./js/checkout.js"></script>
     <script src="./js/menu.js"></script>
 </body>
 </html>

@@ -1,5 +1,4 @@
-let productosEnCarrito = localStorage.getItem("productos-en-carrito");
-productosEnCarrito = JSON.parse(productosEnCarrito);
+let productosEnCarrito = leerCarrito();
 
 const contenedorCarritoVacio = document.querySelector("#carrito-vacio");
 const contenedorCarritoGrid = document.querySelector("#carrito-grid");
@@ -7,7 +6,6 @@ const contenedorCarritoProductos = document.querySelector("#carrito-productos");
 const contenedorCarritoComprado = document.querySelector("#carrito-comprado");
 const botonVaciar = document.querySelector("#carrito-acciones-vaciar");
 const contenedorTotal = document.querySelector("#total");
-const botonComprar = document.querySelector("#carrito-acciones-comprar");
 
 
 function cargarProductosCarrito() {
@@ -40,7 +38,7 @@ function cargarProductosCarrito() {
                             <span class="carrito-producto-cantidad-numero">${producto.cantidad}</span>
                             <button class="carrito-producto-sumar" data-id="${producto.id}" aria-label="Sumar"><span class="material-symbols-outlined">add</span></button>
                         </div>
-                        <p class="carrito-producto-precio">$${producto.precio * producto.cantidad}</p>
+                        <p class="carrito-producto-precio">$${formatearPrecio(producto.precio * producto.cantidad)}</p>
                     </div>
                 </div>
             `;
@@ -99,39 +97,23 @@ function eliminarDelCarrito(e) {
       }).showToast();
 
     const idBoton = e.currentTarget.id;
-    const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
-
-    productosEnCarrito.splice(index, 1);
+    quitarProducto(productosEnCarrito, idBoton);
     guardarYActualizar();
 }
 
 function restarCantidad(e) {
-    const idBoton = e.currentTarget.dataset.id;
-    const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
-    if (index === -1) return;
-
-    if (productosEnCarrito[index].cantidad > 1) {
-        productosEnCarrito[index].cantidad--;
-    } else {
-        productosEnCarrito.splice(index, 1);
-    }
-
+    decrementarProducto(productosEnCarrito, e.currentTarget.dataset.id);
     guardarYActualizar();
 }
 
 function sumarCantidad(e) {
-    const idBoton = e.currentTarget.dataset.id;
-    const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
-    if (index === -1) return;
-
-    productosEnCarrito[index].cantidad++;
-
+    incrementarProducto(productosEnCarrito, e.currentTarget.dataset.id);
     guardarYActualizar();
 }
 
 function guardarYActualizar() {
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
     cargarProductosCarrito();
+    document.dispatchEvent(new CustomEvent("carrito:actualizado"));
 }
 
 botonVaciar.addEventListener("click", vaciarCarrito);
@@ -149,7 +131,7 @@ function vaciarCarrito() {
         cancelButtonColor: '#1B1A1A'
     }).then((result) => {
         if (result.isConfirmed) {
-            productosEnCarrito.length = 0;
+            vaciarArregloCarrito(productosEnCarrito);
             guardarYActualizar();
         }
     })
@@ -157,38 +139,9 @@ function vaciarCarrito() {
 
 
 function actualizarTotal() {
-    const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
-    total.innerText = `$${totalCalculado}`;
+    total.innerText = `$${formatearPrecio(calcularTotalPrecio(productosEnCarrito))}`;
 }
 
-botonComprar.addEventListener("click", comprarCarrito);
-
-function comprarCarrito() {
-    if (productosEnCarrito.length === 0) {
-        alert("El carrito está vacío.");
-        return;
-    }
-
-    // Crear un mensaje con los productos
-    let mensaje = "¡Hola! Estos son los productos de mi carrito:\n\n";
-    productosEnCarrito.forEach(producto => {
-        mensaje += `- ${producto.titulo} x${producto.cantidad}: $${producto.precio * producto.cantidad}\n`;
-    });
-    mensaje += `\nTotal: $${productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0)}`;
-
-    // Convertir el mensaje a formato URL
-    const mensajeCodificado = encodeURIComponent(mensaje);
-    const numeroWhatsApp = "573150338545";
-    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
-
-    // Abrir WhatsApp
-    window.open(urlWhatsApp, "_blank");
-
-    // Vaciar el carrito
-    productosEnCarrito.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-
-    contenedorCarritoVacio.classList.add("disabled");
-    contenedorCarritoGrid.classList.add("disabled");
-    contenedorCarritoComprado.classList.remove("disabled");
-}
+// El botón "Comprar ahora" (#carrito-acciones-comprar) ya no dispara el envío
+// directo a WhatsApp desde aquí — ahora abre el formulario de datos de envío
+// y el flujo de pago con Wompi, manejados por js/checkout.js.

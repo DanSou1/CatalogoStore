@@ -1,0 +1,3 @@
+name = "wompi-signature"
+main = "wompi-signature.js"
+compatibility_date = "2026-01-01"

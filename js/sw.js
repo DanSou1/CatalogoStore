@@ -1,15 +1,26 @@
-const CACHE_NAME = 'mi-cache-v1';
+const CACHE_NAME = 'mi-cache-v10';
 
 // Archivos esenciales para cachear
 const urlsToCache = [
-    './',                 // Página principal
-    './index.html',       // Archivo HTML principal
-    './carrito.html',     // Otro archivo HTML
-    './css/main.css',     // Archivo CSS
-    './js/carrito.js',    // Script carrito
-    './js/main.js',       // Script principal
-    './js/detalle.js',    // Script modal de detalle de producto
-    './js/menu.js',       // Script para el menú
+    './',                        // Página principal
+    './index.html',              // Archivo HTML principal
+    './carrito.html',            // Otro archivo HTML
+    './css/tailwind.css',
+    './css/main.css',            // Archivo CSS
+    './js/carrito-storage.js',   // Capa compartida de carrito
+    './js/carrito.js',           // Script carrito
+    './js/checkout.js',          // Datos de envío, flete y pago con Wompi
+    './js/wompi-config.js',      // Configuración de Wompi
+    './js/web3forms-config.js',  // Configuración de notificación por correo
+    './js/main.js',              // Script principal
+    './js/detalle.js',           // Script modal de detalle de producto
+    './js/menu.js',              // Script para el menú
+    './js/drawer.js',            // Panel lateral de carrito
+    './js/promo.js',             // Barra de countdown
+    './js/testimonios.js',       // Testimonios
+    './js/faq.js',                // Acordeón FAQ
+    './js/tailwind-config.js',   // Configuración de Tailwind
+    './js/temporada.js',         // Toggle de temporada (Halloween, etc.)
 ];
 
 // Instalar el Service Worker y cachear los archivos esenciales
@@ -18,7 +29,7 @@ self.addEventListener('install', event => {
         caches.open(CACHE_NAME).then(cache => {
             console.log('Archivos esenciales cacheados');
             return cache.addAll(urlsToCache);
-        })
+        }).then(() => self.skipWaiting())
     );
 });
 
@@ -52,7 +63,9 @@ self.addEventListener('fetch', event => {
     );
 });
 
-// Activar el Service Worker y limpiar cachés antiguas
+// Activar el Service Worker, limpiar cachés antiguas y tomar control
+// inmediato de las pestañas ya abiertas (sin esto, una pestaña abierta
+// sigue viendo la versión vieja hasta que se cierra por completo).
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches.keys().then(cacheNames => {
@@ -64,6 +77,6 @@ self.addEventListener('activate', event => {
                     }
                 })
             );
-        })
+        }).then(() => self.clients.claim())
     );
 });

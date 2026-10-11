@@ -132,6 +132,7 @@ aside > header {
 nav {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .menu {
@@ -442,6 +443,59 @@ main {
     background-color: var(--clr-charcoal);
     border-color: var(--clr-charcoal);
     color: var(--clr-surface);
+}
+
+.producto-agregar:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.producto-agregar:disabled:hover {
+    background-color: var(--clr-surface);
+    border-color: var(--clr-surface);
+    color: var(--clr-plum);
+}
+
+.producto-imagen-wrapper {
+    position: relative;
+}
+
+.producto-badge-descuento {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    z-index: 1;
+    background-color: var(--clr-charcoal);
+    color: var(--clr-surface);
+    font-size: .65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: .25rem .5rem;
+    border-radius: var(--radius-full);
+}
+
+.producto-precios {
+    display: flex;
+    align-items: baseline;
+    gap: .4rem;
+}
+
+.producto-precio-anterior {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, .6);
+    font-size: .85rem;
+}
+
+.producto-stock {
+    font-size: .7rem;
+    font-weight: 700;
+    color: #ffd6d6;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+
+.producto-stock-agotado {
+    color: #ffb3b3;
 }
 
 /*** MODAL DE DETALLE DE PRODUCTO ***/
@@ -937,6 +991,111 @@ main {
     color: var(--clr-surface);
 }
 
+/*** DATOS DE ENVÍO ***/
+
+.estado-datos-envio {
+    max-width: 480px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: var(--clr-surface);
+    border: 1px solid var(--clr-outline-variant);
+    border-radius: var(--radius-lg);
+}
+
+.estado-datos-envio h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--clr-charcoal);
+    margin-bottom: 1.5rem;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    margin-bottom: 1.25rem;
+}
+
+.campo-formulario label {
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--clr-on-surface-variant);
+}
+
+.campo-formulario input,
+.campo-formulario select {
+    padding: .75rem .9rem;
+    border: 1px solid var(--clr-outline-variant);
+    border-radius: var(--radius-md);
+    font-size: .95rem;
+    color: var(--clr-on-surface);
+    background-color: var(--clr-surface);
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus {
+    outline: 2px solid var(--clr-plum);
+    outline-offset: 1px;
+}
+
+.metodo-pago-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.metodo-pago-opcion {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .95rem;
+    font-weight: 400;
+    color: var(--clr-on-surface);
+    padding: .65rem .9rem;
+    border: 1px solid var(--clr-outline-variant);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.metodo-pago-opcion input {
+    accent-color: var(--clr-plum);
+}
+
+.datos-envio-resumen {
+    border-top: 1px solid var(--clr-outline-variant);
+    padding-top: 1rem;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.datos-envio-linea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .9rem;
+    color: var(--clr-on-surface-variant);
+}
+
+#datos-envio-flete-nota {
+    display: block;
+    font-size: .7rem;
+    color: var(--clr-outline);
+}
+
+.datos-envio-total {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--clr-charcoal);
+    padding-top: .5rem;
+    border-top: 1px solid var(--clr-outline-variant);
+}
+
+.datos-envio-total #datos-envio-total {
+    color: var(--clr-plum);
+}
+
 .header-mobile {
     display: none;
 }
@@ -946,7 +1105,7 @@ main {
 }
 
 .disabled {
-    display: none;
+    display: none !important;
 }
 
 /*** MEDIA QUERIES ***/
@@ -1052,6 +1211,10 @@ main {
         z-index: 5;
     }
 
+    .titulo-principal {
+        scroll-margin-top: 70px;
+    }
+
     .boton-carrito-flotante {
         display: none;
     }
@@ -1091,4 +1254,125 @@ main {
     .contenedor-productos {
         grid-template-columns: 1fr;
     }
+}
+
+/*** MODAL DE PAGO DE WOMPI ***/
+
+/* Wompi fija el modal del widget a 847x1112px vía estilo en línea/su propia
+   hoja de estilos. Se reduce ~10% para que se sienta menos apretado en
+   pantallas grandes, sin tocar su posición/scroll (ya trae overflow:auto) ni
+   el comportamiento responsivo propio de Wompi en pantallas chicas — por eso
+   queda detrás de un min-width, para no interferir con su CSS en celular. */
+@media screen and (min-width: 768px) {
+    .waybox-modal {
+        height: 760px !important;
+        width: 1000px !important;
+    }
+}
+
+/*** TEMA HALLOWEEN (activado/desactivado desde js/temporada.js) ***/
+
+html.tema-halloween {
+    --clr-plum: #d9550c;
+    --clr-plum-dark: #b8430a;
+    --clr-charcoal: #1f1326;
+    --clr-bg: #fff6ec;
+    --clr-surface-container: #ffe8d1;
+    --clr-surface-container-low: #fff1e2;
+}
+
+html.tema-halloween #hero-destacado {
+    position: relative;
+    overflow: hidden;
+}
+
+html.tema-halloween #hero-destacado::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, .07) 0, transparent 45%),
+                        radial-gradient(circle at 85% 80%, rgba(255, 255, 255, .06) 0, transparent 40%);
+}
+
+html.tema-halloween .logo-sub::after {
+    content: " 🎃";
+}
+
+html.tema-halloween .promociones {
+    position: relative;
+}
+
+html.tema-halloween .promociones::after {
+    content: "🎃";
+    position: absolute;
+    right: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: .9rem;
+    pointer-events: none;
+}
+
+html.tema-halloween .producto {
+    border-style: dashed;
+    border-color: var(--clr-plum);
+}
+
+#barra-halloween {
+    display: none;
+}
+
+html.tema-halloween #barra-halloween {
+    display: flex;
+}
+
+.producto-badge-halloween {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    z-index: 1;
+    background-color: var(--clr-charcoal);
+    color: var(--clr-surface);
+    font-size: .65rem;
+    font-weight: 800;
+    padding: .25rem .5rem;
+    border-radius: var(--radius-full);
+}
+
+/*** CARRUSEL DE PROMOCIONES ***/
+
+#hero-carrusel-dots {
+    display: flex;
+}
+
+.hero-carrusel-dot {
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    border: 0;
+    padding: 0;
+    background-color: var(--clr-outline-variant);
+    cursor: pointer;
+    transition: background-color .2s, transform .2s;
+}
+
+.hero-carrusel-dot.active {
+    background-color: var(--clr-plum);
+    transform: scale(1.2);
+}
+
+.murcielago-halloween {
+    position: fixed;
+    left: -10vw;
+    z-index: 9999;
+    pointer-events: none;
+    animation: vuelo-murcielago 3.2s ease-in-out forwards;
+}
+
+@keyframes vuelo-murcielago {
+    0%   { transform: translate(0, 0) scale(1); opacity: 0; }
+    12%  { opacity: 1; }
+    50%  { transform: translate(60vw, -40px) scale(1.1); }
+    88%  { opacity: 1; }
+    100% { transform: translate(120vw, 20px) scale(.9); opacity: 0; }
 }

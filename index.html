@@ -5,24 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ExperienceLove</title>
+    <script src="./js/temporada.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/tailwind.css">
 </head>
 <body>
     <div class="wrapper">
-        <a href="./carrito.html" class="boton-carrito-flotante" aria-label="Carrito">
+        <button type="button" id="abrir-carrito-flotante" class="boton-carrito-flotante" aria-label="Carrito">
             <span class="material-symbols-outlined">shopping_cart</span>
             <span class="numerito">0</span>
-        </a>
+        </button>
         <header class="header-mobile">
             <h1 class="logo">Experience Love</h1>
             <div class="header-mobile-acciones">
-                <a href="./carrito.html" class="boton-carrito-icono" aria-label="Carrito">
+                <button type="button" id="abrir-carrito-icono" class="boton-carrito-icono" aria-label="Carrito">
                     <span class="material-symbols-outlined">shopping_cart</span>
                     <span class="numerito">0</span>
-                </a>
+                </button>
                 <button class="open-menu" id="open-menu">
                     <span class="material-symbols-outlined">menu</span>
                 </button>
@@ -72,10 +74,138 @@
             </footer>
         </aside>
         <main>
+            <div id="barra-promo" class="disabled bg-plum text-surface text-xs sm:text-sm font-semibold px-4 py-2 rounded-xl mb-6 flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-base">schedule</span>
+                <span>Oferta por tiempo limitado — termina en</span>
+                <span id="cuenta-regresiva" class="font-bold tracking-wider"></span>
+            </div>
+
+            <div id="barra-halloween" class="bg-charcoal text-surface text-xs sm:text-sm font-semibold px-4 py-2 rounded-xl mb-6 items-center justify-center gap-2">
+                <span>🎃 Edición especial de Halloween — disfraces y sorpresas de temporada 🕸️</span>
+            </div>
+
+            <section id="hero-destacado" class="relative rounded-2xl overflow-hidden mb-10 bg-gradient-to-br from-plum to-charcoal text-surface p-8 lg:p-12">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div class="flex flex-col gap-4">
+                        <span class="inline-flex items-center gap-2 bg-surface/10 px-3 py-1 rounded-full text-xs font-bold tracking-wide self-start">
+                            <span class="material-symbols-outlined text-sm">local_fire_department</span>
+                            Promociones
+                        </span>
+                        <h1 id="hero-headline" class="text-2xl lg:text-4xl font-extrabold leading-tight">Vive la experiencia sin complicaciones</h1>
+                        <p id="hero-subcopy" class="text-sm lg:text-base text-surface/80 max-w-md">Envío discreto, pago al recibir y atención directa por WhatsApp en cada pedido.</p>
+                        <a href="#contenedor-productos" class="text-xs font-bold uppercase tracking-wide underline self-start">Ver catálogo completo</a>
+                    </div>
+                    <div class="bg-surface text-charcoal rounded-xl p-5 shadow-panel">
+                        <img id="hero-producto-imagen" class="w-full h-72 object-contain bg-surface-container-low rounded-lg mb-4" src="" alt="">
+                        <h3 id="hero-producto-titulo" class="font-bold text-lg mb-2">Cargando...</h3>
+                        <div class="flex items-center justify-between mb-3">
+                            <div>
+                                <span id="hero-producto-precio-anterior" class="disabled text-xs text-on-surface-variant line-through block"></span>
+                                <span id="hero-producto-precio" class="text-2xl font-extrabold"></span>
+                            </div>
+                            <button class="producto-agregar" data-rol="hero-agregar">Agregar</button>
+                        </div>
+                        <div id="hero-carrusel-dots" class="justify-center gap-1.5"></div>
+                    </div>
+                </div>
+            </section>
+
             <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
             <div id="contenedor-productos" class="contenedor-productos"><!-- Esto se va a rellenar con JS --></div>
+
+            <section id="testimonios" class="mt-14">
+                <h2 class="titulo-principal">Lo que dicen nuestros clientes</h2>
+                <div id="contenedor-testimonios" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+
+            <section id="faq" class="mt-14">
+                <h2 class="titulo-principal">Preguntas frecuentes</h2>
+                <div class="flex flex-col gap-3 max-w-2xl">
+                    <div class="bg-surface border border-outline-variant rounded-lg overflow-hidden">
+                        <button type="button" class="faq-pregunta w-full flex items-center justify-between gap-3 p-4 text-left font-semibold text-charcoal">
+                            ¿Cuánto tarda el envío y cómo lo rastreo?
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                        <div class="faq-respuesta disabled px-4 pb-4 text-sm text-on-surface-variant">
+                            Los pedidos se despachan en 24-48 horas hábiles. Una vez enviado, te compartimos la guía y el seguimiento directamente por WhatsApp.
+                        </div>
+                    </div>
+                    <div class="bg-surface border border-outline-variant rounded-lg overflow-hidden">
+                        <button type="button" class="faq-pregunta w-full flex items-center justify-between gap-3 p-4 text-left font-semibold text-charcoal">
+                            ¿El empaque es discreto?
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                        <div class="faq-respuesta disabled px-4 pb-4 text-sm text-on-surface-variant">
+                            Sí, todos los pedidos se empacan sin logos ni referencias al contenido, de forma totalmente discreta.
+                        </div>
+                    </div>
+                    <div class="bg-surface border border-outline-variant rounded-lg overflow-hidden">
+                        <button type="button" class="faq-pregunta w-full flex items-center justify-between gap-3 p-4 text-left font-semibold text-charcoal">
+                            ¿Qué métodos de pago aceptan?
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                        <!-- TODO: confirmar métodos de pago reales -->
+                        <div class="faq-respuesta disabled px-4 pb-4 text-sm text-on-surface-variant">
+                            Coordinamos el método de pago directamente por WhatsApp al confirmar tu pedido.
+                        </div>
+                    </div>
+                    <div class="bg-surface border border-outline-variant rounded-lg overflow-hidden">
+                        <button type="button" class="faq-pregunta w-full flex items-center justify-between gap-3 p-4 text-left font-semibold text-charcoal">
+                            ¿Puedo hablar con alguien antes de comprar?
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                        <div class="faq-respuesta disabled px-4 pb-4 text-sm text-on-surface-variant">
+                            Claro, escríbenos por WhatsApp y un asesor te resuelve cualquier duda antes de finalizar tu pedido.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer-confianza" class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-14 mb-6">
+                <div class="flex flex-col items-center text-center gap-2 p-4">
+                    <span class="material-symbols-outlined text-plum text-2xl">local_shipping</span>
+                    <p class="text-xs font-semibold text-charcoal">Envío discreto</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-2 p-4">
+                    <span class="material-symbols-outlined text-plum text-2xl">verified_user</span>
+                    <p class="text-xs font-semibold text-charcoal">Compra segura</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-2 p-4">
+                    <span class="material-symbols-outlined text-plum text-2xl">chat</span>
+                    <p class="text-xs font-semibold text-charcoal">Atención por WhatsApp</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-2 p-4">
+                    <span class="material-symbols-outlined text-plum text-2xl">workspace_premium</span>
+                    <p class="text-xs font-semibold text-charcoal">Garantía</p>
+                </div>
+            </footer>
         </main>
     </div>
+
+    <div id="carrito-drawer-backdrop" class="disabled fixed inset-0 bg-charcoal/50 z-40"></div>
+    <div id="carrito-drawer" class="translate-x-full fixed top-0 right-0 h-full w-full sm:w-96 bg-surface text-charcoal z-50 shadow-panel flex flex-col transition-transform duration-300">
+        <div class="flex items-center justify-between p-4 bg-surface-container-low">
+            <h3 class="font-bold text-charcoal">Tu carrito</h3>
+            <button type="button" id="cerrar-carrito-drawer" aria-label="Cerrar carrito">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div id="carrito-drawer-vacio" class="disabled flex-1 flex flex-col items-center justify-center gap-3 p-6 text-center text-on-surface-variant">
+            <span class="material-symbols-outlined text-4xl">shopping_bag</span>
+            <p>Tu carrito está vacío</p>
+        </div>
+        <div id="carrito-drawer-productos" class="flex-1 overflow-y-auto p-4 flex flex-col gap-3"></div>
+        <div id="carrito-drawer-resumen" class="disabled p-4 bg-surface-container-low flex flex-col gap-3">
+            <div class="flex justify-between font-bold text-charcoal">
+                <span>Total</span>
+                <span id="carrito-drawer-total">$0</span>
+            </div>
+            <a href="./carrito.html" class="bg-plum text-surface text-center py-3 rounded-full font-bold text-sm uppercase">
+                Ver carrito y finalizar compra
+            </a>
+        </div>
+    </div>
+
     <dialog id="modal-producto" class="modal-producto" aria-labelledby="modal-producto-titulo">
         <div class="modal-panel">
             <span class="modal-handle" aria-hidden="true"></span>
@@ -121,8 +251,13 @@
         }
     </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/carrito-storage.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/detalle.js"></script>
+    <script src="./js/drawer.js"></script>
+    <script src="./js/promo.js"></script>
+    <script src="./js/testimonios.js"></script>
+    <script src="./js/faq.js"></script>
     <script src="./js/menu.js"></script>
 </body>
 </html>
