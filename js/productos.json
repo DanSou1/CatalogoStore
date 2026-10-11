@@ -1,147 +1,161 @@
 [
     {
+        "id": "promociones-01.halloween",
+        "titulo": "Kit Halloween: Truco, trato o placer",
+        "imagen": "./img/promociones/kit-truco-trato-placer.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 62900,
+        "precioAnterior": 70900,
+        "descripcion": "Kit de Halloween para parejas con 3 productos: juego de cartas Verdad o Reto, anillo vibrador Sen Íntimo y lubricante íntimo sabor caramelo con sensación caliente (30 ml). Precio especial de temporada, válido hasta el 31 de octubre.",
+        "medidas": "Incluye: 1 juego de cartas Verdad o Reto, 1 anillo vibrador, 1 lubricante caramelo de 30 ml.",
+        "recomendacionesSalud": "Lee las indicaciones de cada producto antes de usarlo. El lubricante no es anticonceptivo ni protege contra infecciones de transmisión sexual. Productos solo para adultos."
+    },
+    {
         "id": "cosmeticos-03",
         "titulo": "Labial de feromonas",
-        "imagen": "./img/cosmeticos/1.webp",
+        "imagen": "./img/cosmeticos/labial-feromonas.webp",
         "categoria": {
             "nombre": "cosmeticos",
             "id": "cosmeticos"
         },
-        "precio": 0,
+        "precio": 15000,
         "descripcion": "Bálsamo labial con toque de color y esencia seductora, en un estuche compacto tipo potecito, ideal para llevar en la cartera. Hidrata los labios mientras suma un aroma envolvente pensado para potenciar la conexión en tus encuentros. Fórmula suave que deja un acabado natural con un ligero brillo.",
         "medidas": "Aprox. 10 g.",
         "recomendacionesSalud": "Aplicar directamente sobre los labios con la yema del dedo o aplicador. Realizá una prueba de alergia en una pequeña zona de piel antes del primer uso. Evitá el contacto con los ojos. No usar sobre piel irritada o lastimada. Si aparece ardor o enrojecimiento, suspendé el uso. Conservar bien cerrado, en lugar fresco y seco."
     },
     {
         "id": "cosmeticos-10",
-        "titulo": "Perfume de feromonas sin olor",
-        "imagen": "./img/cosmeticos/9.webp",
+        "titulo": "Feromonas sin olor para hombre",
+        "imagen": "./img/cosmeticos/perfume-feromonas-hombre.webp",
         "categoria": {
             "nombre": "cosmeticos",
             "id": "cosmeticos"
         },
-        "precio": 0,
-        "descripcion": "Perfume de feromonas concentradas, totalmente sin aroma, en formato gotero de fácil aplicación. Pensado para combinarlo con tu perfume o loción habitual sin alterar su fragancia, sumando un extra de atracción de forma discreta. Frasco pequeño ideal para llevar en la cartera y retocar durante el día.",
-        "medidas": "Gotero de 10 ml (0.33 fl oz).",
-        "recomendacionesSalud": "Aplicar unas gotas sobre puntos de pulso (muñecas, cuello) solo o combinado con tu perfume habitual. Realizá una prueba de alergia en una pequeña zona de piel antes del primer uso. Evitá el contacto con ojos y mucosas. No aplicar sobre piel irritada. Si notás molestia, lavar la zona y suspender el uso. Conservar en lugar fresco, alejado de la luz directa."
+        "precio": 39900,
+        "descripcion": "Feromonas concentradas para hombre, sin olor: no es un perfume, así que no cambia ni tapa tu fragancia. Aplícalas solas o debajo de tu loción de siempre para sumar un extra de atracción de forma discreta. Formato pequeño, fácil de llevar y de retocar durante el día.",
+        "medidas": "10 ml.",
+        "recomendacionesSalud": "Aplicar en puntos de pulso como cuello y muñecas. Uso externo. Evitar el contacto con ojos y mucosas y no aplicar sobre piel irritada. Hacer una prueba en una pequeña zona antes del primer uso. Mantener bien cerrado y lejos del calor."
     },
     {
         "id": "juego-02",
         "titulo": "Dados luminosos eroticos",
-        "imagen": "./img/juegos/2.png",
+        "imagen": "./img/juegos/dados-luminosos-eroticos.webp",
         "categoria": {
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 0,
+        "precio": 15000,
         "descripcion": "Dados luminosos eróticos para jugar en pareja: se lanzan los 2 dados y la combinación de acción y zona del cuerpo marca el siguiente movimiento del juego. Brillan en la oscuridad para sumar ambiente. Perfecto para una cita nocturna, San Valentín o cualquier noche en la que quieran salir de la rutina con humor y complicidad.",
         "medidas": "Set de 2 dados, Aprox. 2,5 cm de lado cada uno."
     },
     {
         "id": "juego-04",
         "titulo": "Baraja tántrica",
-        "imagen": "./img/juegos/4.png",
+        "imagen": "./img/juegos/baraja-tantrica.webp",
         "categoria": {
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 0,
+        "precio": 30000,
         "descripcion": "Baraja de naipes ilustrados con temática tántrica: cada carta representa una postura o dinámica para explorar en pareja, siguiendo las reglas clásicas de un juego de cartas. Viene en estuche compacto, fácil de llevar en un viaje o guardar en la mesa de noche. Una alternativa distinta a los juegos de dados o tableros, pensada para sumar picante a una noche en pareja.",
         "medidas": "Aprox. 54 cartas ilustradas, presentación en estuche plegable tipo caja de naipes."
     },
     {
         "id": "juego-07",
         "titulo": "Verdad o Reto",
-        "imagen": "./img/juegos/7.png",
+        "imagen": "./img/juegos/verdad-o-reto.webp",
         "categoria": {
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 0,
+        "precio": 30000,
         "descripcion": "El clásico \"verdad o reto\" en versión para adultos: un mazo de cartas con preguntas atrevidas y retos para animar una noche en pareja o entre amigos. Se juega por turnos, cada quien elige verdad o reto y sigue lo que indica la carta. Presentación en caja rígida tipo estuche, fácil de guardar y transportar. Recomendado 18+.",
         "medidas": "Mazo de cartas, presentación en caja rígida tipo estuche."
     },
     {
         "id": "juego-11",
         "titulo": "Juego Tricky Lésbico",
-        "imagen": "./img/juegos/11.webp",
+        "imagen": "./img/juegos/tricky-lesbico.webp",
         "categoria": {
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 0,
+        "precio": 20900,
         "descripcion": "Versión atrevida del clásico triki (tres en raya) pensada para parejas de mujeres: cada casilla que se marca trae un reto o dinámica distinta, y quien completa la línea gana el derecho a elegir la siguiente actividad. Formato de tablero compacto, fácil de jugar en cualquier momento de la noche. Una forma divertida y directa de sumar complicidad en la pareja.",
         "medidas": "Tablero de juego, Aprox. 20 x 20 cm."
     },
     {
         "id": "juego-13",
         "titulo": "Póker Kamasutra Lésbico",
-        "imagen": "./img/juegos/13.webp",
+        "imagen": "./img/juegos/poker-kamasutra-lesbiana.webp",
         "categoria": {
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 0,
+        "precio": 28000,
         "descripcion": "Baraja de póker temática Kamasutra pensada para parejas de mujeres: 58 cartas en total — 54 de posturas ilustradas estilo póker y 4 cartas de \"penitencias\" para subir la apuesta en cualquier momento de la partida. Se juega con las reglas clásicas del póker, pero cada mano desbloquea un reto distinto. Estuche rígido tipo caja de naipes, fácil de llevar y guardar.",
         "medidas": "58 cartas (54 Kamasutra + 4 de penitencias), presentación en estuche rígido tipo caja de naipes."
     },
     {
         "id": "juego-14",
         "titulo": "Dados Luminosos de Penitencia",
-        "imagen": "./img/juegos/14.webp",
+        "imagen": "./img/juegos/dados-penitencia.webp",
         "categoria": {
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 0,
+        "precio": 16000,
         "descripcion": "Set de 3 dados luminosos que brillan en la oscuridad, pensados para imponer una penitencia a quien pierda la ronda de turno: cada dado combina una acción distinta, armando un reto diferente cada vez que se lanzan. Dinámica simple y rápida, ideal para sumarle picante a cualquier noche de juego en pareja sin reglas complicadas.",
         "medidas": "Set de 3 dados luminosos, Aprox. 2,5 cm de lado cada uno. Presentación en caja individual."
     },
     {
         "id": "juego-15",
-        "titulo": "Jenga Erótico",
-        "imagen": "./img/juegos/15.webp",
+        "titulo": "Jenga Picante",
+        "imagen": "./img/juegos/jenga-picante.webp",
         "categoria": {
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 0,
-        "descripcion": "Versión atrevida del clásico juego de torre de bloques: cada pieza que se retira trae impreso un reto o una prenda para cumplir antes de seguir jugando. Se arma la torre y se van sacando bloques por turnos, igual que el Jenga tradicional, pero la tensión de que no se caiga viene acompañada de picante entre los dos. Ideal para una noche en pareja que arranca con risas.",
+        "precio": 67900,
+        "descripcion": "Jenga Picante \"Retos y Shots\": el clásico juego de torre con 54 fichas, cada una con un reto caliente. Arma la torre, saca una ficha con una sola mano y cumple el reto; quien tumbe la torre debe cumplir el reto o tomarse el shot que el grupo decida. Ideal para parejas, fiestas y despedidas.",
         "medidas": "54 bloques de madera numerados, presentación en caja."
     },
     {
         "id": "juego-16",
         "titulo": "Juego Tricky Gay",
-        "imagen": "./img/juegos/16.webp",
+        "imagen": "./img/juegos/tricky-gay.webp",
         "categoria": {
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 0,
+        "precio": 20900,
         "descripcion": "Versión atrevida del clásico triki (tres en raya) pensada para parejas de hombres: cada casilla que se marca trae un reto o dinámica distinta, y quien completa la línea gana el derecho a elegir la siguiente actividad. Formato de tablero compacto, fácil de jugar en cualquier momento de la noche.",
         "medidas": "Tablero de juego, Aprox. 20 x 20 cm."
     },
     {
         "id": "juego-17",
         "titulo": "Juego Tricky Hetero",
-        "imagen": "./img/juegos/17.webp",
+        "imagen": "./img/juegos/tricky-hetero.webp",
         "categoria": {
             "nombre": "Juegos",
             "id": "Juegos"
         },
-        "precio": 0,
+        "precio": 20900,
         "descripcion": "Versión atrevida del clásico triki (tres en raya) pensada para parejas heterosexuales: cada casilla que se marca trae un reto o dinámica distinta, y quien completa la línea gana el derecho a elegir la siguiente actividad. Formato de tablero compacto, fácil de jugar en cualquier momento de la noche.",
         "medidas": "Tablero de juego, Aprox. 20 x 20 cm."
     },
     {
         "id": "juguetes-02",
         "titulo": "Anillo vibrador desechable",
-        "imagen": "./img/juguetes/2.png",
+        "imagen": "./img/juguetes/anillo-vibrador.webp",
         "categoria": {
             "nombre": "Juguetes",
             "id": "Juguetes"
         },
-        "precio": 0,
+        "precio": 12000,
         "descripcion": "Anillo vibrador desechable: Cuerpo de silicona suave con textura en relieve para estimulación añadida durante el encuentro en pareja. Empaque \"Sen Íntimo\" tipo masajeador personal, discreto y compacto para guardar fácilmente.",
         "medidas": "Aprox. 4 cm de diámetro interno (anillo elástico), motor bala aprox. 5 cm.",
         "recomendacionesSalud": "Usar lubricante a base de agua: retirarlo antes de sumergir el anillo en agua y limpiarlo solo con un paño húmedo. Lavar el anillo con agua tibia y jabón neutro antes y después de cada uso, secar bien antes de guardar. No dejarlo puesto por tiempo prolongado ni ajustarlo demasiado, para evitar presión excesiva o cortar la circulación."
@@ -149,25 +163,24 @@
     {
         "id": "juguetes-06",
         "titulo": "Succionador de clítoris Rose Sex",
-        "imagen": "./img/juguetes/6-rosesex.webp",
+        "imagen": "./img/juguetes/rose-sex-clitoral.webp",
         "categoria": {
             "nombre": "Juguetes",
             "id": "Juguetes"
         },
-        "precio": 0,
-        "descripcion": "Estimulador 2 en 1 con forma de rosa: la flor genera pulsos de succión tipo sonic sobre el clítoris mientras un brazo articulado con vibración se encarga de la estimulación interna, ambos con varios modos e intensidades regulables desde sus botones táctiles. Cuerpo de silicona suave, recargable por USB. Uno de los productos más buscados del mercado por su diseño doble función.",
-        "medidas": "Rosa: aprox. 7 cm de alto x 6 cm de ancho; brazo vibrador aprox. 12 cm de largo x 2,5 cm de diámetro.",
-        "recomendacionesSalud": "Cuerpo de silicona suave: usar lubricante a base de agua (el siliconado puede deteriorar el material con el tiempo). Lavar con agua tibia y jabón neutro antes y después de cada uso, secando bien antes de guardar. Se recarga por cable USB con conector magnético: no sumergir el puerto de carga, limpiar solo esa zona con un paño apenas húmedo. Comenzar con la intensidad más baja."
+        "precio": 83900,
+        "descripcion": "Clitoral Massager Rose Sex de GuiaCereza Toys: succionador de clítoris en forma de rosa, con boquilla que estimula por pulsos de aire sin contacto directo y un solo botón para manejarlo. Diseño compacto y discreto, ideal para empezar con la succión o para regalar.",
+        "recomendacionesSalud": "Usar lubricante a base de agua. Lavar la boquilla con agua tibia y jabón neutro antes y después de cada uso, y secar bien antes de guardar. No sumergir la zona del botón ni del puerto de carga. Empezar con la intensidad más baja."
     },
     {
         "id": "juguetes-13",
         "titulo": "Dildo transparente Gregorio",
-        "imagen": "./img/juguetes/13.webp",
+        "imagen": "./img/juguetes/dildo-gregorio.webp",
         "categoria": {
             "nombre": "Juguetes",
             "id": "Juguetes"
         },
-        "precio": 0,
+        "precio": 63900,
         "descripcion": "Dildo realista \"Gregorio\" de la línea Kissme Love, en material tipo jalea transparente, 100% libre de ftalatos. No vibra — pensado para penetración manual o con arnés. Flexible y con ventosa adherible a superficies planas para uso hands-free. A prueba de agua, fácil de higienizar.",
         "medidas": "Ver ficha del empaque para largo y diámetro exactos.",
         "recomendacionesSalud": "Material flexible tipo jalea/TPE, libre de ftalatos: lavar con agua tibia y jabón neutro antes y después de cada uso, secar bien antes de guardar. Usar siempre con lubricante (compatible con base agua; evitar siliconado si se combina con otros juguetes de silicona). La ventosa se adhiere a superficies lisas y planas — verificar que quede bien sujeta antes de apoyar peso. Guardar en un lugar seco, separado de otros juguetes."
@@ -175,12 +188,12 @@
     {
         "id": "juguetes-14",
         "titulo": "Koakuma",
-        "imagen": "./img/juguetes/14.webp",
+        "imagen": "./img/juguetes/koakuma.webp",
         "categoria": {
             "nombre": "Juguetes",
             "id": "Juguetes"
         },
-        "precio": 0,
+        "precio": 139900,
         "descripcion": "Vibrador compacto de silicona suave, pensado para estimulación puntual con varios modos e intensidades de vibración. Diseño ergonómico fácil de sostener, pensado para orgasmos intensos y duraderos en solitario o en pareja. Recargable, discreto y fácil de transportar.",
         "medidas": "Aprox. 12 cm de largo x 3 cm de diámetro.",
         "recomendacionesSalud": "Cuerpo de silicona suave: usar lubricante a base de agua. Lavar con agua tibia y jabón neutro antes y después de cada uso, secando bien antes de guardar. Si es recargable por USB, no sumergir el puerto de carga. Comenzar con la intensidad más baja."
@@ -188,12 +201,12 @@
     {
         "id": "juguetes-15",
         "titulo": "Limpiador de juguetes 60 ml",
-        "imagen": "./img/juguetes/15.webp",
+        "imagen": "./img/juguetes/limpiador-juguetes.webp",
         "categoria": {
             "nombre": "Juguetes",
             "id": "Juguetes"
         },
-        "precio": 0,
+        "precio": 17900,
         "descripcion": "Limpiador y desinfectante para el cuidado diario de tus juguetes íntimos, fórmula suave que elimina el 99.9% de las bacterias sin dañar materiales como silicona, TPE o vidrio. Práctico frasco con dosificador tipo spray de 60 ml, ideal para aplicar antes y después de cada uso y mantener tu colección en buen estado por más tiempo.",
         "medidas": "Frasco de 60 ml con dosificador spray.",
         "recomendacionesSalud": "Rociar sobre el juguete limpio y dejar actuar unos segundos antes de enjuagar con agua, o secar con un paño limpio según el material. No usar sobre piel directamente. Evitar el contacto con ojos. Conservar en lugar fresco y seco, fuera del alcance de los niños."
@@ -201,12 +214,12 @@
     {
         "id": "juguetes-16",
         "titulo": "Bowling Pins One Massager",
-        "imagen": "./img/juguetes/16.webp",
+        "imagen": "./img/juguetes/bowling-pins.webp",
         "categoria": {
             "nombre": "Juguetes",
             "id": "Juguetes"
         },
-        "precio": 0,
+        "precio": 98900,
         "descripcion": "Wand massager \"Bowling Pins\" de GuiaCerezaToys, en tono rosa nude. Cabezal flexible y acolchado para un masaje envolvente de cuerpo completo, con varios modos e intensidades de vibración controlados por un solo botón. Recargable, silencioso y fácil de sostener durante sesiones largas.",
         "medidas": "Ver ficha del empaque para largo y diámetro exactos.",
         "recomendacionesSalud": "Cabezal de silicona suave: lavar con agua tibia y jabón neutro antes y después de cada uso, secando bien antes de guardar. Usar lubricante a base de agua. Si es recargable por USB, no sumergir el puerto de carga. Comenzar con la intensidad más baja."
@@ -214,12 +227,12 @@
     {
         "id": "bondage-09",
         "titulo": "Kit de amarre a la cama",
-        "imagen": "./img/bondage/9.webp",
+        "imagen": "./img/bondage/kit-amarre-cama.webp",
         "categoria": {
             "nombre": "Bondage",
             "id": "Bondage"
         },
-        "precio": 0,
+        "precio": 95900,
         "descripcion": "Kit de sujeción bajo colchón con correas de nylon resistente, anillos metálicos múltiples y cuatro esposas acolchadas para muñecas y tobillos con broches de gancho. Se ancla bajo el colchón sin perforar ni atornillar nada, permitiendo inmovilización en la cama con ajuste regulable mediante hebillas de liberación rápida.",
         "medidas": "Aprox. correas ajustables hasta 200 cm; cuffs de 18–25 cm de contorno.",
         "recomendacionesSalud": "Ajustar las correas sin apretar en exceso, dejando espacio para dos dedos entre la tela y la piel. Verificar que las hebillas de liberación rápida queden siempre accesibles para poder soltarse en cualquier momento. No dejar a la persona inmovilizada sola ni por tiempo prolongado."
@@ -227,38 +240,38 @@
     {
         "id": "bondage-10",
         "titulo": "Sling sexual arnés de posiciones",
-        "imagen": "./img/bondage/10.webp",
+        "imagen": "./img/bondage/sling-posiciones.webp",
         "categoria": {
             "nombre": "Bondage",
             "id": "Bondage"
         },
-        "precio": 0,
+        "precio": 126000,
         "descripcion": "Arnés corporal tipo columpio en correas de nylon resistente con hebillas ajustables, diseñado para que una persona sostenga el peso de la otra en distintas posiciones sin esfuerzo en brazos o piernas. Se ajusta al torso y piernas como un arnés de escalada, distribuyendo el peso de forma segura y sin necesidad de instalación en techo o puerta.",
         "medidas": "Talla única regulable — correas ajustables a distintos contornos de torso y pierna.",
         "recomendacionesSalud": "Antes de usar, revisar que todas las hebillas y costuras estén en buen estado y bien ajustadas. Ajustar las correas al cuerpo de quien sostiene el peso, verificando que queden firmes pero sin cortar la circulación. Usar sobre una superficie segura y despejada, e ir probando el equilibrio de forma gradual antes de una posición completa."
     },
     {
         "id": "bondage-11",
-        "titulo": "Plug anal talla S emoticón",
-        "imagen": "./img/bondage/11.webp",
+        "titulo": "Plug anal metálico talla S emoji pícaro",
+        "imagen": "./img/bondage/plug-emoji-metalico.webp",
         "categoria": {
             "nombre": "Bondage",
             "id": "Bondage"
         },
-        "precio": 0,
-        "descripcion": "Plug anal talla S metálico, en acero quirúrgico plateado, con una carita emoji decorativa en la base — un diseño divertido que le suma humor al juego anal. Al ser metálico pesa más que las versiones en silicona, lo que suma una sensación de firmeza distinta durante el uso. Forma cónica con base ancha de seguridad.",
+        "precio": 70000,
+        "descripcion": "Plug anal metálico Funny Steel, talla S, con base redonda decorada con un emoji pícaro. Su forma de gota y su superficie lisa y pulida lo hacen ideal para quienes se inician, y el metal se puede entibiar o enfriar con agua para sumar sensaciones.",
         "medidas": "Aprox. 7 cm de alto x 3 cm de ancho x 4 cm de profundidad, 50 g.",
-        "recomendacionesSalud": "Lavar con agua tibia y jabón neutro antes y después de cada uso (el metal es 100% impermeable, no retiene bacterias). Usar siempre con lubricante a base de agua, insertar de forma gradual y sin forzar — al ser rígido no se adapta al cuerpo como la silicona. No compartir sin desinfectar entre usos y entre personas."
+        "recomendacionesSalud": "Usar siempre con abundante lubricante (el metal es compatible con lubricantes a base de agua y de silicona). Introducir despacio y sin forzar; la base ancha evita que se desplace hacia adentro. Lavar con agua tibia y jabón neutro antes y después de cada uso y secar bien. Si cambias de zona, lávalo antes."
     },
     {
         "id": "bondage-12",
         "titulo": "Plug anal talla S cola de zorro",
-        "imagen": "./img/bondage/12.webp",
+        "imagen": "./img/bondage/plug-cola-zorro.webp",
         "categoria": {
             "nombre": "Bondage",
             "id": "Bondage"
         },
-        "precio": 0,
+        "precio": 98900,
         "descripcion": "Plug anal talla S metálico (acero), con una cola de zorro de pelo sintético estilo arcoíris en la base, pensado para juegos de roleplay y petplay además del uso anal tradicional. Cuerpo de acero liso y pulido, fácil de higienizar, con base ancha de seguridad. Un accesorio decorativo y funcional a la vez.",
         "medidas": "Cuerpo metálico, cola de pelo sintético. Ver ficha del empaque para largo y diámetro exactos.",
         "recomendacionesSalud": "Lavar el cuerpo metálico con agua tibia y jabón neutro antes y después de cada uso (el acero es 100% impermeable; evitar mojar la cola de pelo sintético, limpiar solo con un paño seco o cepillo). Usar siempre con lubricante a base de agua, insertar de forma gradual y sin forzar — al ser rígido no se adapta al cuerpo como la silicona. No compartir sin desinfectar entre usos."
@@ -266,49 +279,37 @@
     {
         "id": "bondage-13",
         "titulo": "Ducha anal",
-        "imagen": "./img/bondage/13.webp",
+        "imagen": "./img/bondage/ducha-anal.webp",
         "categoria": {
             "nombre": "Bondage",
             "id": "Bondage"
         },
-        "precio": 0,
+        "precio": 35900,
         "descripcion": "Ducha anal de higiene íntima, con pera de silicona suave y boquilla redondeada, pensada para una limpieza previa cómoda y sencilla antes del juego anal. Fácil de llenar y de usar con una sola mano, de material flexible y fácil de higienizar después de cada uso.",
         "medidas": "Aprox. capacidad de 160–200 ml.",
         "recomendacionesSalud": "Usar únicamente con agua tibia (nunca caliente) o la solución que recomiende tu profesional de salud. Introducir la boquilla con cuidado y sin forzar, usando lubricante si hace falta. Lavar con agua y jabón neutro antes y después de cada uso, secar bien y guardar en un lugar limpio y seco. No compartir sin desinfectar entre personas."
     },
     {
         "id": "bondage-14",
-        "titulo": "Traje sado de amarre",
-        "imagen": "./img/bondage/14.webp",
+        "titulo": "Kit sado rojo",
+        "imagen": "./img/bondage/kit-sado-rojo.webp",
         "categoria": {
             "nombre": "Bondage",
             "id": "Bondage"
         },
-        "precio": 0,
-        "descripcion": "Body tipo arnés en cuero sintético con tiras ajustables que realzan la figura y las curvas de caderas y pecho. Diseño abierto que combina con lencería o se usa solo, pensado para looks de dominación suave o para complementar una sesión de bondage. Ajuste regulable en varios puntos para un calce cómodo.",
-        "medidas": "Talla única, tiras ajustables en cintura, caderas y pecho."
-    },
-    {
-        "id": "bondage-15",
-        "titulo": "Traje sado rojo",
-        "imagen": "./img/bondage/15.webp",
-        "categoria": {
-            "nombre": "Bondage",
-            "id": "Bondage"
-        },
-        "precio": 0,
-        "descripcion": "Body rojo de escote profundo con tiras tipo arnés que atraviesan el torso, pensado para looks atrevidos de dominación o como pieza central de una sesión de bondage. Tela elástica que se ajusta al cuerpo, con terminaciones en cuero sintético en las tiras. Un clásico infaltable para sumarle actitud a la noche.",
-        "medidas": "Talla única, elástico, tiras ajustables."
+        "precio": 84900,
+        "descripcion": "Kit sado en color rojo para juegos de amarre y dominación en pareja: esposas acolchadas para manos y tobillos, collar con correa, antifaz, látigo, cuerda y más accesorios para armar la escena completa. Ideal para quienes quieren empezar en el BDSM con todo en un solo paquete.",
+        "recomendacionesSalud": "Acordar antes una palabra de seguridad y respetarla. No apretar las esposas ni la cuerda al punto de cortar la circulación y nunca dejar sola a una persona amarrada. Limpiar las piezas con un paño húmedo y jabón neutro y dejar secar antes de guardar."
     },
     {
         "id": "lubricante-04",
         "titulo": "Lubricante whisky",
-        "imagen": "./img/lubricantes/4.png",
+        "imagen": "./img/lubricantes/crema-de-whisky.webp",
         "categoria": {
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
-        "precio": 0,
+        "precio": 28900,
         "descripcion": "Lubricante íntimo \"Crema de Whisky\" con sensación caliente, línea Sen Íntimo en presentación oscura tipo botella de licor. Base agua de textura suave, pensado para sumar calidez progresiva y un aroma amaderado a los momentos de pareja.",
         "medidas": "30 ml",
         "recomendacionesSalud": "Base agua: compatible con condón de látex y juguetes de silicona. Por su efecto calor, hacer una prueba en zona pequeña de piel antes del primer uso; no usar sobre mucosas con heridas o irritación."
@@ -316,12 +317,12 @@
     {
         "id": "lubricante-09",
         "titulo": "Lubricante capuchino sensación caliente",
-        "imagen": "./img/lubricantes/9-capuchino.webp",
+        "imagen": "./img/lubricantes/capuchino.webp",
         "categoria": {
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
-        "precio": 0,
+        "precio": 28900,
         "descripcion": "Lubricante íntimo sabor capuchino con sensación caliente, línea Sen Íntimo. Base agua de textura suave, con aroma a café y un toque cremoso que envuelve el momento con una calidez progresiva. Pensado para quienes buscan un sabor gourmet distinto en su intimidad de pareja.",
         "medidas": "30 ml",
         "recomendacionesSalud": "Base agua: compatible con condón de látex y juguetes de silicona. Por su efecto calor, hacer una prueba en zona pequeña de piel antes del primer uso; no usar sobre mucosas con heridas o irritación."
@@ -329,12 +330,12 @@
     {
         "id": "lubricante-14",
         "titulo": "Lubricante anal desensibilizante Black Power",
-        "imagen": "./img/lubricantes/14.png",
+        "imagen": "./img/lubricantes/desensibilizante-black-power.webp",
         "categoria": {
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
-        "precio": 0,
+        "precio": 40900,
         "descripcion": "Lubricante anal desensibilizante \"Anal Lube Black Power\", presentación en frasco negro mate, pensada para quienes buscan una fórmula de mayor intensidad desensibilizante. Base agua de textura suave, ideal para sumar comodidad en la penetración anal.",
         "medidas": "30 ml",
         "recomendacionesSalud": "Usar con moderación: el efecto desensibilizante puede enmascarar dolor real que indica una lesión — no abusar de la cantidad ni la frecuencia, siempre en conjunto con buena lubricación adicional."
@@ -342,12 +343,12 @@
     {
         "id": "lubricante-16",
         "titulo": "Lubricante multiorgasmos",
-        "imagen": "./img/lubricantes/16.png",
+        "imagen": "./img/lubricantes/multiorgasmos.webp",
         "categoria": {
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
-        "precio": 0,
+        "precio": 38900,
         "descripcion": "Lubricante íntimo \"Multiorgasmos\", línea Sen Íntimo en frasco rosado de 30 mL. Fórmula base agua pensada para intensificar la sensibilidad y potenciar el placer en pareja con un efecto estimulante progresivo. Ideal para quienes buscan renovar su rutina íntima.",
         "medidas": "30 ml",
         "recomendacionesSalud": "Base agua: compatible con condón de látex y juguetes de silicona. Por su efecto estimulante, hacer una prueba en zona pequeña de piel antes del primer uso; no usar sobre mucosas con heridas o irritación."
@@ -355,12 +356,12 @@
     {
         "id": "lubricante-17",
         "titulo": "Lubricante lychee sensación caliente",
-        "imagen": "./img/lubricantes/17.png",
+        "imagen": "./img/lubricantes/lychee.webp",
         "categoria": {
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
-        "precio": 0,
+        "precio": 38900,
         "descripcion": "Lubricante íntimo sabor lychee con sensación caliente y electrizante, línea Edición Especial Sen Íntimo. Base agua de textura suave, con un dulce aroma exótico y calidez progresiva al contacto con la piel. Pensado para sumar variedad y un toque intenso a la intimidad de pareja.",
         "medidas": "30 ml",
         "recomendacionesSalud": "Base agua: compatible con condón de látex y juguetes de silicona. Por su efecto calor/electrizante, hacer una prueba en zona pequeña de piel antes del primer uso; no usar sobre mucosas con heridas o irritación."
@@ -368,12 +369,12 @@
     {
         "id": "lubricante-22",
         "titulo": "Lubricante íntimo Trío",
-        "imagen": "./img/lubricantes/22.webp",
+        "imagen": "./img/lubricantes/trio.webp",
         "categoria": {
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
-        "precio": 0,
+        "precio": 29900,
         "descripcion": "Lubricante íntimo \"Trío\", línea Sen Íntimo, formulado para triple uso: lubricante íntimo, loción de masajes y sexo oral, con delicioso sabor. Base agua de textura suave, pensado para acompañar distintos momentos de la intimidad de pareja sin cambiar de producto.",
         "medidas": "30 ml",
         "recomendacionesSalud": "Apto para uso genital, masajes y contacto oral. Se recomienda una prueba en una zona pequeña de piel antes del primer uso, y verificar que no haya alergia a los ingredientes."
@@ -381,12 +382,12 @@
     {
         "id": "lubricante-23",
         "titulo": "Lubricante anal electrizante",
-        "imagen": "./img/lubricantes/23.png",
+        "imagen": "./img/lubricantes/anal-electrizante.webp",
         "categoria": {
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
-        "precio": 0,
+        "precio": 38900,
         "descripcion": "Lubricante anal electrizante, línea Sen Íntimo con diseño arcoíris, con efecto hormigueante y desensibilizante pensado para sumar comodidad e intensidad en la penetración anal. Base agua de textura suave.",
         "medidas": "30 ml",
         "recomendacionesSalud": "Usar con moderación: el efecto desensibilizante puede enmascarar dolor real que indica una lesión — no abusar de la cantidad ni la frecuencia, siempre en conjunto con buena lubricación adicional."
@@ -394,27 +395,27 @@
     {
         "id": "lubricante-24",
         "titulo": "Ejaculation Delight Black Power spray",
-        "imagen": "./img/lubricantes/24.webp",
+        "imagen": "./img/lubricantes/retardante-black-power.webp",
         "categoria": {
             "nombre": "Lubricantes",
             "id": "Lubricantes"
         },
-        "precio": 0,
+        "precio": 39900,
         "descripcion": "Spray retardante línea Black Power, formulado para prolongar el momento antes de la penetración. Se absorbe directo en la piel en pocos minutos, sin necesidad de enjuagar, y es compatible con preservativo una vez absorbido. Presentación compacta en spray, fácil de dosificar y de llevar contigo.",
         "medidas": "Spray de 15 ml.",
         "recomendacionesSalud": "Agitar bien antes de usar. Aplicar 2-3 dosis alrededor del pene, cubriendo desde la base hasta el glande, al menos 15 minutos antes del contacto íntimo. No usar sobre piel con heridas o irritación. No apto para sexo oral. Producto solo para adultos."
     },
     {
-        "id": "sachet-02",
+        "id": "lubricante-25",
         "titulo": "Lubricante caramelo sensación caliente",
-        "imagen": "./img/lubricantes/sachets/4.webp",
+        "imagen": "./img/lubricantes/caramelo.webp",
         "categoria": {
-            "nombre": "Sachet",
-            "id": "Sachet"
+            "nombre": "Lubricantes",
+            "id": "Lubricantes"
         },
-        "precio": 0,
-        "descripcion": "Lubricante íntimo en sachet individual, sabor caramelo con sensación de calor progresivo al aplicarlo. Formato de dosis única, ideal para sumar variedad al momento o para probar antes de animarte al frasco grande. Fácil de llevar en la cartera o el bolsillo, listo para usar donde y cuando quieras.",
-        "medidas": "Sachet individual de 7 ml (0.24 fl oz).",
+        "precio": 28900,
+        "descripcion": "Lubricante íntimo Sen Íntimo sabor caramelo con sensación de calor progresivo al aplicarlo. Presentación en caja con frasco de 30 ml, ideal para juegos previos y sexo oral gracias a su sabor dulce.",
+        "medidas": "Frasco de 30 ml (1.0 fl oz), en caja.",
         "recomendacionesSalud": "Aplicar sobre la zona deseada o sobre el preservativo. No usar sobre piel con heridas o irritación. No es anticonceptivo ni contiene espermicidas. Verificá compatibilidad antes de usar con juguetes de silicona, dado el efecto calor. Evitá el contacto con ojos y oídos; lavar la zona después del uso. Producto solo para adultos."
     }
 ]
