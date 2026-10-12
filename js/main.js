@@ -75,9 +75,12 @@ botonesCategorias.forEach(boton => {
         e.currentTarget.classList.add("active");
 
         if (e.currentTarget.id != "todos") {
-            const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
-            tituloPrincipal.innerText = productoCategoria.categoria.nombre;
-            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
+            const id = e.currentTarget.id;
+            const productosBoton = id === "Promociones"
+                ? ordenarPorTemporada(productos.filter(enPromocion))
+                : productos.filter(producto => producto.categoria.id === id);
+            const productoCategoria = productos.find(producto => producto.categoria.id === id);
+            tituloPrincipal.innerText = productoCategoria ? productoCategoria.categoria.nombre : e.currentTarget.innerText.trim();
             cargarProductos(productosBoton);
         } else {
             tituloPrincipal.innerText = "Todos los productos";
@@ -164,6 +167,11 @@ function actualizarNumerito() {
     numeritos.forEach(numerito => numerito.innerText = cantidad);
 }
 
+// Un producto está en promoción si es de la categoría Promociones o tiene precio anterior más alto (descuento).
+function enPromocion(p) {
+    return p.categoria.id === "Promociones" || (p.precioAnterior && p.precioAnterior > p.precio);
+}
+
 let carruselProductos = [];
 let carruselIndex = 0;
 let carruselInterval = null;
@@ -173,7 +181,7 @@ function renderCarruselPromociones(productos) {
     const dotsContenedor = document.querySelector("#hero-carrusel-dots");
     if (!heroSection || !dotsContenedor) return;
 
-    carruselProductos = ordenarPorTemporada(productos.filter(p => p.categoria.id === "Promociones"));
+    carruselProductos = ordenarPorTemporada(productos.filter(enPromocion));
 
     if (!carruselProductos.length) {
         heroSection.classList.add("disabled");
