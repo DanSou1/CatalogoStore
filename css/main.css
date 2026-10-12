@@ -601,6 +601,23 @@ main {
     font-variant-numeric: tabular-nums; margin-top: .25rem;
 }
 
+.modal-compartir {
+    display: inline-flex; align-items: center; gap: .35rem;
+    margin-top: .6rem;
+    padding: .4rem .85rem;
+    border: 1.5px solid var(--clr-outline-variant);
+    border-radius: var(--radius-full);
+    background: transparent;
+    color: var(--clr-charcoal);
+    font-size: .75rem; font-weight: 700;
+    cursor: pointer;
+    transition: border-color .2s, color .2s;
+}
+
+.modal-compartir .material-symbols-outlined { font-size: 17px; }
+.modal-compartir:hover { border-color: var(--clr-plum); color: var(--clr-plum); }
+.modal-compartir:focus-visible { outline: 2px solid var(--clr-plum); outline-offset: 2px; }
+
 .modal-descripcion {
     font-size: 1rem; font-weight: 400; line-height: 1.65;
     color: var(--clr-on-surface-variant); max-width: 58ch; margin-top: .75rem;

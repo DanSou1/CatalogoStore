@@ -24,6 +24,36 @@ function enlaceProducto(id) {
     return `${location.origin}${location.pathname}?p=${encodeURIComponent(id)}`;
 }
 
+// Enlace para compartir (muestra foto y precio en WhatsApp/Facebook). Las páginas
+// p/<id>.html se generan con: python tools/generar_enlaces.py
+function enlaceCompartir(id) {
+    return `${location.origin}${location.pathname.replace(/[^/]*$/, "")}p/${id.replace(/\./g, "-")}.html`;
+}
+
+const modalCompartir = modalProducto.querySelector(".modal-compartir");
+const modalCompartirTexto = modalProducto.querySelector(".modal-compartir-texto");
+
+modalCompartir?.addEventListener("click", async () => {
+    const producto = productos.find(p => p.id === modalAgregar.dataset.id);
+    if (!producto) return;
+    const url = enlaceCompartir(producto.id);
+    if (navigator.share) {
+        try {
+            await navigator.share({ title: producto.titulo, text: `${producto.titulo} · $${formatearPrecio(producto.precio)}`, url });
+            return;
+        } catch (err) {
+            if (err && err.name === "AbortError") return;
+        }
+    }
+    try {
+        await navigator.clipboard.writeText(url);
+        modalCompartirTexto.textContent = "¡Enlace copiado!";
+    } catch {
+        window.prompt("Copia este enlace:", url);
+    }
+    setTimeout(() => { modalCompartirTexto.textContent = "Compartir producto"; }, 1800);
+});
+
 function abrirDesdeEnlace() {
     const params = new URLSearchParams(location.search);
     const categoria = params.get("c");
