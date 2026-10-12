@@ -15,7 +15,7 @@ const modalAgregarIcono = modalAgregar.querySelector(".material-symbols-outlined
 const modalAgregarTexto = modalAgregar.querySelector(".modal-agregar-texto");
 
 // Número de WhatsApp de la tienda (código de país + número, sin "+" ni espacios).
-const NUMERO_WHATSAPP_ASESOR = "573150338545";
+const NUMERO_WHATSAPP_ASESOR = "573004675206";
 const modalWhatsapp = modalProducto.querySelector(".modal-whatsapp");
 
 function enlaceWhatsappProducto(producto) {
