@@ -14,6 +14,146 @@
         "recomendacionesSalud": "Lee las indicaciones de cada producto antes de usarlo. El lubricante no es anticonceptivo ni protege contra infecciones de transmisión sexual. Productos solo para adultos."
     },
     {
+        "id": "promociones-02.halloween",
+        "titulo": "Kit Halloween: Hechizo tántrico",
+        "imagen": "./img/promociones/kit-hechizo-tantrico.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 110900,
+        "precioAnterior": 123800,
+        "descripcion": "Kit de Halloween para una noche de conexión en pareja con 4 productos: baraja tántrica, lubricante multiorgasmos, feromonas sin olor para hombre y labial de feromonas. Precio especial de temporada, válido hasta el 31 de octubre.",
+        "medidas": "Incluye: 1 baraja tántrica, 1 lubricante multiorgasmos, 1 feromonas sin olor para hombre, 1 labial de feromonas.",
+        "recomendacionesSalud": "Lee las indicaciones de cada producto antes de usarlo. Los lubricantes no son anticonceptivos ni protegen contra infecciones de transmisión sexual. Productos solo para adultos."
+    },
+    {
+        "id": "promociones-03.halloween",
+        "titulo": "Kit Halloween: Embrujo para ella",
+        "imagen": "./img/promociones/kit-embrujo-para-ella.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 123900,
+        "precioAnterior": 137800,
+        "descripcion": "Kit de Halloween pensado para ella con 3 productos: succionador de clítoris Rose Sex, lubricante lychee con sensación caliente y dados luminosos eróticos. Precio especial de temporada, válido hasta el 31 de octubre.",
+        "medidas": "Incluye: 1 succionador de clítoris Rose Sex, 1 lubricante lychee sensación caliente, 1 set de dados luminosos eróticos.",
+        "recomendacionesSalud": "Lee las indicaciones de cada producto antes de usarlo. Los lubricantes no son anticonceptivos ni protegen contra infecciones de transmisión sexual. Productos solo para adultos."
+    },
+    {
+        "id": "promociones-04.halloween",
+        "titulo": "Kit Halloween: Poción para él",
+        "imagen": "./img/promociones/kit-pocion-para-el.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 71900,
+        "precioAnterior": 80800,
+        "descripcion": "Kit de Halloween pensado para él con 3 productos: spray retardante Black Power, anillo vibrador y lubricante capuchino con sensación caliente. Precio especial de temporada, válido hasta el 31 de octubre.",
+        "medidas": "Incluye: 1 spray retardante Black Power, 1 anillo vibrador, 1 lubricante capuchino sensación caliente.",
+        "recomendacionesSalud": "Lee las indicaciones de cada producto antes de usarlo. Los lubricantes no son anticonceptivos ni protegen contra infecciones de transmisión sexual. Productos solo para adultos."
+    },
+    {
+        "id": "promociones-05.halloween",
+        "titulo": "Kit Halloween: Noche de brujas",
+        "imagen": "./img/promociones/kit-noche-de-brujas.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 132900,
+        "precioAnterior": 147800,
+        "descripcion": "Kit de Halloween para parejas de chicas con 4 productos: Póker Kamasutra lésbico, juego Tricky lésbico, succionador de clítoris Rose Sex y labial de feromonas. Precio especial de temporada, válido hasta el 31 de octubre.",
+        "medidas": "Incluye: 1 Póker Kamasutra lésbico, 1 juego Tricky lésbico, 1 succionador de clítoris Rose Sex, 1 labial de feromonas.",
+        "recomendacionesSalud": "Lee las indicaciones de cada producto antes de usarlo. Los lubricantes no son anticonceptivos ni protegen contra infecciones de transmisión sexual. Productos solo para adultos."
+    },
+    {
+        "id": "promociones-06.halloween",
+        "titulo": "Kit Halloween: Monstruos de noche",
+        "imagen": "./img/promociones/kit-monstruos-de-noche.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 52900,
+        "precioAnterior": 59800,
+        "descripcion": "Kit de Halloween para parejas de chicos con 2 productos: juego Tricky gay y lubricante anal electrizante. Precio especial de temporada, válido hasta el 31 de octubre.",
+        "medidas": "Incluye: 1 juego Tricky gay, 1 lubricante anal electrizante.",
+        "recomendacionesSalud": "Usa siempre lubricante en juegos anales y avanza despacio; detente si sientes dolor. Lava los juguetes antes y después de cada uso. Los lubricantes no son anticonceptivos ni protegen contra infecciones de transmisión sexual. Productos solo para adultos."
+    },
+    {
+        "id": "promociones-07.halloween",
+        "titulo": "Kit Halloween: Sin miedo a probar",
+        "imagen": "./img/promociones/kit-sin-miedo-a-probar.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 147900,
+        "precioAnterior": 164700,
+        "descripcion": "Kit de Halloween para iniciarse en el juego anal con 4 productos: plug anal metálico talla S con emoji pícaro, ducha anal, lubricante anal desensibilizante Black Power y limpiador de juguetes. Precio especial de temporada, válido hasta el 31 de octubre.",
+        "medidas": "Incluye: 1 plug anal metálico talla S emoji, 1 ducha anal, 1 lubricante anal desensibilizante Black Power, 1 limpiador de juguetes 60 ml.",
+        "recomendacionesSalud": "Usa siempre lubricante en juegos anales y avanza despacio; detente si sientes dolor. Lava los juguetes antes y después de cada uso. Los lubricantes no son anticonceptivos ni protegen contra infecciones de transmisión sexual. Productos solo para adultos."
+    },
+    {
+        "id": "promociones-08.halloween",
+        "titulo": "Kit Halloween: Amarres de bruja",
+        "imagen": "./img/promociones/kit-amarres-de-bruja.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 176900,
+        "precioAnterior": 196800,
+        "descripcion": "Kit de Halloween para explorar el bondage en pareja con 3 productos: kit sado rojo, kit de amarre a la cama y dados luminosos de penitencia. Precio especial de temporada, válido hasta el 31 de octubre.",
+        "medidas": "Incluye: 1 kit sado rojo, 1 kit de amarre a la cama, 1 set de dados luminosos de penitencia.",
+        "recomendacionesSalud": "Acuerden una palabra de seguridad antes de empezar y no dejen sola a una persona amarrada. Revisen que las ataduras no corten la circulación. Productos solo para adultos."
+    },
+    {
+        "id": "promociones-09.halloween",
+        "titulo": "Kit Halloween: Fantasía zorrita",
+        "imagen": "./img/promociones/kit-fantasia-zorrita.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 128900,
+        "precioAnterior": 143800,
+        "descripcion": "Kit de Halloween para un juego de rol travieso con 3 productos: plug anal talla S con cola de zorro, lubricante sabor crema de whisky y dados luminosos de penitencia. Precio especial de temporada, válido hasta el 31 de octubre.",
+        "medidas": "Incluye: 1 plug anal talla S cola de zorro, 1 lubricante crema de whisky, 1 set de dados luminosos de penitencia.",
+        "recomendacionesSalud": "Usa siempre lubricante en juegos anales y avanza despacio; detente si sientes dolor. Lava los juguetes antes y después de cada uso. Los lubricantes no son anticonceptivos ni protegen contra infecciones de transmisión sexual. Productos solo para adultos."
+    },
+    {
+        "id": "promociones-10.halloween",
+        "titulo": "Kit Halloween: Posiciones prohibidas",
+        "imagen": "./img/promociones/kit-posiciones-prohibidas.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 232900,
+        "precioAnterior": 259700,
+        "descripcion": "Kit de Halloween para probar posiciones nuevas con 4 productos: sling sexual arnés de posiciones, dildo transparente Gregorio, lubricante íntimo Trío y spray retardante Black Power. Precio especial de temporada, válido hasta el 31 de octubre.",
+        "medidas": "Incluye: 1 sling sexual arnés de posiciones, 1 dildo transparente Gregorio, 1 lubricante íntimo Trío, 1 spray retardante Black Power.",
+        "recomendacionesSalud": "Lee las indicaciones de cada producto antes de usarlo. Los lubricantes no son anticonceptivos ni protegen contra infecciones de transmisión sexual. Productos solo para adultos."
+    },
+    {
+        "id": "promociones-11.halloween",
+        "titulo": "Kit Halloween: Fiesta de brujas",
+        "imagen": "./img/promociones/kit-fiesta-de-brujas.webp",
+        "categoria": {
+            "nombre": "Promociones",
+            "id": "Promociones"
+        },
+        "precio": 101900,
+        "precioAnterior": 113900,
+        "descripcion": "Kit de Halloween de juegos picantes con 3 productos: Jenga Picante, juego de cartas Verdad o Reto y dados luminosos de penitencia. Precio especial de temporada, válido hasta el 31 de octubre.",
+        "medidas": "Incluye: 1 Jenga Picante, 1 juego de cartas Verdad o Reto, 1 set de dados luminosos de penitencia.",
+        "recomendacionesSalud": "Juegos solo para adultos. Jueguen con consentimiento y respeten los límites de cada persona."
+    },
+    {
         "id": "cosmeticos-03",
         "titulo": "Labial de feromonas",
         "imagen": "./img/cosmeticos/labial-feromonas.webp",

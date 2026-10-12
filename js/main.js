@@ -97,6 +97,11 @@ function actualizarBotonesAgregar() {
     });
 }
 
+document.querySelector('[data-rol="hero-ver-mas"]')?.addEventListener("click", (e) => {
+    const id = e.currentTarget.dataset.id;
+    if (id) abrirModal(id);
+});
+
 contenedorProductos.addEventListener("click", (e) => {
     const botonVerMas = e.target.closest(".producto-ver-mas");
     if (botonVerMas) {
@@ -229,6 +234,8 @@ function mostrarSlideCarrusel(index) {
     }
 
     heroBoton.id = producto.id;
+    const heroVerMas = document.querySelector('[data-rol="hero-ver-mas"]');
+    if (heroVerMas) heroVerMas.dataset.id = producto.id;
     heroBoton.innerText = temporadaActiva() === "halloween" ? "Agregar 🎃" : "Agregar";
     actualizarBotonesAgregar();
 

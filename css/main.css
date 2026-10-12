@@ -1341,6 +1341,23 @@ html.tema-halloween #barra-halloween {
 
 /*** CARRUSEL DE PROMOCIONES ***/
 
+.hero-ver-mas {
+    margin-bottom: .75rem;
+    border-color: var(--clr-plum);
+    background-color: transparent;
+    color: var(--clr-plum);
+}
+
+.hero-ver-mas:hover {
+    background-color: var(--clr-plum);
+    border-color: var(--clr-plum);
+    color: var(--clr-surface);
+}
+
+.hero-ver-mas:focus-visible {
+    outline-color: var(--clr-plum);
+}
+
 #hero-carrusel-dots {
     display: flex;
 }
