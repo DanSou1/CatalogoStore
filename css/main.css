@@ -652,6 +652,7 @@ main {
 
 .modal-pie {
     position: sticky; bottom: 0; margin-top: auto;
+    display: flex; gap: .75rem;
     padding: 1rem 1.75rem;
     background-color: var(--clr-surface);
     border-top: 1px solid var(--clr-outline-variant);
@@ -672,6 +673,56 @@ main {
 }
 
 .modal-agregar:hover { background-color: var(--clr-charcoal); }
+
+.modal-pie > .modal-agregar,
+.modal-pie > .modal-whatsapp {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: .9rem .75rem;
+    font-size: .78rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.modal-whatsapp {
+    display: flex; align-items: center; justify-content: center; gap: .5rem;
+    background-color: #25D366;
+    color: #ffffff;
+    padding: 1rem;
+    text-transform: uppercase; letter-spacing: .04em;
+    font-weight: 700; font-size: .85rem;
+    text-align: center; line-height: 1.2;
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    touch-action: manipulation;
+    transition: background-color .2s;
+}
+
+.modal-whatsapp:hover { background-color: #1DA851; }
+
+.modal-whatsapp:focus-visible {
+    outline: 2px solid #1DA851;
+    outline-offset: 2px;
+}
+
+.modal-whatsapp-icono {
+    width: 1.35rem; height: 1.35rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .modal-pie { gap: .5rem; }
+    .modal-pie > .modal-agregar,
+    .modal-pie > .modal-whatsapp {
+        padding: .8rem .55rem;
+        font-size: .72rem;
+        letter-spacing: .02em;
+    }
+}
+
+@media (max-width: 340px) {
+    .modal-pie { flex-direction: column; }
+}
 .modal-agregar.confirmado { background-color: var(--clr-charcoal); }
 
 .modal-cerrar:focus-visible,

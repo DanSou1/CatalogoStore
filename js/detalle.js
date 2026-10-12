@@ -14,6 +14,15 @@ const modalAgregar = modalProducto.querySelector(".modal-agregar");
 const modalAgregarIcono = modalAgregar.querySelector(".material-symbols-outlined");
 const modalAgregarTexto = modalAgregar.querySelector(".modal-agregar-texto");
 
+// Número de WhatsApp de la tienda (código de país + número, sin "+" ni espacios).
+const NUMERO_WHATSAPP_ASESOR = "573150338545";
+const modalWhatsapp = modalProducto.querySelector(".modal-whatsapp");
+
+function enlaceWhatsappProducto(producto) {
+    const mensaje = `Hola XperienceLove 👋 Quiero más información sobre: ${producto.titulo} ($${formatearPrecio(producto.precio)})`;
+    return `https://wa.me/${NUMERO_WHATSAPP_ASESOR}?text=${encodeURIComponent(mensaje)}`;
+}
+
 function abrirModal(id) {
     const producto = productos.find(p => p.id === id);
     if (!producto) return;
@@ -53,6 +62,10 @@ function abrirModal(id) {
     modalFichas.hidden = !producto.medidas && !producto.recomendacionesSalud;
 
     modalAgregar.dataset.id = producto.id;
+    if (modalWhatsapp) {
+        modalWhatsapp.href = enlaceWhatsappProducto(producto);
+        modalWhatsapp.setAttribute("aria-label", `Hablar con un asesor por WhatsApp sobre ${producto.titulo}`);
+    }
     modalAgregar.classList.remove("confirmado");
     modalAgregarIcono.textContent = "add_shopping_cart";
     modalAgregarTexto.textContent = "Agregar al carrito";
