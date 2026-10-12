@@ -18,8 +18,29 @@ const modalAgregarTexto = modalAgregar.querySelector(".modal-agregar-texto");
 const NUMERO_WHATSAPP_ASESOR = "573004675206";
 const modalWhatsapp = modalProducto.querySelector(".modal-whatsapp");
 
+// Enlace directo a un producto: https://dansou1.github.io/CatalogoStore/?p=<id del producto>
+// Enlace directo a una categoría: https://dansou1.github.io/CatalogoStore/?c=<id de la categoría> (ej. ?c=Promociones)
+function enlaceProducto(id) {
+    return `${location.origin}${location.pathname}?p=${encodeURIComponent(id)}`;
+}
+
+function abrirDesdeEnlace() {
+    const params = new URLSearchParams(location.search);
+    const categoria = params.get("c");
+    if (categoria) {
+        const boton = document.getElementById(categoria);
+        if (boton && boton.classList.contains("boton-categoria")) boton.click();
+    }
+    const id = params.get("p");
+    if (id && productos.some(p => p.id === id)) {
+        abrirModal(id);
+    } else if (id) {
+        history.replaceState(null, "", location.pathname);
+    }
+}
+
 function enlaceWhatsappProducto(producto) {
-    const mensaje = `Hola XperienceLove 👋 Quiero más información sobre: ${producto.titulo} ($${formatearPrecio(producto.precio)})`;
+    const mensaje = `Hola XperienceLove 👋 Quiero más información sobre: ${producto.titulo} ($${formatearPrecio(producto.precio)})\n${enlaceProducto(producto.id)}`;
     return `https://wa.me/${NUMERO_WHATSAPP_ASESOR}?text=${encodeURIComponent(mensaje)}`;
 }
 
@@ -70,6 +91,7 @@ function abrirModal(id) {
     modalAgregarIcono.textContent = "add_shopping_cart";
     modalAgregarTexto.textContent = "Agregar al carrito";
 
+    history.replaceState(null, "", `?p=${encodeURIComponent(producto.id)}`);
     modalProducto.showModal();
     document.body.style.overflow = "hidden";
 }
@@ -85,6 +107,9 @@ modalProducto.addEventListener("animationend", (e) => {
 });
 
 modalProducto.addEventListener("close", () => {
+    if (new URLSearchParams(location.search).has("p")) {
+        history.replaceState(null, "", location.pathname);
+    }
     document.body.style.overflow = "";
     modalProducto.classList.remove("cerrando");
 });

@@ -6,6 +6,7 @@ fetch("./js/productos.json")
         productos = data;
         cargarProductos(productos);
         renderCarruselPromociones(productos);
+        abrirDesdeEnlace();
     })
 
 
