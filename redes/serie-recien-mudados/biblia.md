@@ -77,3 +77,12 @@ Prompt de diseño de voz de Vale: `Young Colombian woman from Bogotá, 29 years 
 
 | Capítulo | Archivo | Qué muestra |
 | --- | --- | --- |
+| 1 | `parte-01/tomas/t1-puerta.mp4` | Mano con llaves abre la puerta; a los 6 s se prende la luz de la sala con cajas |
+| 1 | `parte-01/tomas/t2-pizza-piso.mp4` | Vale y Andrés de espaldas en el piso comiendo pizza frente a la ventana; ella recuesta la cabeza (5–7 s). Los 2 primeros segundos traen esquinas redondeadas: no usar |
+| 1 | `parte-01/tomas/t3-celulares.mp4` | Celulares en el piso junto a la pizza; las manos los toman (3–5 s); Vale baja el de Andrés y queda boca abajo (6–8 s) |
+| 1 | `parte-01/tomas/t5-manos.mp4` | Manos que se entrelazan sobre la pizza con una vela (3–7 s) |
+| 1 | `parte-01/tomas/t6-carta.mp4` | Por encima del hombro de Andrés: Vale de lado con pizza y una carta en blanco |
+
+Video final de la Parte 1: `parte-01/recien-mudados-parte-01.mp4` (37 s). Montaje: `parte-01/build_p1.py` (para cada parte nueva se copia y se cambian SHOTS, VOICE y SUBS).
+
+**Voz y música usadas**: narración "Daniela - Vendedora" en bloques cortos sin etiquetas de pausa (cada [short pause] suma ~0,5 s); Vale con sus frases en un solo audio separado por [long pause] y recortado en el montaje. Música de fondo: `musica-tema.mp3` (Playful Heart), al 30 % con ducking. El ambiente de las tomas de Flow va al 35 %.
