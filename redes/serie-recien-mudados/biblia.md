@@ -73,6 +73,8 @@ Prompt de diseño de voz de Vale: `Young Colombian woman from Bogotá, 29 years 
 
 - **Parte 1 · Las cajas**: primera noche en el apartamento, comen pizza en el piso, pacto de "viernes de juego, sin celular". Juegan Verdad o se atreve. Suspenso: Vale lee "¿Qué es lo que nunca le has contado a tu pareja?" y Andrés se queda callado. Objetos que deben seguir: la caja de pizza, la vela en un frasco de vidrio, la baraja Verdad o se atreve en el piso.
 
+- **Parte 2 · Lo que Andrés no había contado** (narrada por Andrés en primera persona, pedido de Daniel): confiesa que "esos momentos" le duraban muy poco y por eso evitaba buscarla; Vale no se ríe. Consejo: la presión lo empeora, respirar lento ayuda, si persiste al médico. Ancla: spray Black Power. Suspenso: Vale le toma la mano: "Yo también tengo algo que confesarte". Escena desde aquí: cajas vacías apiladas en una esquina, cojines, sin plástico en el sofá. Objetos que siguen: la vela en frasco de vidrio en la mesa de centro.
+
 ## Tomas generadas (para reutilizar)
 
 | Capítulo | Archivo | Qué muestra |
@@ -82,6 +84,14 @@ Prompt de diseño de voz de Vale: `Young Colombian woman from Bogotá, 29 years 
 | 1 | `parte-01/tomas/t3-celulares.mp4` | Celulares en el piso junto a la pizza; las manos los toman (3–5 s); Vale baja el de Andrés y queda boca abajo (6–8 s) |
 | 1 | `parte-01/tomas/t5-manos.mp4` | Manos que se entrelazan sobre la pizza con una vela (3–7 s) |
 | 1 | `parte-01/tomas/t6-carta.mp4` | Por encima del hombro de Andrés: Vale de lado con pizza y una carta en blanco |
+
+| 2 | `parte-02/tomas/n1-solo-sofa.mp4` | Andrés solo en el borde del sofá, de espaldas, frente a la ventana (0–2 s con esquinas redondeadas) |
+| 2 | `parte-02/tomas/n2-reloj.mp4` | Manos de Andrés en las rodillas, nervioso con el reloj |
+| 2 | `parte-02/tomas/n3-mano-vale.mp4` | La mano de Vale (anillo) se posa sobre la de Andrés en el brazo del sofá (2–7 s); usar zoom ≥1,08 por un borde negro |
+| 2 | `parte-02/tomas/n4-ventana.mp4` | Andrés de pie frente a la ventana con lluvia, respira |
+| 2 | `parte-02/tomas/n5-manos-sofa.mp4` | Vale y Andrés de espaldas en el sofá (0–3,5 s); a los 4 s ella gira la cabeza (no usar); 5–8 s manos entrelazadas con vela |
+
+Video final de la Parte 2: `parte-02/recien-mudados-parte-02.mp4` (36 s), montaje `parte-02/build_p2.py`. Voz de Andrés "Andrés - XperienceLove" acelerada ×1,1; la frase de Vale con "Vale - XperienceLove".
 
 Video final de la Parte 1: `parte-01/recien-mudados-parte-01.mp4` (37 s). Montaje: `parte-01/build_p1.py` (para cada parte nueva se copia y se cambian SHOTS, VOICE y SUBS).
 
