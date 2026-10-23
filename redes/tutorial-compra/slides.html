@@ -1,0 +1,64 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Bodoni;src:url(../vid/cards/fonts/BodoniModa.ttf)}
+@font-face{font-family:Corm;src:url(../vid/cards/fonts/CormorantGaramond-Italic.ttf);font-style:italic}
+@font-face{font-family:Archivo;src:url(../vid/cards/fonts/Archivo.ttf)}
+*{margin:0;box-sizing:border-box}body{background:#000}
+.c{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:Archivo;color:#F6EEF8;
+ background:radial-gradient(900px 900px at 50% 45%,#2a0f3d 0%,#12061c 55%,#07040B 100%)}
+.g{position:absolute;border-radius:50%;filter:blur(110px)}
+.g1{width:560px;height:560px;left:-220px;top:160px;background:#FF4FB3;opacity:.26}
+.g2{width:620px;height:620px;right:-260px;top:720px;background:#5B8CFF;opacity:.24}
+.head{position:absolute;left:80px;top:96px;width:470px}
+.step{display:inline-block;background:#FF4FB3;color:#1a0712;font-weight:800;font-size:30px;letter-spacing:3px;padding:10px 26px;border-radius:40px}
+.t{font-family:Bodoni;font-size:64px;line-height:1.06;margin-top:30px}
+.t em{font-family:Corm;font-style:italic;font-size:74px;background:linear-gradient(90deg,#FF4FB3,#A855F7 60%,#5B8CFF);-webkit-background-clip:text;color:transparent}
+.s{font-size:31px;line-height:1.4;color:#d9c9e3;margin-top:28px}
+.s b{color:#fff}
+.phone{position:absolute;right:70px;top:120px;width:452px;height:974px;border-radius:64px;background:#0b0710;padding:16px;
+ box-shadow:0 0 0 3px rgba(168,85,247,.55),0 0 60px rgba(168,85,247,.35),0 40px 80px rgba(0,0,0,.6)}
+.screen{position:relative;width:420px;height:909px;border-radius:50px;overflow:hidden;background:#fff}
+.screen img{width:420px;height:909px;display:block}
+.tap{position:absolute;border:5px solid #FF4FB3;border-radius:40px;box-shadow:0 0 0 9999px rgba(10,4,16,.0),0 0 26px rgba(255,79,179,.9)}
+.dot{position:absolute;width:74px;height:74px;border-radius:50%;background:rgba(255,79,179,.35);border:4px solid #fff;transform:translate(-50%,-50%)}
+.foot{position:absolute;left:80px;bottom:78px;display:flex;align-items:center;gap:22px}
+.foot img{height:120px}
+.foot span{font-size:26px;color:#bfaecb;line-height:1.35}
+.swipe{position:absolute;left:80px;bottom:250px;font-size:30px;color:#fff;font-weight:700;letter-spacing:2px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.chip{border:2px solid rgba(246,238,248,.4);border-radius:40px;padding:10px 22px;font-size:26px}
+.wa{display:inline-block;background:#25D366;color:#06210f;font-weight:800;font-size:34px;padding:16px 34px;border-radius:50px;margin-top:34px}
+</style></head><body><div class="c" id="c"><div class="g g1"></div><div class="g g2"></div><div id="x"></div></div>
+<script>
+const S=430/390*0.9767; // css px de la captura → px del slide (420/390)
+const K=420/390;
+const SL={
+ s1:{shot:'01-inicio',pill:'TUTORIAL',t:'Así compras en<br>nuestro catálogo<br><em>en 1 minuto.</em>',s:'Fácil, discreto y sin salir de casa. Te mostramos paso a paso.',swipe:'DESLIZA →'},
+ s2:{shot:'02-producto-grilla',pill:'PASO 1',t:'Elige tu<br><em>producto.</em>',s:'Entra al catálogo desde el <b>link de la bio</b> y toca <b>"Ver más información"</b> en el que te guste.'},
+ s3:{shot:'03-detalle',pill:'PASO 2',t:'Agrégalo<br><em>al carrito.</em>',s:'Lee la descripción y toca <b>"Agregar al carrito"</b>. Si tienes dudas, toca <b>"Hablar con un asesor"</b>.'},
+ s4:{shot:'04-drawer',pill:'PASO 3',t:'Revisa<br><em>tu carrito.</em>',s:'Puedes sumar o quitar unidades. Cuando estés listo, toca <b>"Ver carrito y finalizar compra"</b>.'},
+ s5:{shot:'05-carrito',pill:'PASO 4',t:'Toca<br><em>comprar ahora.</em>',s:'Verás el resumen de tu pedido. Toca <b>"Comprar ahora"</b> para seguir.'},
+ s6:{shot:'06-datos',pill:'PASO 5',t:'Tus datos<br><em>de envío.</em>',s:'Escribe <b>quién recibe</b>, tu <b>celular</b>, tu <b>correo</b> (ahí te llega la guía), la <b>ciudad</b> y la <b>dirección</b>.',box:'name'},
+ s7:{shot:'07-metodo',pill:'PASO 6',t:'Elige cómo<br><em>pagar.</em>',s:'<b>Pago en línea</b> seguro con Wompi, o en Bogotá <b>pago contra entrega</b>: pagas cuando te llega.'},
+ s8:{shot:'08-continuar',pill:'PASO 7',t:'Confirma<br><em>y listo.</em>',s:'Revisa el total con el envío y toca <b>"Continuar al pago"</b>.'},
+ s9:{shot:'09-gracias',pill:'¡LISTO!',t:'Tu pedido<br><em>va en camino.</em>',s:'Te escribimos para coordinar la entrega.',end:true},
+};
+const BOX={};
+(async()=>{
+ const id=new URLSearchParams(location.search).get('v');const d=SL[id];
+ const boxes=await (await fetch('shots/boxes.json')).json();
+ let h=`<div class="head"><span class="step">${d.pill}</span><div class="t">${d.t}</div><div class="s">${d.s}</div>`;
+ if(d.end) h+=`<div class="chips"><span class="chip">Caja sin marca</span><span class="chip">Contra entrega en Bogotá</span></div><div class="wa">¿Dudas? 300 467 5206</div>`;
+ h+=`</div><div class="phone"><div class="screen"><img src="shots/${d.shot}.png">`;
+ let b=boxes[d.shot];
+ if(d.shot==='03-detalle') b={x:20,y:778,width:170,height:52};
+ if(d.shot==='06-datos') b={x:70,y:296,width:250,height:556};
+ if(b && d.shot!=='09-gracias'){const p=8;
+   h+=`<div class="tap" style="left:${(b.x-p)*K}px;top:${(b.y-p)*K}px;width:${(b.width+2*p)*K}px;height:${(b.height+2*p)*K}px"></div>`;
+   if(d.shot!=='06-datos'&&d.shot!=='07-metodo') h+=`<div class="dot" style="left:${(b.x+b.width*0.62)*K}px;top:${(b.y+b.height*0.6)*K}px"></div>`;}
+ h+=`</div></div>`;
+ if(d.swipe) h+=`<div class="swipe">${d.swipe}</div>`;
+ h+=`<div class="foot"><img src="../vid/cards/logo_alpha.png"><span>Catálogo en el link de la bio<br>Envío discreto a toda Colombia</span></div>`;
+ document.getElementById('x').innerHTML=h;
+ document.body.dataset.ready=1;
+})();
+</script></body></html>

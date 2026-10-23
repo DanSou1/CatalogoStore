@@ -1,0 +1,81 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Bodoni;src:url(../vid/cards/fonts/BodoniModa.ttf)}
+@font-face{font-family:Corm;src:url(../vid/cards/fonts/CormorantGaramond-Italic.ttf);font-style:italic}
+@font-face{font-family:Archivo;src:url(../vid/cards/fonts/Archivo.ttf)}
+*{margin:0;box-sizing:border-box}body{background:#000}
+.c{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:Archivo;color:#F6EEF8;
+ background:radial-gradient(1000px 1100px at 50% 50%,#2a0f3d 0%,#12061c 55%,#07040B 100%)}
+.g{position:absolute;border-radius:50%;filter:blur(120px)}
+.g1{width:640px;height:640px;left:-260px;top:420px;background:#FF4FB3;opacity:.26}
+.g2{width:700px;height:700px;right:-300px;top:1150px;background:#5B8CFF;opacity:.24}
+#head{position:absolute;left:0;width:100%;top:230px;text-align:center}
+.step{display:inline-block;background:#FF4FB3;color:#1a0712;font-weight:800;font-size:36px;letter-spacing:4px;padding:12px 32px;border-radius:44px}
+.t{font-family:Bodoni;font-size:76px;line-height:1.05;margin-top:24px}
+.t em{font-family:Corm;font-style:italic;font-size:86px;background:linear-gradient(90deg,#FF4FB3,#A855F7 60%,#5B8CFF);-webkit-background-clip:text;color:transparent}
+.phone{position:absolute;left:50%;top:560px;width:556px;height:1194px;margin-left:-278px;border-radius:76px;background:#0b0710;padding:18px;
+ box-shadow:0 0 0 3px rgba(168,85,247,.55),0 0 70px rgba(168,85,247,.38),0 50px 90px rgba(0,0,0,.6)}
+.screen{position:relative;width:520px;height:1125px;border-radius:60px;overflow:hidden;background:#fff}
+.screen img{position:absolute;left:0;top:0;width:520px;height:1125px}
+.tap{position:absolute;border:6px solid #FF4FB3;border-radius:44px;box-shadow:0 0 30px rgba(255,79,179,.9)}
+.rip{position:absolute;border-radius:50%;border:5px solid #fff;background:rgba(255,79,179,.35);transform:translate(-50%,-50%)}
+#end{position:absolute;inset:0;text-align:center}
+#end img{position:absolute;left:50%;transform:translateX(-50%);top:430px;height:460px}
+.e1{position:absolute;width:100%;top:960px;font-family:Bodoni;font-size:84px}
+.e2{position:absolute;width:100%;top:1070px;font-family:Corm;font-style:italic;font-size:100px;background:linear-gradient(90deg,#FF4FB3,#A855F7 60%,#5B8CFF);-webkit-background-clip:text;color:transparent}
+.chips{position:absolute;width:100%;top:1270px;display:flex;justify-content:center;gap:16px}
+.chip{border:2px solid rgba(246,238,248,.4);border-radius:40px;padding:12px 26px;font-size:32px}
+.wa{position:absolute;left:50%;transform:translateX(-50%);top:1380px;background:#25D366;color:#06210f;font-weight:800;font-size:46px;padding:20px 46px;border-radius:60px;white-space:nowrap}
+</style></head><body><div class="c" id="c"><div class="g g1"></div><div class="g g2"></div>
+<div id="head"></div><div class="phone" id="phone"><div class="screen" id="screen"><img id="a"><img id="b"><div class="tap" id="tap"></div><div class="rip" id="rip"></div></div></div>
+<div id="end"></div></div>
+<script>
+const K=520/390;
+const ST=[
+ {d:3.0,shot:'01-inicio',pill:'TUTORIAL',t:'Así compras en<br>el catálogo <em>en 1 minuto</em>'},
+ {d:3.2,shot:'02-producto-grilla',pill:'PASO 1',t:'Toca <em>"Ver más<br>información"</em>'},
+ {d:3.2,shot:'03-detalle',pill:'PASO 2',t:'Toca <em>"Agregar<br>al carrito"</em>',box:{x:20,y:778,width:170,height:52}},
+ {d:3.2,shot:'04-drawer',pill:'PASO 3',t:'Toca <em>"Ver carrito<br>y finalizar"</em>'},
+ {d:3.0,shot:'05-carrito',pill:'PASO 4',t:'Toca <em>"Comprar<br>ahora"</em>'},
+ {d:3.4,shot:'06-datos',pill:'PASO 5',t:'Llena tus <em>datos<br>de envío</em>',box:{x:70,y:296,width:250,height:556},noRip:true},
+ {d:3.4,shot:'07-metodo',pill:'PASO 6',t:'Pago en línea o<br><em>contra entrega</em>'},
+ {d:3.0,shot:'08-continuar',pill:'PASO 7',t:'Toca <em>"Continuar<br>al pago"</em>'},
+ {d:2.6,shot:'09-gracias',pill:'¡LISTO!',t:'Tu pedido<br><em>va en camino</em>',noBox:true},
+];
+const END=3.4;
+let BOXES={};
+const ease=x=>x<0?0:x>1?1:1-Math.pow(1-x,3);
+function setHead(s,k){const h=document.getElementById('head');
+  if(h.dataset.k!=k){h.dataset.k=k;h.innerHTML=`<span class="step">${s.pill}</span><div class="t">${s.t}</div>`;}}
+window.render=function(t){
+  let acc=0,i=0;for(;i<ST.length;i++){if(t<acc+ST[i].d)break;acc+=ST[i].d;}
+  const endEl=document.getElementById('end'),ph=document.getElementById('phone'),hd=document.getElementById('head');
+  if(i>=ST.length){const lt=t-acc;const o=ease(lt/0.5);
+    ph.style.opacity=1-o;hd.style.opacity=1-o;
+    if(!endEl.innerHTML)endEl.innerHTML=`<img src="../vid/cards/logo_alpha.png"><div class="e1">Catálogo en el</div><div class="e2">link de la bio</div>
+      <div class="chips"><span class="chip">Caja sin marca</span><span class="chip">Contra entrega en Bogotá</span></div><div class="wa">WhatsApp 300 467 5206</div>`;
+    endEl.style.opacity=o;endEl.style.transform=`translateY(${(1-o)*40}px)`;return;}
+  endEl.style.opacity=0;ph.style.opacity=1;hd.style.opacity=1;
+  const s=ST[i],lt=t-acc;
+  setHead(s,i);
+  const hin=ease(lt/0.35);hd.style.transform=`translateY(${(1-hin)*30}px)`;hd.style.opacity=hin;
+  const A=document.getElementById('a'),B=document.getElementById('b');
+  A.src=`shots/${(ST[i-1]||s).shot}.png`;B.src=`shots/${s.shot}.png`;
+  B.style.opacity=i==0?1:ease(lt/0.3);
+  // ligero zoom de entrada del teléfono
+  const z=1+0.02*Math.sin(Math.min(lt/s.d,1)*Math.PI/2);ph.style.transform=`scale(${z})`;
+  const tap=document.getElementById('tap'),rip=document.getElementById('rip');
+  let b=s.box||BOXES[s.shot];
+  if(!b||s.noBox){tap.style.opacity=0;rip.style.opacity=0;return;}
+  const p=8,ta=ease((lt-0.7)/0.3);
+  Object.assign(tap.style,{left:(b.x-p)*K+'px',top:(b.y-p)*K+'px',width:(b.width+2*p)*K+'px',height:(b.height+2*p)*K+'px',opacity:ta});
+  if(s.noRip){rip.style.opacity=0;return;}
+  const r=(lt-1.1)/0.7;
+  if(r<0||r>1){rip.style.opacity=0;}else{const sz=40+140*ease(r);
+    Object.assign(rip.style,{left:(b.x+b.width*0.6)*K+'px',top:(b.y+b.height*0.55)*K+'px',width:sz+'px',height:sz+'px',opacity:1-r});}
+};
+window.TOTAL=ST.reduce((a,s)=>a+s.d,0)+END;
+(async()=>{BOXES=await (await fetch('shots/boxes.json')).json();
+ // precarga
+ await Promise.all(ST.map(s=>new Promise(r=>{const im=new Image();im.onload=r;im.src=`shots/${s.shot}.png`})));
+ document.body.dataset.ready=1;})();
+</script></body></html>
