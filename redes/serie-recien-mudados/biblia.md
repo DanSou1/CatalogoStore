@@ -75,6 +75,10 @@ Prompt de diseño de voz de Vale: `Young Colombian woman from Bogotá, 29 years 
 
 - **Parte 2 · Lo que Andrés no había contado** (narrada por Andrés en primera persona, pedido de Daniel): confiesa que "esos momentos" le duraban muy poco y por eso evitaba buscarla; Vale no se ríe. Consejo: la presión lo empeora, respirar lento ayuda, si persiste al médico. Ancla: spray Black Power. Suspenso: Vale le toma la mano: "Yo también tengo algo que confesarte". Escena desde aquí: cajas vacías apiladas en una esquina, cojines, sin plástico en el sofá. Objetos que siguen: la vela en frasco de vidrio en la mesa de centro.
 
+- **Parte 3 · La confesión de Vale** (Vale narra en primera persona): le contaba poco que a veces siente resequedad y evitaba esos momentos; aprende que es normal (estrés, cansancio, anticonceptivos) y que hablarlo es la mitad de la solución. Ancla: hidratante íntimo caramelo. Suspenso: el citófono, "Don Andrés, le llegó un paquete… y su mamá". Objetos nuevos: citófono blanco junto a la puerta.
+
+**Proyecto de Flow (desde el 28 oct 2026)**: el proyecto "Serie Recién mudados" ya no aparece en la cuenta. La serie sigue en el proyecto "oct 28 - 11:40" (flow.google.com/project/4d92fc93-67fc-4d66-a049-9acf7f1ca55c), con la imagen de referencia "apartment 2" (versión con cajas apiladas). Vale y Andrés se describen con el texto fijo de arriba en cada prompt.
+
 ## Tomas generadas (para reutilizar)
 
 | Capítulo | Archivo | Qué muestra |
@@ -90,6 +94,14 @@ Prompt de diseño de voz de Vale: `Young Colombian woman from Bogotá, 29 years 
 | 2 | `parte-02/tomas/n3-mano-vale.mp4` | La mano de Vale (anillo) se posa sobre la de Andrés en el brazo del sofá (2–7 s); usar zoom ≥1,08 por un borde negro |
 | 2 | `parte-02/tomas/n4-ventana.mp4` | Andrés de pie frente a la ventana con lluvia, respira |
 | 2 | `parte-02/tomas/n5-manos-sofa.mp4` | Vale y Andrés de espaldas en el sofá (0–3,5 s); a los 4 s ella gira la cabeza (no usar); 5–8 s manos entrelazadas con vela |
+
+| 3 | `parte-03/tomas/m1-vale-cojin.mp4` | Vale sola en el sofá abrazando un cojín, de espaldas |
+| 3 | `parte-03/tomas/m2-anillo.mp4` | Manos de Vale dándole vueltas al anillo |
+| 3 | `parte-03/tomas/m3-caricia.mp4` | Andrés le acaricia el pelo; 0–3 s se ve su perfil (usar 4–8 s) |
+| 3 | `parte-03/tomas/m4-risa.mp4` | Ella recostada en su hombro; a los 4–5 s se ve el perfil de Vale (no usar) |
+| 3 | `parte-03/tomas/m5-citofono.mp4` | Mano de Andrés contesta el citófono; voz del portero a los 4–6,5 s |
+
+Video final de la Parte 3: `parte-03/recien-mudados-parte-03.mp4` (40 s), montaje `parte-03/build_p3.py`.
 
 Video final de la Parte 2: `parte-02/recien-mudados-parte-02.mp4` (36 s), montaje `parte-02/build_p2.py`. Voz de Andrés "Andrés - XperienceLove" acelerada ×1,1; la frase de Vale con "Vale - XperienceLove".
 
