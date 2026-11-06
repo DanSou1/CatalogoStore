@@ -1,7 +1,7 @@
 """Reel loción Trío — estructura de 8 piezas. Voz de Daniela a velocidad real; subtítulos tipo karaoke arriba."""
 import os, re, subprocess
 W = os.path.dirname(os.path.abspath(__file__))
-C = os.environ.get("CARDS", "/tmp/claude-0/-home-claude/d3141047-47b3-5415-be12-edec1a18ebf1/scratchpad/vid/cards")
+C = os.environ.get("CARDS", "/home/claude/catalogostore/tools/piezas")
 FONTS = os.path.join(C, "fonts")
 T = lambda p: os.path.join(W, "tomas", p)
 F1, F2, F3, F4, F5 = T("f1-lampara.mp4"), T("f2-manos-locion.mp4"), T("f3-gota.mp4"), T("f4-pareja-cama.mp4"), T("f5-masaje.mp4")

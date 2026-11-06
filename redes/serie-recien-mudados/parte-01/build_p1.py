@@ -4,7 +4,7 @@ subtítulos quemados (Archivo, palabra clave en rosa), placa de producto y cierr
 import subprocess, os
 U = "/root/.claude/uploads/d3141047-47b3-5415-be12-edec1a18ebf1"
 W = os.path.dirname(os.path.abspath(__file__))
-C = "/tmp/claude-0/-home-claude/d3141047-47b3-5415-be12-edec1a18ebf1/scratchpad/vid/cards"
+C = "/home/claude/catalogostore/tools/piezas"
 FONTS = os.path.join(C, "fonts")
 def u(prefix): return next(os.path.join(U, f) for f in os.listdir(U) if f.startswith(prefix))
 DOOR, COUPLE, PHONES, HANDS, SHOULDER = u("baaa82c5"), u("840606f9"), u("8d1ffa03"), u("c8d5f929"), u("1ed46a6c")

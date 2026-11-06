@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Bodoni;src:url(fonts/BodoniModa.ttf)}
+@font-face{font-family:Corm;src:url(fonts/CormorantGaramond-Italic.ttf);font-style:italic}
+@font-face{font-family:Archivo;src:url(fonts/Archivo.ttf)}
+*{margin:0;box-sizing:border-box} body{background:#000}
+.c{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:Archivo;color:#F6EEF8;
+ background:radial-gradient(900px 900px at 50% 45%,#2a0f3d 0%,#12061c 55%,#07040B 100%)}
+.g{position:absolute;border-radius:50%;filter:blur(110px)}
+.g1{width:600px;height:600px;left:-200px;top:300px;background:#FF4FB3;opacity:.28}
+.g2{width:640px;height:640px;right:-240px;top:1000px;background:#5B8CFF;opacity:.25}
+.logo{position:absolute;left:50%;transform:translateX(-50%)}
+.t1{position:absolute;width:100%;text-align:center;font-family:Bodoni;font-size:96px;line-height:1.05}
+.t2{position:absolute;width:100%;text-align:center;font-family:Corm;font-style:italic;font-size:120px;line-height:1;
+ background:linear-gradient(90deg,#FF4FB3,#A855F7 55%,#5B8CFF);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(255,79,179,.45))}
+.pill{position:absolute;left:50%;transform:translateX(-50%);background:#FF4FB3;color:#1a0712;font-weight:800;font-size:64px;padding:14px 44px;border-radius:60px;letter-spacing:2px}
+.wa{position:absolute;left:50%;transform:translateX(-50%);background:#25D366;color:#06210f;font-weight:800;font-size:44px;padding:20px 46px;border-radius:60px;white-space:nowrap}
+.chips{position:absolute;width:100%;display:flex;justify-content:center;gap:16px}
+.chip{border:2px solid rgba(246,238,248,.4);border-radius:40px;padding:12px 26px;font-size:32px}
+.ped{position:absolute;left:190px;width:700px;height:130px;border-radius:50%;background:radial-gradient(closest-side,#1c0b29,#0c0512);border:2px solid rgba(168,85,247,.7);box-shadow:0 0 40px rgba(168,85,247,.45)}
+.prod{position:absolute;left:50%;transform:translateX(-50%);filter:drop-shadow(0 22px 26px rgba(0,0,0,.7))}
+.seal{position:absolute;right:90px;width:230px;height:230px;border-radius:50%;transform:rotate(-9deg);background:radial-gradient(circle at 35% 30%,#ff7cc6,#d02c8c);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.seal small{font-size:22px;font-weight:700;letter-spacing:2px}.seal b{font-family:Bodoni;font-size:48px}
+.eb{position:absolute;width:100%;text-align:center;letter-spacing:9px;font-size:26px;font-weight:600;color:#c9b6d6}
+.foot{position:absolute;width:100%;text-align:center;font-size:26px;color:#bfaecb}
+</style></head><body><div class="c" id="c"><div class="g g1"></div><div class="g g2"></div><div id="x"></div></div>
+<script>
+const V=new URLSearchParams(location.search).get('v');
+const x=document.getElementById('x');
+const end=(top,mid)=>`<img class="logo" src="logo_alpha.png" style="top:420px;height:440px">${top}${mid}
+<div class="chips" style="top:1440px"><span class="chip">Envío discreto</span><span class="chip">Contra entrega en Bogotá</span></div>
+<div class="wa" style="top:1540px">WhatsApp 300 467 5206</div>`;
+if(V==='end1') x.innerHTML=end(`<div class="t1" style="top:960px">Comenta</div>`,`<div class="pill" style="top:1110px">JUEGO</div><div class="foot" style="top:1260px">y te mandamos las opciones</div>`);
+if(V==='end3') x.innerHTML=end(`<div class="t1" style="top:960px">Comenta</div>`,`<div class="pill" style="top:1110px">MASAJE</div><div class="foot" style="top:1260px">y te contamos cuál usamos</div>`);
+if(V==='end2') x.innerHTML=end(`<div class="t1" style="top:960px">Escríbenos.</div>`,`<div class="t2" style="top:1080px">sin pena.</div><div class="foot" style="top:1260px">Si persiste, consulta con tu médico.</div>`);
+
+const prod=(eyebrow,t1,t2,img,ih,price,label,foot)=>`<div class="eb" style="top:200px">${eyebrow}</div><div class="t1" style="top:250px">${t1}</div><div class="t2" style="top:350px">${t2}</div>
+<div class="ped" style="top:1130px"></div><img class="prod" src="${img}" style="top:${1190-ih}px;height:${ih}px">
+<div class="foot" style="top:1650px;font-size:34px;color:#e9dcef">${foot}</div>`;
+if(V==='prod1') x.innerHTML=prod('JUEGO PARA PAREJAS','Baraja','Tántrica.','recortes/baraja_final.png',640,'$30.000','BARAJA','Envío discreto · Contra entrega en Bogotá');
+if(V==='prod1b') x.innerHTML=prod('UNA NOCHE DISTINTA','Sin presión,','solo juego.','recortes/baraja_final.png',640,'$30.000','BARAJA','Comenta JUEGO y te la mostramos');
+if(V==='prod2') x.innerHTML=prod('BIENESTAR MASCULINO','Spray','para hombre.','recortes/spray_blur.png',740,'$39.900','SPRAY','Se aplica minutos antes · sin enjuagar');
+if(V==='prod3') x.innerHTML=prod('TIP DE PAREJA','Loción','Trío.','recortes/trio_final.png',700,'$29.900','3 EN 1','Masajes · hidratante íntimo · delicioso sabor');
+if(V==='prod_vor') x.innerHTML=prod('PARTE 1 · EL JUEGO DEL PACTO','Verdad','o se atreve.','recortes/vor_cut.png',560,'','','Preguntas y retos para conocerse otra vez');
+if(V==='prod_spray_p2') x.innerHTML=prod('PARTE 2 · LO QUE LE DIO CONFIANZA','Spray','para él.','recortes/spray_blur.png',740,'','','Se aplica minutos antes · sin enjuagar');
+if(V==='end_calma') x.innerHTML=end(`<div class="t1" style="top:960px">Comenta</div>`,`<div class="pill" style="top:1110px">CALMA</div><div class="foot" style="top:1260px">y sigue la parte 3</div>`);
+if(V==='end_sisenor') x.innerHTML=`<img class="logo" src="logo_alpha.png" style="top:520px;height:460px"><div class="t1" style="top:1060px">¿Listo para todo?</div><div class="t2" style="top:1180px">¡Sí señor!</div><div class="foot" style="top:1400px">Síguenos para más humor de pareja · Escenas creadas con IA</div>`;
+if(V==='prod_caramelo_p3') x.innerHTML=prod('PARTE 3 · LA OTRA MITAD','Hidratante','íntimo caramelo.','recortes/caramelo_blur.png',600,'','','Sabor a caramelo · sensación cálida');
+if(V==='end_caramelo') x.innerHTML=end(`<div class="t1" style="top:960px">Comenta</div>`,`<div class="pill" style="top:1110px">CARAMELO</div><div class="foot" style="top:1260px">y sigue la parte 4</div>`);
+if(V==='gancho_trio') x.innerHTML=`<div class="ped" style="top:1240px"></div><img class="prod" src="recortes/trio_final.png" style="top:420px;height:880px"><div class="eb" style="top:1500px">1 FRASQUITO · 3 USOS</div>`;
+if(V==='bucle_trio') x.innerHTML=`<div class="t2" style="top:560px;font-size:520px;line-height:1">3</div><div class="t1" style="top:1180px">¿y el tercero?</div>`;
+if(V==='end_trio') x.innerHTML=end(`<div class="t1" style="top:960px">Comenta</div>`,`<div class="pill" style="top:1110px">TRÍO</div><div class="foot" style="top:1260px">y te contamos cómo pedirlo</div>`);
+if(V==='end_atreve') x.innerHTML=end(`<div class="t1" style="top:960px">Comenta</div>`,`<div class="pill" style="top:1110px">ATREVE</div><div class="foot" style="top:1260px">y sigue la parte 2</div>`);
+</script></body></html>

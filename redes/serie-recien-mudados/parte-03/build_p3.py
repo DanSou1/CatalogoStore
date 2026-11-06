@@ -3,7 +3,7 @@ Misma receta que build_p2.py; cada toma lleva su propio volumen de ambiente (el 
 import subprocess, os
 W = os.path.dirname(os.path.abspath(__file__))
 R = os.path.dirname(W)
-C = os.environ.get("CARDS", "/tmp/claude-0/-home-claude/d3141047-47b3-5415-be12-edec1a18ebf1/scratchpad/vid/cards")
+C = os.environ.get("CARDS", "/home/claude/catalogostore/tools/piezas")
 FONTS = os.path.join(C, "fonts")
 T = lambda p: os.path.join(W, "tomas", p)
 P = lambda n, p: os.path.join(R, f"parte-0{n}", "tomas", p)
