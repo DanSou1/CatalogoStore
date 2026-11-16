@@ -90,3 +90,22 @@ Historia y personajes inventados, situaciones muy reales. Escenas y voces creada
 ## Métrica a las 48 h
 
 Tasa de 3 s (meta ≥40 %) y retención al segundo 20. Si la versión con caras retiene más que las partes 1-3, la temporada sigue así.
+
+## Opción elegida: B · Multicámara (Daniel, 15 nov 2026, 23:24)
+
+Daniel eligió la B y aprobó el gasto (~135 créditos). Set de TV: planos frontales de la sala, actuación natural, **nadie le habla a la cámara** (solo la mirada final del beat 8). Los "confesionarios" de la opción A pasan a ser líneas dentro de la escena, dichas a otro personaje. Caras con los personajes de referencia de arriba.
+
+Plantilla fija (inicio de cada prompt):
+`Vertical 9:16, multi-camera TV sitcom look, front-facing set camera, natural performance, realistic acting, subtle facial expressions, warm amber light, small modern apartment in Bogotá at night with exposed brick wall, rainy window with city lights, grey sofa with mustard throw, monstera plant, boxes stacked in a corner. Casual clothes, no nudity, no text, no logos, no subtitles. Dialogue in Colombian Spanish (Bogotá accent). Characters never look at the camera.`
+
+| Toma | Beat | Prompt (después de la plantilla) |
+|---|---|---|
+| B1 | 1 | `Wide front shot of the living room. Andrés stands by the door holding a white intercom handset, frozen. Vale on the sofa asks "¿Quién era?". He answers "El paquete." She smiles: "¡Ay, qué bien!". He adds slowly: "…y mi mamá." Vale's smile freezes.` |
+| B2 | 2 | `Medium front shot, Vale on the sofa hugging a mustard cushion, says to Andrés off-screen with dry humor: "El paquete lo estábamos esperando hace una semana… a tu mamá, nadie." Small eye roll.` |
+| B3 | 3 | `Medium shot at the apartment door. Doña Gloria walks in pulling a small floral suitcase, holding a plain brown cardboard box with no labels. She shakes the box next to her ear, curious: "Mijo, el portero me dio esto. ¿Qué es? Suena raro."` |
+| B4 | 4 | `Medium front shot, Andrés by the door, nervous, rubs the back of his neck and mutters to Vale: "Yo soy contador. Con los números no sudo. Con mi mamá y una caja… sí."` |
+| B5 | 5 | `Wide front shot of the living room. Doña Gloria turns the plain brown box around looking for a label: "No dice nada: ni marca, ni qué es…". Vale jumps up from the sofa: "¡Son cositas de cocina!". Gloria raises an eyebrow: "¿Cocina? ¿Ustedes cocinan?"` |
+| B6 | 6 | `Medium front shot, Doña Gloria sits on the sofa with the plain box on her lap, calm and amused, says to Vale: "Mija, treinta y cinco años de casada. Yo sé muy bien qué son cositas de cocina." She winks at Vale.` |
+| B7 | 8 | `Wide front shot. Doña Gloria places her floral suitcase on the sofa and sits down comfortably: "Bueno… me quedo una semanita, mijo." Andrés and Vale, standing, slowly look at each other, then both look straight into the camera, deadpan.` |
+
+Beat 7 (ancla) y 9 (cierre) son placas: `titulo_p4`, `ancla_discreto_p4`, `end_discreto` en `tools/piezas/card.html`.

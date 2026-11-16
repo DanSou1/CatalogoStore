@@ -63,6 +63,28 @@ const S={
  conv4: conv(3,'¿Qué nos gustaría probar?','Sin presión y sin burla. <b>Un juego de preguntas</b> rompe el hielo cuando no saben por dónde empezar.'),
  conv5: prod('PARA LA CONVERSACIÓN 3','Baraja','Tántrica.','recortes/baraja_final.png',520,'Preguntas y retos para conocerse otra vez','JUEGO','<br>y te la mostramos'),
  conv6: end('Envíaselo a tu pareja','y empiecen hoy.'),
+ // Black Friday 27-30 nov 2026 (descuento real 15 %, fecha de cierre explícita → aquí sí van precios)
+ bf1: `<div class="pad ctr"><div class="eb">VIERNES 27 AL LUNES 30 DE NOVIEMBRE</div><div class="t1" style="font-size:118px;margin-top:40px;letter-spacing:4px">BLACK FRIDAY</div><div class="t2" style="font-size:120px">15 % menos</div><div class="a" style="font-size:40px;margin-top:6px">en 4 de nuestros favoritos</div></div>
+  <div class="ped" style="top:1010px"></div>
+  <img class="prod" src="recortes/feromonas_blur.png" style="left:250px;top:750px;height:300px;transform:none">
+  <img class="prod" src="recortes/jenga_blur.png" style="left:500px;top:620px;height:440px;transform:none">
+  <img class="prod" src="recortes/lychee_blur.png" style="left:640px;top:830px;height:220px;transform:none">
+  ${seal('-15','%')}<div class="ctr" style="position:absolute;top:1120px;width:100%;font-size:34px">+ <b style="color:#FF7CC6">regalo sorpresa</b> comprando en la web</div>${brand}<div class="swipe">DESLIZA →</div>`,
+ bf2: bfp('PARA ÉL','Feromonas','sin olor.','recortes/feromonas_blur.png',440,'No cambian tu perfume · 10 ml','39.900','33.900',2),
+ bf3: bfp('PARA PROBAR ALGO NUEVO','Arnés de','posiciones.','recortes/sling_ilustracion.svg',420,'Correas regulables · talla única · sin instalar nada','126.000','107.100',3),
+ bf4: bfp('PARA LA FIESTA','Jenga','Picante.','recortes/jenga_blur.png',500,'54 fichas con retos y shots','67.900','57.700',4),
+ bf5: bfp('PARA ELLA Y PARA ÉL','Hidratante íntimo','lychee.','recortes/lychee_blur.png',400,'Sensación cálida · sabor lychee · 30 ml','38.900','33.100',5),
+ bf6: `<div class="pad"><div class="eb">CÓMO COMPRAR EN LA WEB</div><div class="t1" style="font-size:80px">Tres pasos</div><div class="t2" style="font-size:100px">y llega tu regalo.</div>
+  <div style="margin-top:50px">${paso(1,'Entra a la tienda','Link en la bio de @x_experiencelove')}${paso(2,'Agrégalos al carrito','El 15 % ya viene aplicado')}${paso(3,'Paga como prefieras','En línea, o contra entrega en Bogotá')}</div>
+  <div class="ctr" style="margin-top:36px;font-size:36px">Tu pedido llega con un <b style="color:#FF7CC6">regalo sorpresa</b>.</div>
+  <div class="chips"><span class="chip">Envío discreto</span><span class="chip">Hasta el lunes 30</span></div></div>${brand}<div class="swipe">6/6</div>`,
 };
+function seal(a,b){return `<div style="position:absolute;right:80px;top:560px;width:220px;height:220px;border-radius:50%;transform:rotate(-9deg);background:radial-gradient(circle at 35% 30%,#ff7cc6,#d02c8c);display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px rgba(255,79,179,.5);color:#1a0712"><b style="font-family:Archivo;font-weight:900;font-size:84px;letter-spacing:-2px">${a}</b><b style="font-weight:900;font-size:44px;margin-top:22px">${b}</b></div>`}
+function bfp(eb,t1,t2,img,ih,foot,antes,ahora,n){return `<div class="pad ctr" style="padding-top:96px"><div class="eb">BLACK FRIDAY · ${eb}</div><div class="t1" style="font-size:80px">${t1}</div><div class="t2" style="font-size:96px">${t2}</div></div>
+ <div class="ped" style="top:840px"></div><img class="prod" src="${img}" style="top:${895-ih}px;height:${ih}px">${seal('-15','%').replace('top:560px','top:430px')}
+ <div class="ctr" style="position:absolute;top:975px;width:100%"><div class="a" style="font-size:32px;margin:0;color:#d9c9e2">${foot}</div>
+ <div style="margin-top:18px;display:flex;justify-content:center;align-items:baseline;gap:26px"><s style="font-size:44px;color:#a796b3;text-decoration-color:#FF4FB3;text-decoration-thickness:4px">$${antes}</s><span style="font-family:Bodoni;font-size:84px">$${ahora}</span></div>
+ <div style="font-size:26px;color:#bfaecb;letter-spacing:3px;margin-top:4px">DEL 27 AL 30 DE NOVIEMBRE</div></div>${brand}<div class="swipe">${n}/6</div>`}
+function paso(n,t,s){return `<div style="display:flex;align-items:center;gap:34px;margin:22px 0"><div class="num" style="font-size:150px;width:110px;text-align:center">${n}</div><div><div style="font-family:Bodoni;font-size:52px">${t}</div><div style="font-size:32px;color:#d9c9e2;margin-top:6px">${s}</div></div></div>`}
 x.innerHTML=S[V]||'';
 </script></body></html>
