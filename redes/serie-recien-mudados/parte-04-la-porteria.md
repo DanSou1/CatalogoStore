@@ -16,6 +16,8 @@ Pedido de Daniel (tablero, 15 nov 2026): que se sienta como una serie de TV tipo
 | B | **Multicámara de sala** | Plano frontal de la sala como un set de TV, sin hablarle a cámara; risas de público | Sí | Mismo costo y mismo trabajo de caras que A, pero menos "mirada a cámara" |
 | C | **Sitcom sin caras** | Mismo guion y mismas risas, pero de espaldas, manos y siluetas como las partes 1-3; los "confesionarios" son un plano fijo del cojín/sofá con la voz | No | Fiel a la biblia, voces de ElevenLabs. ~6 tomas × 15 = **~90 créditos** |
 
+**Riesgo de las caras (opciones A y B)**: Flow genera cada toma por separado, y aunque use la misma foto de referencia la cara puede cambiar un poco entre tomas (nariz, cejas, edad, peinado), sobre todo de perfil, con gestos fuertes o cuando hay dos o tres personas en el cuadro. En una serie eso se nota enseguida y rompe la ilusión. Cómo lo bajamos: personajes guardados en Flow con su foto de referencia, una sola persona por confesionario, planos medios frontales, y repetir la toma que salga distinta (cada repetición cuesta 12-15 créditos más). Aun así puede pasar que alguna toma no quede igual. Si eso preocupa, la C conserva el humor en los diálogos y no tiene ese riesgo.
+
 **Importante**: la serie hasta hoy es sin caras (regla de la biblia). Para A o B escribe en el comentario de la tarea **"Apruebo caras en la serie"** y la letra. Los personajes con cara se declaran como IA en el caption, como siempre.
 
 ## Guion (opción A)
