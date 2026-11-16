@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* Láminas de carrusel 1080×1350 con la marca. Uso: post.html?v=<nombre>  ·  python3 render.py --post <nombre> */
+@font-face{font-family:Bodoni;src:url(fonts/BodoniModa.ttf)}
+@font-face{font-family:Corm;src:url(fonts/CormorantGaramond-Italic.ttf);font-style:italic}
+@font-face{font-family:Archivo;src:url(fonts/Archivo.ttf)}
+*{margin:0;box-sizing:border-box} body{background:#000}
+.c{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:Archivo;color:#F6EEF8;
+ background:radial-gradient(800px 800px at 50% 42%,#2a0f3d 0%,#12061c 58%,#07040B 100%)}
+.g{position:absolute;border-radius:50%;filter:blur(110px)}
+.g1{width:520px;height:520px;left:-200px;top:140px;background:#FF4FB3;opacity:.26}
+.g2{width:560px;height:560px;right:-230px;top:720px;background:#5B8CFF;opacity:.24}
+.pad{position:absolute;inset:0;padding:110px 96px}
+.eb{letter-spacing:8px;font-size:26px;font-weight:600;color:#c9b6d6}
+.t1{font-family:Bodoni;font-size:92px;line-height:1.04;margin-top:26px}
+.t2{font-family:Corm;font-style:italic;font-size:112px;line-height:1;background:linear-gradient(90deg,#FF4FB3,#A855F7 55%,#5B8CFF);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 16px rgba(255,79,179,.4));padding-bottom:10px}
+.num{font-family:Corm;font-style:italic;font-size:220px;line-height:.9;background:linear-gradient(90deg,#FF4FB3,#A855F7);-webkit-background-clip:text;color:transparent}
+.tag{display:inline-block;border-radius:40px;padding:10px 26px;font-size:28px;font-weight:800;letter-spacing:3px}
+.mito{background:rgba(246,238,248,.12);color:#e9dcef;border:2px solid rgba(246,238,248,.35)}
+.ver{background:#FF4FB3;color:#1a0712}
+.q{font-family:Bodoni;font-size:72px;line-height:1.12;margin:26px 0 60px}
+.q s{text-decoration-color:#FF4FB3;text-decoration-thickness:5px}
+.a{font-size:48px;line-height:1.38;color:#efe3f4;margin-top:22px}
+.a b{color:#FF7CC6}
+.small{font-size:28px;color:#bfaecb;margin-top:30px}
+.swipe{position:absolute;bottom:90px;right:96px;font-size:30px;letter-spacing:4px;color:#c9b6d6}
+.brand{position:absolute;bottom:84px;left:96px;display:flex;align-items:center;gap:14px;font-size:26px;color:#bfaecb;letter-spacing:2px}
+.brand img{height:62px}
+.ped{position:absolute;left:240px;width:600px;height:110px;border-radius:50%;background:radial-gradient(closest-side,#1c0b29,#0c0512);border:2px solid rgba(168,85,247,.7);box-shadow:0 0 40px rgba(168,85,247,.45)}
+.prod{position:absolute;left:50%;transform:translateX(-50%);filter:drop-shadow(0 22px 26px rgba(0,0,0,.7))}
+.pill{display:inline-block;background:#FF4FB3;color:#1a0712;font-weight:800;font-size:56px;padding:12px 40px;border-radius:60px;letter-spacing:2px}
+.wa{display:inline-block;background:#25D366;color:#06210f;font-weight:800;font-size:40px;padding:18px 42px;border-radius:60px}
+.chips{display:flex;justify-content:center;gap:14px;margin-top:34px}
+.chip{border:2px solid rgba(246,238,248,.4);border-radius:40px;padding:10px 24px;font-size:28px}
+.ctr{text-align:center}
+</style></head><body><div class="c" id="c"><div class="g g1"></div><div class="g g2"></div><div id="x"></div></div>
+<script>
+const V=new URLSearchParams(location.search).get('v');
+const x=document.getElementById('x');
+const brand=`<div class="brand"><img src="logo_alpha.png">XPERIENCELOVE</div>`;
+const cover=(eb,t1,t2,sub)=>`<div class="pad"><div class="eb">${eb}</div><div class="t1" style="margin-top:210px">${t1}</div><div class="t2">${t2}</div><div class="a" style="margin-top:40px;max-width:820px">${sub}</div></div>${brand}<div class="swipe">DESLIZA →</div>`;
+const mito=(n,m,v,extra='')=>`<div class="pad"><div class="eb">MITO ${n}</div><div style="margin-top:150px"><span class="tag mito">LO QUE CREÍAMOS</span></div>
+<div class="q"><s>${m}</s></div><span class="tag ver">LO QUE ES</span><div class="a">${v}</div>${extra}</div>${brand}<div class="swipe">${n}/4</div>`;
+const conv=(n,t,body)=>`<div class="pad"><div class="num" style="margin-top:110px">${n}</div><div class="q" style="margin:10px 0 30px">${t}</div><div class="a">${body}</div></div>${brand}<div class="swipe">${n}/3</div>`;
+const prod=(eb,t1,t2,img,ih,foot,word,wfoot)=>`<div class="pad ctr"><div class="eb">${eb}</div><div class="t1" style="font-size:80px">${t1}</div><div class="t2" style="font-size:96px">${t2}</div></div>
+<div class="ped" style="top:900px"></div><img class="prod" src="${img}" style="top:${955-ih}px;height:${ih}px">
+<div class="ctr" style="position:absolute;top:1040px;width:100%"><div class="a" style="font-size:34px;margin:0">${foot}</div>
+<div style="margin-top:28px;font-size:36px">Comenta <span class="pill" style="font-size:40px;padding:8px 30px">${word}</span> ${wfoot}</div></div>`;
+const end=(t1,t2)=>`<div class="ctr" style="position:absolute;top:150px;width:100%"><img src="logo_alpha.png" style="height:330px"><div class="t1" style="font-size:80px">${t1}</div><div class="t2" style="font-size:100px">${t2}</div>
+<div class="chips"><span class="chip">Envío discreto</span><span class="chip">Contra entrega en Bogotá</span></div><div style="margin-top:40px"><span class="wa">WhatsApp 300 467 5206</span></div></div>`;
+const S={
+ // Carrusel jueves: mitos (pilar mitos y datos) · ancla hidratante íntimo caramelo (lubricante-25)
+ mitos1: cover('MITOS Y DATOS','Mitos de pareja','que creíamos a los 20.','El tercero es el que más nos preguntan por WhatsApp.'),
+ mitos2: mito(1,'Si hay amor, las ganas llegan solas.','Las ganas también se cultivan. La rutina las apaga y <b>lo nuevo las prende</b>: un plan distinto, un juego, una conversación.'),
+ mitos3: mito(2,'Hablar de esto mata la magia.','Hablarlo es <b>la mitad de la solución</b>. La otra mitad es escuchar sin burla y sin afán.'),
+ mitos4: mito(3,'Si hay resequedad, es que no hay ganas.','El estrés, el cansancio y hasta algunos anticonceptivos influyen. <b>Es más común de lo que se dice</b> y tiene ayuda sencilla.','<div class="small">Si la incomodidad persiste, consulta con tu médico.</div>'),
+ mitos5: mito(4,'La chispa es cuestión de suerte.','Es cuestión de hábitos: <b>una noche a la semana solo para ustedes</b>, aunque sea en la sala y sin celular.'),
+ mitos6: prod('PARA EL MITO 3','Hidratante íntimo','caramelo.','recortes/caramelo_blur.png',560,'Sabor a caramelo · sensación cálida','MITO','<br>y te contamos cuál usamos'),
+ mitos7: end('Guárdalo y','envíaselo a tu pareja.'),
+ // Carrusel lunes: consejo · ancla Baraja Tántrica (juego-04)
+ conv1: cover('CONSEJO DE PAREJA','3 conversaciones','que toda pareja que vive junta debería tener.','La tercera es la que casi nadie se atreve a empezar.'),
+ conv2: conv(1,'¿Cómo nos repartimos la casa?','Lo que no se habla se cobra después… <b>en forma de cantaleta.</b> Repártanlo por escrito, aunque suene a contrato.'),
+ conv3: conv(2,'¿Cuánto tiempo es solo nuestro?','Una noche a la semana <b>sin celular y sin pendientes</b>. Agéndenla como una cita, porque lo es.'),
+ conv4: conv(3,'¿Qué nos gustaría probar?','Sin presión y sin burla. <b>Un juego de preguntas</b> rompe el hielo cuando no saben por dónde empezar.'),
+ conv5: prod('PARA LA CONVERSACIÓN 3','Baraja','Tántrica.','recortes/baraja_final.png',520,'Preguntas y retos para conocerse otra vez','JUEGO','<br>y te la mostramos'),
+ conv6: end('Envíaselo a tu pareja','y empiecen hoy.'),
+};
+x.innerHTML=S[V]||'';
+</script></body></html>
