@@ -1628,3 +1628,50 @@ html.navidad-neon .producto-badge-temporada {
 html.navidad-neon #barra-navidad {
     background-image: linear-gradient(90deg, #ff4fb3, #7b3fe4, #2f5bea);
 }
+
+/*** BLACK FRIDAY (activado/desactivado por fecha desde js/blackfriday.js) ***/
+.producto-badge-bf {
+    position: absolute;
+    bottom: .5rem;
+    left: .5rem;
+    z-index: 1;
+    background-color: #0d0d0d;
+    color: #f2c94c;
+    font-size: .65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    white-space: nowrap;
+    padding: .25rem .55rem;
+    border-radius: var(--radius-full);
+    border: 1px solid #f2c94c;
+}
+
+html.promo-blackfriday #barra-promo {
+    background: #0d0d0d;
+    color: #f2c94c;
+    border: 1px solid #f2c94c;
+}
+
+.modal-precio-anterior {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--clr-on-surface-variant);
+    text-decoration: line-through;
+}
+
+.modal-promo-nota {
+    margin-top: .4rem;
+    padding: .5rem .75rem;
+    border-radius: var(--radius-lg);
+    background: #0d0d0d;
+    color: #f2c94c;
+    font-size: .8rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.datos-envio-regalo p:last-child {
+    font-weight: 700;
+    color: var(--clr-plum);
+}

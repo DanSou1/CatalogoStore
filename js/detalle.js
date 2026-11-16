@@ -83,6 +83,21 @@ function abrirModal(id) {
     modalCategoria.textContent = producto.categoria.nombre;
     modalTitulo.textContent = producto.titulo;
     modalPrecio.textContent = `$${formatearPrecio(producto.precio)}`;
+    const modalPromoNota = modalProducto.querySelector(".modal-promo-nota");
+    const conDescuento = producto.precioAnterior && producto.precioAnterior > producto.precio;
+    if (conDescuento) {
+        const anterior = document.createElement("span");
+        anterior.className = "modal-precio-anterior";
+        anterior.textContent = `$${formatearPrecio(producto.precioAnterior)}`;
+        modalPrecio.prepend(anterior, " ");
+    }
+    if (modalPromoNota) {
+        const enBlackFriday = conDescuento && typeof blackFridayActivo === "function" && blackFridayActivo() && esProductoBlackFriday(producto);
+        modalPromoNota.textContent = enBlackFriday
+            ? `Black Friday: 15 % de descuento hasta el ${BLACK_FRIDAY.textoCierre} Comprando por la página llevas ${BLACK_FRIDAY.regalo.toLowerCase()}.`
+            : "";
+        modalPromoNota.hidden = !enBlackFriday;
+    }
 
     if (producto.descripcion) {
         modalDescripcion.textContent = producto.descripcion;

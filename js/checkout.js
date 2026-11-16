@@ -246,6 +246,9 @@ function enviarCorreoNotificacion({ referencia, subtotal, flete, total, datosEnv
             Ciudad: datosEnvio.ciudad,
             Direccion: datosEnvio.direccion,
             Documento: datosEnvio.documento || "No aplica",
+            ...(typeof blackFridayActivo === "function" && blackFridayActivo()
+                ? { "Regalo Black Friday": `${BLACK_FRIDAY.regalo} (incluir en el paquete)` }
+                : {}),
         }),
     }).catch(error => console.error("No se pudo enviar la notificación por correo:", error));
 }

@@ -3,7 +3,7 @@ let productos = [];
 fetch("./js/productos.json")
     .then(response => response.json())
     .then(data => {
-        productos = data;
+        productos = typeof aplicarBlackFriday === "function" ? aplicarBlackFriday(data) : data;
         cargarProductos(productos);
         renderCarruselPromociones(productos);
         abrirDesdeEnlace();
@@ -30,7 +30,8 @@ function cargarProductos(productosElegidos) {
     const textoAgregar = textoBotonAgregar();
     const datosTemp = datosTemporada();
 
-    ordenarPorTemporada(productosElegidos).forEach(producto => {
+    const ordenados = ordenarPorTemporada(productosElegidos);
+    (typeof ordenarBlackFriday === "function" ? ordenarBlackFriday(ordenados) : ordenados).forEach(producto => {
 
         const div = document.createElement("div");
         div.classList.add("producto");
@@ -39,11 +40,13 @@ function cargarProductos(productosElegidos) {
         const descuentoPct = tieneDescuento ? Math.round((1 - producto.precio / producto.precioAnterior) * 100) : 0;
         const agotado = producto.stock === 0;
         const esDeTemporada = datosTemp !== null && esProductoDeTemporada(producto, temporada);
+        const esBlackFriday = typeof blackFridayActivo === "function" && blackFridayActivo() && esProductoBlackFriday(producto) && tieneDescuento;
 
         div.innerHTML = `
             <div class="producto-imagen-wrapper">
                 ${tieneDescuento ? `<span class="producto-badge-descuento">-${descuentoPct}%</span>` : ""}
                 ${esDeTemporada ? `<span class="producto-badge-temporada">${datosTemp.badge}</span>` : ""}
+                ${esBlackFriday ? `<span class="producto-badge-bf">Black Friday</span>` : ""}
                 <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
             </div>
             <div class="producto-detalles">
@@ -184,6 +187,8 @@ function renderCarruselPromociones(productos) {
     if (!heroSection || !dotsContenedor) return;
 
     carruselProductos = ordenarPorTemporada(productos.filter(enPromocion));
+    // Durante Black Friday, sus productos van primero en el carrusel.
+    if (typeof ordenarBlackFriday === "function") carruselProductos = ordenarBlackFriday(carruselProductos);
 
     if (!carruselProductos.length) {
         heroSection.classList.add("disabled");

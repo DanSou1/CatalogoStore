@@ -2,7 +2,11 @@ const CARRITO_KEY = "productos-en-carrito";
 
 function leerCarrito() {
     const raw = localStorage.getItem(CARRITO_KEY);
-    return raw ? JSON.parse(raw) : [];
+    const carrito = raw ? JSON.parse(raw) : [];
+    // Black Friday (js/blackfriday.js): el precio de esos productos se recalcula por fecha
+    // cada vez que se lee el carrito, para que no quede un precio de promo vencido (o viejo).
+    if (typeof ajustarPrecioBlackFriday === "function") carrito.forEach(ajustarPrecioBlackFriday);
+    return carrito;
 }
 
 function guardarCarrito(productosEnCarrito) {
