@@ -1394,7 +1394,7 @@ html.tema-halloween #barra-halloween {
     display: flex;
 }
 
-.producto-badge-halloween {
+.producto-badge-temporada {
     position: absolute;
     top: .5rem;
     right: .5rem;
@@ -1460,4 +1460,171 @@ html.tema-halloween #barra-halloween {
     50%  { transform: translate(60vw, -40px) scale(1.1); }
     88%  { opacity: 1; }
     100% { transform: translate(120vw, 20px) scale(.9); opacity: 0; }
+}
+
+/*** TEMA NAVIDAD (activado/desactivado desde js/temporada.js) ***/
+/* Base común a los tres estilos; cada estilo (html.navidad-<estilo>) cambia la paleta. */
+
+#barra-navidad {
+    display: none;
+}
+
+html.tema-navidad #barra-navidad {
+    display: flex;
+}
+
+html.tema-navidad #hero-destacado {
+    position: relative;
+    overflow: hidden;
+}
+
+html.tema-navidad .logo-sub::after {
+    content: " 🎁";
+}
+
+html.tema-navidad .promociones {
+    position: relative;
+}
+
+html.tema-navidad .promociones::after {
+    content: "🎁";
+    position: absolute;
+    right: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: .9rem;
+    pointer-events: none;
+}
+
+.copo-navidad {
+    position: fixed;
+    top: -2rem;
+    z-index: 9999;
+    color: #fff;
+    text-shadow: 0 0 4px rgba(0, 0, 0, .25);
+    pointer-events: none;
+    animation-name: caida-copo;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes caida-copo {
+    0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+    10%  { opacity: .9; }
+    80%  { opacity: .8; }
+    100% { transform: translate(6vw, 105vh) rotate(180deg); opacity: 0; }
+}
+
+/* Estilo 1 — "Noche Buena burdeos": boutique de regalo, vino tinto + dorado. */
+html.navidad-burdeos {
+    --clr-plum: #8c1c2b;
+    --clr-plum-dark: #6e1522;
+    --clr-charcoal: #22151a;
+    --clr-bg: #fbf6ef;
+    --clr-surface-container: #f2e6d6;
+    --clr-surface-container-low: #f8f0e5;
+}
+
+html.navidad-burdeos #hero-destacado {
+    box-shadow: inset 0 0 0 2px #c9a24a;
+}
+
+html.navidad-burdeos #hero-destacado::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle at 12% 18%, rgba(201, 162, 74, .28) 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 12%, rgba(201, 162, 74, .22) 0 2px, transparent 3px),
+        radial-gradient(circle at 88% 70%, rgba(201, 162, 74, .25) 0 2px, transparent 3px),
+        radial-gradient(circle at 40% 85%, rgba(201, 162, 74, .2) 0 2px, transparent 3px),
+        radial-gradient(circle at 85% 85%, rgba(255, 255, 255, .06) 0, transparent 40%);
+}
+
+html.navidad-burdeos .producto {
+    border-color: #c9a24a;
+}
+
+html.navidad-burdeos .producto-badge-temporada {
+    background-color: #c9a24a;
+    color: #22151a;
+}
+
+html.navidad-burdeos #barra-navidad {
+    background-color: var(--clr-charcoal);
+    border: 1px solid #c9a24a;
+}
+
+/* Estilo 2 — "Aguinaldo picante": rojo y verde navideño colombiano, divertido y cercano. */
+html.navidad-aguinaldo {
+    --clr-plum: #c8102e;
+    --clr-plum-dark: #a00d25;
+    --clr-charcoal: #0f3d2e;
+    --clr-bg: #fffaf3;
+    --clr-surface-container: #e8f1ea;
+    --clr-surface-container-low: #f3f8f3;
+}
+
+html.navidad-aguinaldo #hero-destacado::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 10px;
+    pointer-events: none;
+    background: repeating-linear-gradient(45deg, #c8102e 0 12px, #ffffff 12px 24px, #1f7a4d 24px 36px, #ffffff 36px 48px);
+}
+
+html.navidad-aguinaldo .producto {
+    border-style: dashed;
+    border-color: #1f7a4d;
+}
+
+html.navidad-aguinaldo .producto-badge-temporada {
+    background-color: #1f7a4d;
+}
+
+html.navidad-aguinaldo #barra-navidad {
+    background: repeating-linear-gradient(135deg, #c8102e 0 18px, #b00e28 18px 36px);
+}
+
+/* Estilo 3 — "Navidad neón": la marca de redes (rosa → violeta → azul) sobre noche oscura. */
+html.navidad-neon {
+    --clr-plum: #d4258f;
+    --clr-plum-dark: #a81d72;
+    --clr-charcoal: #150f2b;
+    --clr-bg: #f6f3fb;
+    --clr-surface-container: #ebe4f7;
+    --clr-surface-container-low: #f3eefb;
+}
+
+html.navidad-neon #hero-destacado {
+    background-image: linear-gradient(135deg, #ff4fb3 0%, #7b3fe4 55%, #2f5bea 100%);
+}
+
+html.navidad-neon #hero-destacado::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle at 10% 15%, rgba(255, 255, 255, .5) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, .4) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 60% 25%, rgba(255, 255, 255, .45) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 92% 55%, rgba(255, 255, 255, .4) 0 1.5px, transparent 2.5px);
+}
+
+html.navidad-neon .producto {
+    border-color: #d4258f;
+    box-shadow: 0 0 0 1px rgba(212, 37, 143, .15), 0 6px 18px -8px rgba(123, 63, 228, .45);
+}
+
+html.navidad-neon .producto-badge-temporada {
+    background-image: linear-gradient(90deg, #ff4fb3, #7b3fe4);
+}
+
+html.navidad-neon #barra-navidad {
+    background-image: linear-gradient(90deg, #ff4fb3, #7b3fe4, #2f5bea);
 }

@@ -27,7 +27,8 @@ function cargarProductos(productosElegidos) {
     contenedorProductos.innerHTML = "";
 
     const temporada = temporadaActiva();
-    const textoAgregar = temporada === "halloween" ? "Agregar 🎃" : "Agregar";
+    const textoAgregar = textoBotonAgregar();
+    const datosTemp = datosTemporada();
 
     ordenarPorTemporada(productosElegidos).forEach(producto => {
 
@@ -37,12 +38,12 @@ function cargarProductos(productosElegidos) {
         const tieneDescuento = producto.precioAnterior && producto.precioAnterior > producto.precio;
         const descuentoPct = tieneDescuento ? Math.round((1 - producto.precio / producto.precioAnterior) * 100) : 0;
         const agotado = producto.stock === 0;
-        const esDeTemporada = temporada === "halloween" && esProductoDeTemporada(producto, "halloween");
+        const esDeTemporada = datosTemp !== null && esProductoDeTemporada(producto, temporada);
 
         div.innerHTML = `
             <div class="producto-imagen-wrapper">
                 ${tieneDescuento ? `<span class="producto-badge-descuento">-${descuentoPct}%</span>` : ""}
-                ${esDeTemporada ? `<span class="producto-badge-halloween">🎃 Halloween</span>` : ""}
+                ${esDeTemporada ? `<span class="producto-badge-temporada">${datosTemp.badge}</span>` : ""}
                 <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
             </div>
             <div class="producto-detalles">
@@ -245,7 +246,7 @@ function mostrarSlideCarrusel(index) {
     heroBoton.id = producto.id;
     const heroVerMas = document.querySelector('[data-rol="hero-ver-mas"]');
     if (heroVerMas) heroVerMas.dataset.id = producto.id;
-    heroBoton.innerText = temporadaActiva() === "halloween" ? "Agregar 🎃" : "Agregar";
+    heroBoton.innerText = textoBotonAgregar();
     actualizarBotonesAgregar();
 
     document.querySelectorAll(".hero-carrusel-dot").forEach((dot, i) => {
