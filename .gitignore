@@ -1,2 +1,6 @@
 server/.wrangler/
 node_modules/
+
+# Placas renderizadas (se regeneran con tools/piezas/render.py)
+tools/piezas/*.png
+!tools/piezas/logo_alpha.png
