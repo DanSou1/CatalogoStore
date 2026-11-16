@@ -1675,3 +1675,47 @@ html.promo-blackfriday #barra-promo {
     font-weight: 700;
     color: var(--clr-plum);
 }
+
+/* Hero de Black Friday: fondo de diseño (img/blackfriday/), que ya trae el titular, las fechas y el regalo.
+   El texto del hero queda solo para lectores de pantalla y la tarjeta del producto va sobre la zona limpia. */
+html.promo-blackfriday #hero-destacado {
+    background: #0b0306 url("../img/blackfriday/hero-blackfriday-movil.webp") left -4px / 100% auto no-repeat;
+    box-shadow: inset 0 5px 0 #c8102e;
+    padding-top: calc(58% + 1.5rem);
+}
+
+html.promo-blackfriday #hero-destacado::before {
+    display: none;
+}
+
+html.promo-blackfriday #hero-destacado > .grid {
+    gap: 0;
+}
+
+html.promo-blackfriday #hero-texto > * {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+html.promo-blackfriday #hero-texto > a {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    /* Escritorio: la versión vertical ocupa la mitad izquierda; la tarjeta queda a la derecha. */
+    html.promo-blackfriday #hero-destacado {
+        /* Degradado encima para que el borde inferior de la imagen no se note. */
+        background-image: linear-gradient(to bottom, transparent 82%, #0b0306 96%), url("../img/blackfriday/hero-blackfriday-movil.webp");
+        background-size: 100% 100%, 50% auto;
+        background-position: 0 0, left -4px;
+        padding-top: 3rem;
+    }
+
+    html.promo-blackfriday #hero-destacado > .grid {
+        gap: 2rem;
+    }
+}
