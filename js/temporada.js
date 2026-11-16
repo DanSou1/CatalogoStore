@@ -7,7 +7,7 @@ const TEMPORADA_FORZADA = "auto";
 
 // Estilo visual de la Navidad: "burdeos" | "aguinaldo" | "neon".
 // Cada uno es un bloque html.navidad-<estilo> en css/main.css.
-const ESTILO_NAVIDAD = "burdeos";
+const ESTILO_NAVIDAD = "aguinaldo";
 
 // Textos y emoji de cada temporada (badge en las tarjetas, botón Agregar, hero).
 const TEMPORADAS = {

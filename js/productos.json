@@ -2,7 +2,7 @@
     {
         "id": "promociones-01.navidad",
         "titulo": "Kit Navidad: Aguinaldo picante",
-        "imagen": "./img/promociones/kit-truco-trato-placer.webp",
+        "imagen": "./img/promociones/kit-navidad-aguinaldo-picante.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -16,7 +16,7 @@
     {
         "id": "promociones-02.navidad",
         "titulo": "Kit Navidad: Noche Buena tántrica",
-        "imagen": "./img/promociones/kit-hechizo-tantrico.webp",
+        "imagen": "./img/promociones/kit-navidad-noche-buena-tantrica.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -30,7 +30,7 @@
     {
         "id": "promociones-03.navidad",
         "titulo": "Kit Navidad: Regalo para ella",
-        "imagen": "./img/promociones/kit-embrujo-para-ella.webp",
+        "imagen": "./img/promociones/kit-navidad-regalo-para-ella.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -44,7 +44,7 @@
     {
         "id": "promociones-04.navidad",
         "titulo": "Kit Navidad: Regalo para él",
-        "imagen": "./img/promociones/kit-pocion-para-el.webp",
+        "imagen": "./img/promociones/kit-navidad-regalo-para-el.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -58,7 +58,7 @@
     {
         "id": "promociones-05.navidad",
         "titulo": "Kit Navidad: Brindis entre chicas",
-        "imagen": "./img/promociones/kit-noche-de-brujas.webp",
+        "imagen": "./img/promociones/kit-navidad-brindis-entre-chicas.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -72,7 +72,7 @@
     {
         "id": "promociones-06.navidad",
         "titulo": "Kit Navidad: Brindis entre chicos",
-        "imagen": "./img/promociones/kit-monstruos-de-noche.webp",
+        "imagen": "./img/promociones/kit-navidad-brindis-entre-chicos.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -86,7 +86,7 @@
     {
         "id": "promociones-07.navidad",
         "titulo": "Kit Navidad: Propósito de año nuevo",
-        "imagen": "./img/promociones/kit-sin-miedo-a-probar.webp",
+        "imagen": "./img/promociones/kit-navidad-proposito-de-ano-nuevo.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -100,7 +100,7 @@
     {
         "id": "promociones-08.navidad",
         "titulo": "Kit Navidad: Bien envueltos",
-        "imagen": "./img/promociones/kit-amarres-de-bruja.webp",
+        "imagen": "./img/promociones/kit-navidad-bien-envueltos.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -114,7 +114,7 @@
     {
         "id": "promociones-09.navidad",
         "titulo": "Kit Navidad: Zorrita navideña",
-        "imagen": "./img/promociones/kit-fantasia-zorrita.webp",
+        "imagen": "./img/promociones/kit-navidad-zorrita-navidena.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -128,7 +128,7 @@
     {
         "id": "promociones-10.navidad",
         "titulo": "Kit Navidad: Posiciones de fin de año",
-        "imagen": "./img/promociones/kit-posiciones-prohibidas.webp",
+        "imagen": "./img/promociones/kit-navidad-posiciones-de-fin-de-ano.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
@@ -142,7 +142,7 @@
     {
         "id": "promociones-11.navidad",
         "titulo": "Kit Navidad: Parranda picante",
-        "imagen": "./img/promociones/kit-fiesta-de-brujas.webp",
+        "imagen": "./img/promociones/kit-navidad-parranda-picante.webp",
         "categoria": {
             "nombre": "Promociones",
             "id": "Promociones"
