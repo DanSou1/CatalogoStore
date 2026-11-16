@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* Fondo del hero de la tienda (Black Friday 27-30 nov 2026). Uso: banner.html?v=desk (1600×700) | movil (900×1100) */
+@font-face{font-family:Bodoni;src:url(fonts/BodoniModa.ttf)}
+@font-face{font-family:Corm;src:url(fonts/CormorantGaramond-Italic.ttf);font-style:italic}
+@font-face{font-family:Archivo;src:url(fonts/Archivo.ttf)}
+*{margin:0;box-sizing:border-box} body{background:#000}
+.c{position:relative;overflow:hidden;font-family:Archivo;color:#fbf3e6;
+ background:radial-gradient(70% 90% at 22% 50%,#4a0a1b 0%,#24060f 55%,#0b0306 100%)}
+.bk{position:absolute;border-radius:50%;filter:blur(var(--b));background:var(--col);opacity:var(--o)}
+.eb{letter-spacing:8px;font-weight:600;color:#e9c97a}
+.t1{font-family:Bodoni;line-height:.95;letter-spacing:3px;color:#fff6e8}
+.t2{font-family:Bodoni;font-weight:700;line-height:.9;background:linear-gradient(180deg,#fff1c4 0%,#e9c46a 45%,#b8862b 100%);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(233,196,106,.35))}
+.sub{font-family:Corm;font-style:italic;color:#f2d9a8}
+.rule{height:3px;background:linear-gradient(90deg,#e9c46a,rgba(233,196,106,0))}
+.rib{position:absolute;background:linear-gradient(180deg,#d7182f,#9e0c22);box-shadow:0 0 18px rgba(0,0,0,.5)}
+</style></head><body><div class="c" id="c"></div>
+<script>
+const V=new URLSearchParams(location.search).get('v')||'desk';
+const c=document.getElementById('c');
+const W=V==='desk'?1600:900, H=V==='desk'?700:1100; c.style.width=W+'px'; c.style.height=H+'px';
+// bokeh dorado y rojo (pseudoaleatorio fijo)
+let s=7; const r=()=>{s=(s*9301+49297)%233280;return s/233280};
+let bk='';
+for(let i=0;i<46;i++){const x=r()*W,y=r()*H,z=8+r()*46,gold=r()>.28;
+ // dejar más limpio el lado de la tarjeta (derecha en escritorio, abajo en celular)
+ const o=(V==='desk'?(x>W*.55?.18:.45):(y>H*.55?.18:.45))*(.5+r()*.5);
+ bk+=`<div class="bk" style="left:${x}px;top:${y}px;width:${z}px;height:${z}px;--b:${2+r()*7}px;--col:${gold?'#f1c86a':'#e0263f'};--o:${o}"></div>`;}
+bk+=`<div class="bk" style="left:${V==='desk'?-160:-200}px;top:${V==='desk'?120:-120}px;width:700px;height:520px;--b:120px;--col:#c8102e;--o:.28"></div>`;
+const L=V==='desk'?{l:110,t:150,eb:24,t1:120,t2:230,sub:46}:{l:70,t:110,eb:22,t1:104,t2:210,sub:42};
+c.innerHTML=bk+`<div style="position:absolute;left:${L.l}px;top:${L.t}px">
+ <div class="eb" style="font-size:${L.eb}px;letter-spacing:${V==="desk"?8:5}px">DEL VIERNES 27 AL LUNES 30 DE NOVIEMBRE</div>
+ <div class="t1" style="font-size:${L.t1}px;margin-top:22px">BLACK FRIDAY</div>
+ <div style="display:flex;align-items:flex-end;gap:22px;margin-top:6px"><div class="t2" style="font-size:${L.t2}px">15&nbsp;%</div><div class="sub" style="font-size:${L.sub}px;padding-bottom:30px;line-height:1.1">en 4<br>favoritos</div></div>
+ <div class="rule" style="width:${V==='desk'?520:460}px;margin-top:18px"></div>
+ <div class="sub" style="font-size:${L.sub*.8}px;margin-top:14px">+ regalo sorpresa comprando en la web</div></div>
+ <div class="rib" style="left:0;right:0;top:${V==='desk'?0:0}px;height:8px"></div>`;
+</script></body></html>

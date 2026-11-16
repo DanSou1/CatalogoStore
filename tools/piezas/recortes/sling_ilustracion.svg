@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700">
+  <!-- Ilustración PROVISIONAL del producto solo (arnés de correas negras con hebillas), sin personas. Reemplazar por foto real del producto sin figuras. -->
+  <defs>
+    <linearGradient id="pad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#46404d"/><stop offset=".4" stop-color="#18151c"/><stop offset="1" stop-color="#2c2831"/></linearGradient>
+    <linearGradient id="web" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1a171e"/><stop offset=".5" stop-color="#36313c"/><stop offset="1" stop-color="#1a171e"/></linearGradient>
+    <linearGradient id="met" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f4f8"/><stop offset=".5" stop-color="#8f8a96"/><stop offset="1" stop-color="#e6e2ea"/></linearGradient>
+  </defs>
+  <!-- correas largas que caen -->
+  <path d="M250 200 C 230 330, 170 430, 190 610" fill="none" stroke="url(#web)" stroke-width="46" stroke-linecap="round"/>
+  <path d="M550 200 C 570 330, 630 430, 610 610" fill="none" stroke="url(#web)" stroke-width="46" stroke-linecap="round"/>
+  <path d="M330 210 C 340 330, 380 420, 360 520" fill="none" stroke="url(#web)" stroke-width="40" stroke-linecap="round"/>
+  <path d="M470 210 C 460 330, 420 420, 440 520" fill="none" stroke="url(#web)" stroke-width="40" stroke-linecap="round"/>
+  <!-- costuras -->
+  <g stroke="#6e6777" stroke-width="2.5" stroke-dasharray="9 7" fill="none" opacity=".85">
+    <path d="M250 200 C 230 330, 170 430, 190 610"/><path d="M550 200 C 570 330, 630 430, 610 610"/>
+  </g>
+  <!-- banda acolchada superior -->
+  <rect x="110" y="120" width="580" height="130" rx="65" fill="url(#pad)"/>
+  <rect x="130" y="138" width="540" height="94" rx="47" fill="none" stroke="#7a7284" stroke-width="3" stroke-dasharray="12 9"/>
+  <!-- hebillas en las correas -->
+  <g transform="translate(176,360) rotate(12)"><rect width="64" height="72" rx="12" fill="none" stroke="url(#met)" stroke-width="11"/><rect x="28" y="6" width="9" height="60" rx="4" fill="url(#met)"/></g>
+  <g transform="translate(560,360) rotate(-12)"><rect width="64" height="72" rx="12" fill="none" stroke="url(#met)" stroke-width="11"/><rect x="28" y="6" width="9" height="60" rx="4" fill="url(#met)"/></g>
+  <!-- argollas al final -->
+  <path d="M160 615 h60 a30 34 0 0 1 -60 0 z" fill="none" stroke="url(#met)" stroke-width="10"/>
+  <path d="M580 615 h60 a30 34 0 0 1 -60 0 z" fill="none" stroke="url(#met)" stroke-width="10"/>
+  <path d="M330 525 h60 a30 34 0 0 1 -60 0 z" fill="none" stroke="url(#met)" stroke-width="10"/>
+  <path d="M410 525 h60 a30 34 0 0 1 -60 0 z" fill="none" stroke="url(#met)" stroke-width="10"/>
+</svg>
