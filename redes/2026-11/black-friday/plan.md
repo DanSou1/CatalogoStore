@@ -15,6 +15,7 @@ Regalo: "regalo sorpresa" comprando en la web (aún sin definir: no se nombra).
 ## Entregables
 - `carrusel/` 6 láminas 1080×1350: portada · 4 productos · cómo comprar en la web.
 - `historias/` 5 historias 1080×1920: cuenta regresiva (zona libre para el sticker de cuenta regresiva) + 1 por producto (zona libre arriba/abajo).
+- `historias/06-st_bf_quedan2.jpg` (dom 29, "Quedan 2 días") y `07-st_bf_ultimo.jpg` (lun 30, "Último día"), añadidas el 17 nov; sin el arnés, para que sirvan también en pauta.
 - `reel/2026-11-25-black-friday.mp4` 17 s, música propia del canal, texto en pantalla, sin voz (−14 LUFS). Montaje: `reel/build_bf.py`.
 - Placas: `tools/piezas/post.html?v=bf1..bf6`, `card.html?v=st_bf_*` y `bf_*`.
 
