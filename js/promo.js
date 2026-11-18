@@ -1,7 +1,10 @@
 // EDITA ESTA FECHA cuando tengas una promoción activa con fecha límite real.
 // Formato: new Date("AAAA-MM-DDTHH:mm:ss-05:00")  (hora Colombia, UTC-5).
 // Déjala en null para que la barra de cuenta regresiva permanezca oculta.
-const FIN_PROMOCION = null; // ejemplo: new Date("2026-12-31T23:59:59-05:00")
+// Durante Black Friday (js/blackfriday.js) la barra cuenta hacia su cierre automáticamente.
+const FIN_PROMOCION = (typeof blackFridayActivo === "function" && blackFridayActivo())
+    ? BLACK_FRIDAY.fin
+    : null; // ejemplo: new Date("2026-12-31T23:59:59-05:00")
 
 const barraPromo = document.querySelector("#barra-promo");
 const cuentaRegresivaEl = document.querySelector("#cuenta-regresiva");

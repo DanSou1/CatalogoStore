@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mi-cache-v19';
+const CACHE_NAME = 'mi-cache-v20';
 
 // Archivos esenciales para cachear
 const urlsToCache = [
@@ -21,6 +21,7 @@ const urlsToCache = [
     './js/faq.js',                // Acordeón FAQ
     './js/tailwind-config.js',   // Configuración de Tailwind
     './js/temporada.js',         // Toggle de temporada (Halloween, etc.)
+    './js/blackfriday.js',       // Black Friday (precios por fecha + regalo)
 ];
 
 // Instalar el Service Worker y cachear los archivos esenciales
