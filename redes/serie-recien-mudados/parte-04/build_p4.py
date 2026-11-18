@@ -30,11 +30,11 @@ SHOTS = [
     (TIT, 0, 2.0, 1.00, 1.04),
     (T("b1-citofono.mp4"), 0.3, 9.4, 1.00, 1.05),
     (T("c2-vale-suegra.mp4"), 0.9, 6.9, 1.03, 1.08),
-    (first(T("c3-gloria-entra.mp4"), T("b3-gloria-entra.mp4")), 0.6, 8.04, 1.00, 1.05),
+    (first(T("c3-gloria-entra.mp4"), T("b3-gloria-entra.mp4")), 1.6, 7.9, 1.00, 1.05),
     (T("c3-andres-contador.mp4"), 1.1, 7.5, 1.02, 1.07),
-    (first(T("c4-cocina.mp4"), T("b4-cocina.mp4")), 0.8, 8.04, 1.00, 1.05),
+    (first(T("c4-cocina.mp4"), T("b4-cocina.mp4")), 1.6, 8.04, 1.00, 1.05),
     (T("c5-guino.mp4"), 1.1, 8.04, 1.02, 1.08),
-    (ANC, 0, 4.6, 1.00, 1.05),
+    (ANC, 0, 8.1, 1.00, 1.06),
     (T("b6-maleta.mp4"), 0.5, 8.04, 1.00, 1.07),
     (END, 0, 3.4, 1.00, 1.04),
 ]
@@ -43,22 +43,23 @@ SUBS = [
     (1, 3.0, 3.7, "¿Quién era?"), (1, 4.0, 4.8, "El paquete."), (1, 4.8, 5.6, PINK + "¡Ay, qué bien!"),
     (1, 6.0, 8.6, "…y mi mamá."),
     (2, 1.2, 3.8, "El paquete lo estábamos\\Nesperando hace una semana…"), (2, 4.1, 6.0, PINK + "a tu mamá, nadie."),
-    (3, 3.9, 6.0, "Mijo, el portero me dio esto."), (3, 6.0, 8.04, "¿Qué es? " + PINK + "Suena raro."),
+    (3, 3.4, 5.25, "Mijo, el portero me dio esto."), (3, 5.3, 7.6, "¿Qué es? " + PINK + "Suena raro."),
     (4, 1.4, 2.6, "Yo soy contador."), (4, 2.7, 4.3, "Con los números no sudo."),
     (4, 4.6, 7.4, "Con mi mamá y una caja…\\N" + PINK + "sí."),
-    (5, 1.6, 3.3, "No dice nada:\\Nni marca, ni qué es…"), (5, 3.3, 5.6, PINK + "¡Son cositas de cocina!"),
-    (5, 5.6, 8.04, "¿Cocina?\\N¿Ustedes cocinan?"),
+    (5, 2.2, 4.3, "No dice nada:\\Nni marca, ni qué es…"), (5, 4.3, 5.65, PINK + "¡Son cositas de cocina!"),
+    (5, 5.7, 8.04, "¿Cocina?\\N¿Ustedes cocinan?"),
     (6, 1.4, 4.4, "Mija, treinta y cinco\\Naños de casada."), (6, 4.4, 7.6, "Yo sé muy bien qué son\\N" + PINK + "“cositas de cocina”."),
     (8, 1.4, 3.8, "Bueno… me quedo\\Nuna " + PINK + "semanita" + WHITE + ", mijo."),
 ]
 # Risas: (toma, segundo de la toma, archivo, volumen). Arrancan sobre el remate y cruzan el corte.
-LAUGHS = [
-    (1, 7.6, "risa-media.mp3", 0.55), (2, 5.9, "risa-media.mp3", 0.6), (3, 7.6, "risa-corta.mp3", 0.5),
-    (4, 6.9, "risa-media.mp3", 0.6), (5, 7.5, "risa-grande.mp3", 0.7), (6, 7.3, "risa-grande.mp3", 0.75),
-    (7, 3.6, "risa-corta.mp3", 0.5), (8, 5.2, "risa-grande.mp3", 0.75),
+LAUGHS = [  # (toma, segundo de la toma, archivo, volumen)
+    (1, 7.9, "risa-media.mp3", 0.55), (2, 5.9, "risa-media.mp3", 0.6), (3, 7.3, "risa-corta.mp3", 0.45),
+    (4, 7.0, "risa-media.mp3", 0.6), (5, 8.0, "risa-grande.mp3", 0.6), (6, 7.6, "risa-grande.mp3", 0.75),
+    (7, 7.5, "risa-media.mp3", 0.5), (8, 5.0, "risa-grande.mp3", 0.75),
 ]
-VO = [(7, 0.35, "vale-ancla.mp3", 1.0)]  # voz de Vale sobre la placa del ancla
-SUBS_VO = [(7, 0.35, 4.3, "Lo bueno: la caja llega sin marca.\\N" + PINK + "Lo malo… llegó con mi suegra.")]
+VO = [(7, 0.15, "vale-ancla.mp3", 1.0)]  # voz de Vale (de Flow, misma voz de la serie) sobre la placa del ancla
+SUBS_VO = [(7, 0.15, 4.5, "Lo bueno: la caja llega sin marca\\Ny sin nombre del producto."),
+           (7, 5.2, 8.0, "Lo malo… " + PINK + "llegó con mi suegra.")]
 
 def ts(t): return f"{int(t//3600)}:{int(t%3600//60):02d}:{t%60:05.2f}"
 POP = r"{\fad(60,80)\fscx86\fscy86\t(0,140,\fscx100\fscy100)}"
@@ -140,7 +141,7 @@ def build():
         ins += ["-i", p]; idx = n_in; n_in += 1
         d = int(at(k, s) * 1000)
         fc.append(f"[{idx}:a]aresample=48000,aformat=channel_layouts=stereo,volume={g},"
-                  f"afade=t=out:st=2.6:d=1.0,adelay={d}|{d}[x{j}]")
+                  f"adelay={d}|{d}[x{j}]")
         mix.append(f"[x{j}]")
     fc.append("".join(mix) + f"amix=inputs={len(mix)}:duration=first:normalize=0,alimiter=limit=0.93[aout]")
     final = os.path.join(W, "recien-mudados-parte-04.mp4")
