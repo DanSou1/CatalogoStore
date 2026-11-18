@@ -12,7 +12,7 @@ const BLACK_FRIDAY = {
     textoCierre: "lunes 30 de noviembre a las 11:59 p. m.",
     // Regalo para toda compra hecha en la página durante la promo.
     // EDITA ESTE TEXTO cuando Daniel defina el regalo (sale en el carrito y en el correo del pedido).
-    regalo: "Regalo sorpresa",
+    regalo: "Un sachet lubricante de regalo",
     // Precio de promoción por id de producto (15 % sobre el precio de hoy en productos.json).
     // El precio normal SIEMPRE se toma de productos.json; nunca se infla.
     precios: {
