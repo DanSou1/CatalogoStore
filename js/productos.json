@@ -288,6 +288,57 @@
         "medidas": "Tablero de juego, Aprox. 20 x 20 cm."
     },
     {
+        "id": "juego-18",
+        "titulo": "Fiesta Hot Drinks",
+        "imagen": "./img/juegos/fiesta-hot-drinks.webp",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 27600,
+        "descripcion": "Juego de cartas para beber con retos calientes, para jugar en pareja o con amigos. Cada jugador saca una carta y cumple lo que dice: confesiones, besos, masajes y tragos. Incluye una ficha que se lanza al aire para decidir entre trago o beso, y cartas en blanco para que inventen sus propios retos. Solo para mayores de 18.",
+        "medidas": "62 cartas, 1 ficha redonda trago/beso, 1 carta de reglas del juego.",
+        "recomendacionesSalud": "Juego para adultos. Si hay licor, tomen con moderación y nunca conduzcan después de jugar."
+    },
+    {
+        "id": "juego-19",
+        "titulo": "Póker Kamasutra Hetero",
+        "imagen": "./img/juegos/poker-kamasutra-hetero.webp",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 30800,
+        "descripcion": "Baraja de póker con posiciones del Kamasutra pensada para parejas hombre y mujer. Se juega con las reglas clásicas del póker, pero cada carta trae una posición ilustrada y las cartas de penitencia suben la apuesta en cualquier momento de la partida. Viene en estuche tipo caja de naipes, fácil de llevar.",
+        "medidas": "58 cartas en total: 54 cartas de póker Kamasutra y 4 cartas de penitencia."
+    },
+    {
+        "id": "juego-20",
+        "titulo": "Parqués Erótico",
+        "imagen": "./img/juegos/parques-erotico.webp",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 34200,
+        "descripcion": "El parqués de toda la vida, pero picante. Cada vez que te comen o te envían a la cárcel sacas una tarjeta y respondes con la verdad; si el grupo descubre que mientes, te toca penitencia. Ideal para calentar la noche en pareja o en grupo, y se recomienda jugar con su bebida favorita.",
+        "medidas": "Tablero de juego, 36 tarjetas, 2 dados y 24 fichas (4 por cada color).",
+        "recomendacionesSalud": "Juego para adultos. Si hay licor, tomen con moderación."
+    },
+    {
+        "id": "juego-21",
+        "titulo": "Fondo Blanco",
+        "imagen": "./img/juegos/fondo-blanco.webp",
+        "categoria": {
+            "nombre": "Juegos",
+            "id": "Juegos"
+        },
+        "precio": 27600,
+        "descripcion": "Juego de cartas para beber licor, perfecto para animar el parche con amigos o en pareja. Ponen la botella en el centro, cada jugador saca una carta y cumple la instrucción: retos, preguntas y tragos. Trae la carta de reglas para empezar de una. Solo para mayores de 18.",
+        "medidas": "58 cartas con retos e instrucciones, en caja de cartón.",
+        "recomendacionesSalud": "Juego para adultos. Tomen con moderación y nunca conduzcan después de jugar."
+    },
+    {
         "id": "juguetes-02",
         "titulo": "Anillo vibrador desechable",
         "imagen": "./img/juguetes/anillo-vibrador.webp",
