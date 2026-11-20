@@ -32,6 +32,14 @@ REELS = {
     (TRIO("f2-manos-locion.mp4"), 0.0, 3.75, 1.00, 1.08, "El truco: " + PK + "loción Trío", "Sub"),
     (CARD("prod_trio_viernes"), 0, 2.76, 1.00, 1.07, None, None),
     (CARD("end3"), 0, 3.3, 1.00, 1.04, None, None)]),
+ # Versión Facebook (100 % neutra): sin producto, sin voz (solo música + texto), cierre sin "Comenta" ni envío discreto
+ "viernes_fb": dict(out="2026-11-20-plan-de-viernes-facebook.mp4", voz=None, shots=[
+    (P(2,"n4-ventana.mp4"), 0.5, 3.09, 1.00, 1.06, "Afuera llueve.\\N" + PK + "Adentro, plan.", "Big"),
+    (P(2,"n5-manos-sofa.mp4"), 0.3, 3.03, 1.06, 1.12, "Plan de viernes en casa,\\Nen " + PK + "3 pasos:", "Sub"),
+    (P(1,"t3-celulares.mp4"), 5.4, 2.55, 1.00, 1.06, "1. Celulares " + PK + "boca abajo", "Sub"),
+    (P(1,"t5-manos.mp4"), 3.0, 2.81, 1.00, 1.08, "2. Una vela\\Ny " + PK + "su playlist", "Sub"),
+    (P(3,"m3-caricia.mp4"), 3.4, 4.6, 1.00, 1.06, "3. Diez minutos de abrazo,\\N" + PK + "sin afán", "Sub"),
+    (CARD("end_fb_viernes"), 0, 3.3, 1.00, 1.04, None, None)]),
 }
 
 def ts(t): return f"{int(t//3600)}:{int(t%3600//60):02d}:{t%60:05.2f}"
@@ -64,6 +72,15 @@ def build(key):
          "","[Events]","Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
     L += [f"Dialogue: 0,{ts(a)},{ts(b)},{s},,0,0,0,,{POP}{x}" for a, b, x, s in subs]
     ass = os.path.join(tmp, "subs.ass"); open(ass, "w").write("\n".join(L) + "\n")
+    if R["voz"] is None:  # sin voz: música + ambiente
+        fc = [f"[1:a]aresample=48000,aformat=channel_layouts=stereo,volume=1.55,afade=t=in:st=0:d=0.6,afade=t=out:st={total-1.6}:d=1.6[m]",
+              "[0:a]volume=1.0[amb]", "[m][amb]amix=inputs=2:duration=longest:normalize=0,alimiter=limit=0.95[a]",
+              f"[0:v]ass={ass}:fontsdir={FONTS}[v]"]
+        final = os.path.join(W, R["out"])
+        subprocess.run(["ffmpeg","-v","error","-y","-i",joined,"-i",MUSIC,"-filter_complex",";".join(fc),"-map","[v]","-map","[a]",
+                        "-t",f"{total:.2f}","-c:v","libx264","-preset","medium","-crf","20","-pix_fmt","yuv420p",
+                        "-c:a","aac","-b:a","192k","-movflags","+faststart",final], check=True)
+        print(key, round(total, 2), final); return
     fc = ["[2:a]aresample=48000,aformat=channel_layouts=stereo,volume=1.6,apad,asplit=2[vo][sc]",
           f"[1:a]aresample=48000,volume=0.30,afade=t=in:st=0:d=0.6,afade=t=out:st={total-1.6}:d=1.6[m0]",
           "[m0][sc]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=350[m]",
