@@ -11,22 +11,27 @@ CARD = lambda n: os.path.join(C, n + ".png")
 MUSIC = "/home/claude/catalogostore/redes/serie-recien-mudados/musica-tema.mp3"
 PK, WH = r"{\c&HB34FFF&}", r"{\c&HFFFFFF&}"
 
+# Daniela (Flow, Veo 3.1 Lite): recortes medidos sobre su voz
+DI_F, DUR_DI_F, DC_F, DUR_DC_F = 0.0, 4.4, 0.0, 6.6
+DI_J, DUR_DI_J, DC_J, DUR_DC_J = 0.0, 4.0, 0.0, 5.6
 # (fuente, inicio, duración, zoom0, zoom1, texto, estilo)
 REELS = {
  "fondo": dict(out="fondo-blanco-promo.mp4", shots=[
-    (T("f2-carta.mp4"), 0.2, 3.0, 1.00, 1.08, "¿Quién se toma\\N" + PK + "el fondo blanco?", "Big"),
-    (T("f1-cenital.mp4"), 0.0, 3.4, 1.04, 1.10, "Sacas una carta\\Ny cumples lo que diga", "Sub"),
-    (T("f2-carta.mp4"), 3.3, 3.3, 1.00, 1.06, "Retos, preguntas\\N" + PK + "y tragos", "Sub"),
-    (T("f3-brindis.mp4"), 0.2, 3.4, 1.00, 1.08, "Ideal para " + PK + "previas\\N" + WH + "y planes con el parche", "Sub"),
-    (CARD("fb_fondo_prod"), 0, 3.4, 1.00, 1.06, None, None),
-    (CARD("fb_fondo_end"), 0, 3.4, 1.00, 1.04, None, None)]),
+    (T("d-fondo-intro.mp4"), DI_F, DUR_DI_F, 1.00, 1.05, [(0.0,2.85,"¿Llegó el parche y\\Nno saben " + PK + "qué jugar?"),(2.9,4.3,"Miren esto…")], "Sub"),
+    (T("f2-carta.mp4"), 0.2, 2.8, 1.00, 1.08, "Sacas una carta…", "Sub"),
+    ("SLOWZOOM", 3.05, 3.3, 1, 1, PK + "¡FONDO BLANCO!", "Big"),
+    (T("f1-cenital.mp4"), 0.0, 3.0, 1.04, 1.10, "Retos, preguntas\\N" + PK + "y tragos", "Sub"),
+    (T("f3-brindis.mp4"), 0.2, 3.0, 1.00, 1.08, "Ideal para " + PK + "previas\\N" + WH + "y planes con el parche", "Sub"),
+    (T("d-fondo-cta.mp4"), DC_F, DUR_DC_F, 1.00, 1.04, [(0.0,4.1,PK + "Fondo Blanco:" + WH + "\\N58 cartas de retos y tragos"),(4.2,6.5,"Escríbannos al " + PK + "WhatsApp\\N" + WH + "y se lo llevamos")], "Sub"),
+    (CARD("fb_fondo_end"), 0, 3.2, 1.00, 1.04, None, None)]),
  "jenga": dict(out="torre-retos-shots-promo.mp4", shots=[
-    (T("j1-ficha.mp4"), 0.4, 3.8, 1.00, 1.08, "Saca una ficha…\\N" + PK + "sin tumbar la torre", "Big"),
-    (T("j3-brindis-ficha.mp4"), 0.0, 3.6, 1.00, 1.06, "Cada ficha trae\\N" + PK + "un reto o un shot", "Sub"),
-    (T("j2-caida.mp4"), 0.0, 3.0, 1.00, 1.06, "Y si la tumbas…", "Sub"),
-    (T("j2-caida.mp4"), 4.4, 2.8, 1.04, 1.10, PK + "¡te toca a ti!", "Big"),
-    (CARD("fb_jenga_prod"), 0, 3.4, 1.00, 1.06, None, None),
-    (CARD("fb_jenga_end"), 0, 3.4, 1.00, 1.04, None, None)]),
+    (T("d-jenga-intro.mp4"), DI_J, DUR_DI_J, 1.00, 1.05, [(0.0,2.2,"¿Ustedes tienen pulso\\Nde " + PK + "cirujano?"),(2.3,3.9,"Ya vamos a ver…")], "Sub"),
+    (T("j1-ficha.mp4"), 0.4, 3.4, 1.00, 1.08, "Saca una ficha…\\N" + PK + "sin tumbar la torre", "Big"),
+    (T("j3-brindis-ficha.mp4"), 0.0, 3.3, 1.00, 1.06, "Cada ficha trae\\N" + PK + "un reto o un shot", "Sub"),
+    (T("j2-caida.mp4"), 0.0, 2.8, 1.00, 1.06, "Y si la tumbas…", "Sub"),
+    (T("j2-caida.mp4"), 4.4, 2.6, 1.04, 1.10, PK + "¡te toca a ti!", "Big"),
+    (T("d-jenga-cta.mp4"), DC_J, DUR_DC_J, 1.00, 1.04, [(0.0,2.0,"La torre de\\N" + PK + "retos y shots"),(2.05,5.5,"Escríbannos al " + PK + "WhatsApp\\N" + WH + "y armen la fiesta")], "Sub"),
+    (CARD("fb_jenga_end"), 0, 3.2, 1.00, 1.04, None, None)]),
 }
 
 def ts(t): return f"{int(t//3600)}:{int(t%3600//60):02d}:{t%60:05.2f}"
@@ -38,7 +43,13 @@ def build(key):
     for i, (src, ss, dur, z0, z1, txt, sty) in enumerate(R["shots"]):
         out = os.path.join(tmp, f"s{i}.mp4"); n = int(round(dur * 30))
         zp = f"zoompan=z='{z0}+({z1}-{z0})*on/{n}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1080x1920:fps=30"
-        if src.endswith(".png"):
+        if src == "SLOWZOOM":  # grito en cámara lenta con zoom al chico de la derecha (f2-carta)
+            cmd = ["ffmpeg","-v","error","-y","-ss",str(ss),"-t","1.1","-i",T("f2-carta.mp4"),"-filter_complex",
+                   "[0:v]setpts=3*PTS,minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:vsbmc=1,scale=1080:1920:flags=lanczos,"
+                   "zoompan=z='if(lt(on,12),1+1.3*on/12,2.3+0.25*(on-12)/90)':x='(iw*0.79)-(iw/zoom/2)':y='(ih*0.32)-(ih/zoom/2)':d=1:s=1080x1920:fps=30,format=yuv420p[v];"
+                   f"[0:a]asetrate=48000*0.6,aresample=48000,atempo=0.556,volume=1.5,aformat=channel_layouts=stereo,apad[a]",
+                   "-map","[v]","-map","[a]","-frames:v",str(n),"-t",f"{n/30:.3f}"]
+        elif src.endswith(".png"):
             if cards_at is None: cards_at = t
             cmd = ["ffmpeg","-v","error","-y","-loop","1","-i",src,"-f","lavfi","-i","anullsrc=r=48000:cl=stereo","-frames:v",str(n),
                    "-vf",f"scale=1080:1920,{zp.replace(':s=', ':d='+str(n)+':s=')},format=yuv420p","-t",f"{n/30:.3f}"]
@@ -47,7 +58,8 @@ def build(key):
                    "-vf",f"fps=30,scale=1080:1920:flags=lanczos,{zp.replace(':s=', ':d=1:s=')},eq=saturation=1.06,format=yuv420p",
                    "-af",f"aresample=48000,aformat=channel_layouts=stereo,afade=t=in:d=0.06,afade=t=out:st={n/30-0.08:.3f}:d=0.08,apad","-shortest"]
         subprocess.run(cmd+["-r","30","-c:v","libx264","-preset","fast","-crf","18","-c:a","aac","-b:a","192k",out], check=True)
-        if txt: subs.append((t + 0.1, t + n/30 - 0.05, txt, sty))
+        if isinstance(txt, list): subs += [(t + a, t + min(b, n/30 - 0.05), x, sty) for a, b, x in txt]
+        elif txt: subs.append((t + 0.1, t + n/30 - 0.05, txt, sty))
         parts.append(out); t += n/30
     total = t
     lst = os.path.join(tmp, "list.txt"); open(lst, "w").write("".join(f"file '{p}'\n" for p in parts))
