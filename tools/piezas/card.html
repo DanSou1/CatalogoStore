@@ -108,5 +108,17 @@ if(V==='bf_r4') x.innerHTML=bfr(4,'Arnés de','posiciones.','recortes/sling_ilus
 if(V==='bf_regalo') x.innerHTML=`<div class="eb" style="top:520px">Y SI COMPRAS EN LA WEB</div><div class="t1" style="top:580px">te llega un</div><div class="t2" style="top:690px;font-size:150px">regalo sorpresa.</div>
 <div style="position:absolute;left:390px;top:950px;width:300px;height:260px;border-radius:16px;background:linear-gradient(160deg,#2a0f3d,#12061c);border:3px solid rgba(255,79,179,.7);box-shadow:0 0 50px rgba(255,79,179,.35)"><div style="position:absolute;left:0;right:0;top:110px;height:40px;background:#FF4FB3"></div><div style="position:absolute;left:130px;top:0;bottom:0;width:40px;background:#FF4FB3"></div></div>
 <div class="foot" style="top:1300px;font-size:38px;color:#e9dcef">Del viernes 27 al lunes 30 de noviembre</div>`;
+// Promos de juegos para tomar (aptas para Facebook: sin palabras sexuales, sin precio, leyenda de moderación)
+const LEG='Juego para mayores de 18 · Tomen con moderación';
+const fiestaProd=(eb,t1,t2,img,ih,chips)=>`<div class="eb" style="top:300px">${eb}</div><div class="t1" style="top:350px">${t1}</div><div class="t2" style="top:450px">${t2}</div>
+<div class="ped" style="top:1180px"></div><img class="prod" src="${img}" style="top:${1240-ih}px;height:${ih}px">
+<div class="chips" style="top:1380px">${chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div><div class="foot" style="top:1650px">${LEG}</div>`;
+const fiestaEnd=(t1,t2)=>`<img class="logo" src="logo_alpha.png" style="top:420px;height:440px"><div class="t1" style="top:960px">${t1}</div><div class="t2" style="top:1080px">${t2}</div>
+<div class="chips" style="top:1300px"><span class="chip">Envío discreto</span><span class="chip">Contra entrega en Bogotá</span></div>
+<div class="wa" style="top:1410px">WhatsApp 300 467 5206</div><div class="foot" style="top:1560px">${LEG}</div>`;
+if(V==='fb_fondo_prod') x.innerHTML=fiestaProd('EL JUEGO DEL PARCHE','Fondo','Blanco.','recortes/fondo_blanco_cut.png',560,['58 cartas','Retos, preguntas y tragos','Reglas incluidas']);
+if(V==='fb_jenga_prod') x.innerHTML=fiestaProd('LA TORRE DE LA FIESTA','Torre de','retos y shots.','recortes/jenga_blur.png',600,['54 fichas de madera','Un reto en cada ficha']);
+if(V==='fb_fondo_end') x.innerHTML=fiestaEnd('¿Arman el plan?','Pídelo por WhatsApp.');
+if(V==='fb_jenga_end') x.innerHTML=fiestaEnd('¿Quién la tumba?','Pídela por WhatsApp.');
 if(V==='bf_end') x.innerHTML=end(`<div class="t1" style="top:960px">Hasta el lunes 30</div>`,`<div class="t2" style="top:1080px">link en la bio.</div><div class="foot" style="top:1260px">Envío discreto · pago en línea o contra entrega en Bogotá</div>`);
 </script></body></html>
