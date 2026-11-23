@@ -7,7 +7,7 @@
 const BLACK_FRIDAY_FORZADO = "auto";
 
 const BLACK_FRIDAY = {
-    inicio: new Date("2026-11-27T00:00:00-05:00"),
+    inicio: new Date("2026-11-23T00:00:00-05:00"), // adelantado: Daniel pidió toda la semana (23 nov),
     fin: new Date("2026-11-30T23:59:59-05:00"),
     textoCierre: "lunes 30 de noviembre a las 11:59 p. m.",
     // Regalo para toda compra hecha en la página durante la promo.
