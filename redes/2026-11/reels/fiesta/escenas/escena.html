@@ -28,10 +28,15 @@
 .num{position:absolute;right:-6px;top:50%;transform:translate(100%,-50%);font-size:40px;color:#3a2a10}
 .slide{animation:sale 3.6s cubic-bezier(.2,.8,.2,1) both}
 @keyframes sale{0%{transform:translateX(-900px) rotateY(35deg) rotateZ(-6deg)}25%{transform:translateX(0) rotateY(0) rotateZ(2deg)}33%{transform:rotateZ(-1deg)}100%{transform:rotateZ(1deg) scale(1.07)}}
+.ov{position:absolute;left:215px;top:285px;width:420px;height:580px;border-radius:32px;padding:40px 34px;transform:rotate(-8deg)}
+.ov p{font-size:40px}.ov .stop{width:140px;height:140px;margin-top:30px}.ov .stop span{font-size:38px}
+.pop{animation:pop 2.8s cubic-bezier(.2,.9,.25,1.2) both}
+@keyframes pop{0%,8%{opacity:0;transform:translate(60px,120px) rotate(-20deg) scale(.35)}20%{opacity:1;transform:rotate(-6deg) scale(1.06)}28%{transform:rotate(-8deg) scale(1)}100%{opacity:1;transform:rotate(-9deg) scale(1.04)}}
 </style></head><body><div id="c"></div><script>
 const q=new URLSearchParams(location.search), V=q.get('v'), c=document.getElementById('c');
 const bg=im=>`<div class="bg" style="background-image:url(${im})"></div><div class="vig"></div>`;
 if(V==='stop') c.innerHTML=bg('bg_mesa.jpg')+`<div class="card in"><div class="conf"></div><p>Elige a alguien para que tome hasta que tú digas</p><div class="stop"><span>STOP</span></div></div>`;
+if(V==='stopover'){document.body.style.background='transparent'; c.innerHTML=`<div class="card ov pop"><div class="conf"></div><p>Elige a alguien para que tome hasta que tú digas</p><div class="stop"><span>STOP</span></div></div>`;}
 if(V==='pregunta') c.innerHTML=bg('bg_mesa.jpg')+`<div class="card in"><div class="conf"></div><p>Elige a alguien y <span class="pk">pregúntale</span> lo que quieras…</p></div>`;
 if(V==='reglas') c.innerHTML=bg('bg_mesa.jpg')+`<div class="card in" style="padding:50px 46px"><div class="conf"></div><p style="font-size:40px;margin-bottom:20px">REGLAS DE JUEGO</p><p style="font-size:31px;line-height:1.3;text-align:left">• Mezcla las cartas y ponlas boca abajo en el centro<br>• Cada uno toma una carta, la lee en voz alta y <span class="pk">cumple lo que dice</span><br>• Guarda la carta <span class="pk">Comodín</span> hasta que decidas usarla</p></div>`;
 if(V==='solteros') c.innerHTML=bg('bg_torre.jpg')+`<div class="block slide"><div class="label">RONDA de TRAGOS<br>solo los SOLTEROS</div></div>`;

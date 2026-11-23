@@ -27,11 +27,10 @@ REELS = {
    ("clip", T("d-fondo-intro.mp4"), 0.0, 3.95, dict(amb=0.0, vo="vo1-fondo-intro.mp3", titles=[
        (0.0, 2.45, "¿LLEGÓ EL " + PK + "PARCHE" + WH + "\\NY NO SABEN QUÉ JUGAR?", "T"),
        (2.5, 3.95, "MIREN " + YL + "ESTO…", "T")])),
-   ("clip", T("f2-carta.mp4"), 0.2, 2.8, dict(amb=0.35, titles=[(0, 2.8, "SACAS UNA\\N" + PK + "CARTA…", "T")])),
+   ("clip", T("f2-carta.mp4"), 0.2, 2.8, dict(amb=0.35, overlay=E("ov_stopover/%04d.png"), titles=[(0, 2.8, "SACAS UNA\\N" + PK + "CARTA…", "T"),
+       (0.6, 2.8, "{\\pos(540,562)}  TRAGO  ", "Pill")])),
    ("slow", T("f2-carta.mp4"), 3.05, 3.3, dict(amb=1.0, titles=[(0.15, 3.3, SHAKE + YL + "¡FONDO\\NBLANCO!", "Huge")])),
-   ("clip", E("stop.mp4"), 0.0, 3.5, dict(amb=0.0, titles=[(0, 3.5, "CARTAS PARA\\N" + PK + "TOMAR…", "T"),
-       (0.35, 3.5, "{\\pos(540,562)}  TRAGO  ", "Pill")])),
-   ("clip", E("pregunta.mp4"), 0.0, 3.0, dict(amb=0.0, titles=[(0, 3.0, "…Y PARA " + YL + "PREGUNTAR\\N" + WH + "LO QUE QUIERAS", "T"),
+   ("clip", E("pregunta.mp4"), 0.0, 3.0, dict(amb=0.0, titles=[(0, 3.0, "RETOS, TRAGOS\\NY " + YL + "PREGUNTAS", "T"),
        (0.35, 3.0, "{\\pos(540,562)}  PREGUNTA  ", "PillY")])),
    ("clip", T("f3-brindis.mp4"), 0.2, 3.0, dict(amb=0.35, titles=[(0, 3.0, "IDEAL PARA", "T"),
        (0.25, 3.0, "{\\pos(540,562)}  PREVIAS  ", "Pill"), (0.45, 3.0, "{\\pos(540,1698)}  PLANES CON EL PARCHE  ", "PillY")])),
@@ -89,9 +88,12 @@ def shot_video(i, kind, src, ss, dur, o, tmp):
              f"zoompan=z='{z}':x='iw/2-(iw/zoom/2)+{jx}':y='ih/2-(ih/zoom/2)+{jy}':d=1:s={FW}x{FH}:fps=30,eq=saturation=1.08:contrast=1.04")
         a = f"[0:a]volume={o.get('amb',0.35)},aresample=48000,aformat=channel_layouts=stereo,apad[a]"
         inp = ["-ss",str(ss),"-i",src]
+    ov = o.get("overlay"); extra = []
+    if ov:  # carta legible encima de la mano (secuencia PNG con transparencia, render_overlay.py)
+        extra = ["-framerate","30","-i",ov]; v = f"{v}[c0];[c0][4:v]overlay=0:0:eof_action=pass"
     fc = (f"{v},fade=in:d=0.12:color=white,format=yuva420p[c];[2:v]crop={FW}:{FH}:{FX}:{FY},format=gray[m];[c][m]alphamerge[cm];"
           f"[1:v][cm]overlay={FX}:{FY}[b1];[b1][3:v]overlay=0:0,format=yuv420p[v];{a}")
-    run(["ffmpeg","-v","error","-y",*inp,"-loop","1","-i",BG,"-loop","1","-i",MASK,"-loop","1","-i",BORDER,
+    run(["ffmpeg","-v","error","-y",*inp,"-loop","1","-i",BG,"-loop","1","-i",MASK,"-loop","1","-i",BORDER,*extra,
          "-filter_complex",fc,"-map","[v]","-map","[a]","-frames:v",str(n),"-t",f"{n/30:.3f}","-r","30",
          "-c:v","libx264","-preset","fast","-crf","18","-c:a","aac","-b:a","192k",out]); return out
 
