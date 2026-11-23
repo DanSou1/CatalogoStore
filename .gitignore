@@ -5,3 +5,4 @@ node_modules/
 tools/piezas/*.png
 !tools/piezas/logo_alpha.png
 redes/**/_tmp_*/
+redes/**/_tmp*_*/
