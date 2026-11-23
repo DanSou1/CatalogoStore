@@ -10,6 +10,7 @@ import subprocess, os, sys
 W = os.path.dirname(os.path.abspath(__file__))
 P = "/home/claude/catalogostore/tools/piezas"; FONTS = os.path.join(P, "fonts")
 T = lambda f: os.path.join(W, "tomas", f)
+E = lambda f: os.path.join(W, "escenas", f)  # cartas/fichas con el texto real del producto (render_escenas.py)
 A = lambda f: os.path.join(W, "audio", f)
 BG, BORDER, MASK = (os.path.join(P, f"marco_{k}.png") for k in ("bg", "border", "mask"))
 FX, FY, FW, FH = 110, 560, 860, 1140
@@ -28,7 +29,10 @@ REELS = {
        (2.5, 3.95, "MIREN " + YL + "ESTO…", "T")])),
    ("clip", T("f2-carta.mp4"), 0.2, 2.8, dict(amb=0.35, titles=[(0, 2.8, "SACAS UNA\\N" + PK + "CARTA…", "T")])),
    ("slow", T("f2-carta.mp4"), 3.05, 3.3, dict(amb=1.0, titles=[(0.15, 3.3, SHAKE + YL + "¡FONDO\\NBLANCO!", "Huge")])),
-   ("clip", T("f1-cenital.mp4"), 0.0, 3.0, dict(amb=0.3, titles=[(0, 3.0, "RETOS, " + PK + "PREGUNTAS\\N" + YL + "Y TRAGOS", "T")])),
+   ("clip", E("stop.mp4"), 0.0, 3.5, dict(amb=0.0, titles=[(0, 3.5, "CARTAS PARA\\N" + PK + "TOMAR…", "T"),
+       (0.35, 3.5, "{\\pos(540,562)}  TRAGO  ", "Pill")])),
+   ("clip", E("pregunta.mp4"), 0.0, 3.0, dict(amb=0.0, titles=[(0, 3.0, "…Y PARA " + YL + "PREGUNTAR\\N" + WH + "LO QUE QUIERAS", "T"),
+       (0.35, 3.0, "{\\pos(540,562)}  PREGUNTA  ", "PillY")])),
    ("clip", T("f3-brindis.mp4"), 0.2, 3.0, dict(amb=0.35, titles=[(0, 3.0, "IDEAL PARA", "T"),
        (0.25, 3.0, "{\\pos(540,562)}  PREVIAS  ", "Pill"), (0.45, 3.0, "{\\pos(540,1698)}  PLANES CON EL PARCHE  ", "PillY")])),
    ("clip", T("d-fondo-cta.mp4"), 0.0, 6.95, dict(amb=0.0, vo="vo2-fondo-cta.mp3", titles=[
@@ -40,8 +44,8 @@ REELS = {
        (0.0, 2.45, "¿TIENEN PULSO\\NDE " + PK + "CIRUJANO?", "T"),
        (2.5, 4.85, "YA VAMOS " + YL + "A VER…", "T")])),
    ("clip", T("j1-ficha.mp4"), 0.4, 3.4, dict(amb=0.35, titles=[(0, 3.4, "SACA UNA FICHA…\\N" + PK + "SIN TUMBAR LA TORRE", "T")])),
-   ("clip", T("j3-brindis-ficha.mp4"), 0.0, 3.3, dict(amb=0.35, titles=[(0, 3.3, "CADA FICHA TRAE\\N" + YL + "UN RETO O UN SHOT", "T"),
-       (0.3, 3.3, "{\\pos(540,1698)}  54 FICHAS DE MADERA  ", "Pill")])),
+   ("clip", E("solteros.mp4"), 0.0, 3.5, dict(amb=0.0, titles=[(0, 3.5, "CADA FICHA TRAE\\N" + YL + "UN RETO O UN SHOT", "T"),
+       (0.35, 3.5, "{\\pos(540,562)}  RETO  ", "Pill"), (0.55, 3.5, "{\\pos(540,1698)}  54 FICHAS NUMERADAS  ", "PillY")])),
    ("clip", T("j2-caida.mp4"), 0.0, 2.8, dict(amb=0.5, shake=(0.0, 1.0), boom=0.05, titles=[(0, 2.8, "Y SI LA " + PK + "TUMBAS…", "T")])),
    ("clip", T("j2-caida.mp4"), 4.4, 2.6, dict(amb=0.5, titles=[(0.05, 2.6, SHAKE + YL + "¡TE TOCA\\NA TI!", "Huge")])),
    ("clip", T("d-jenga-cta.mp4"), 0.0, 5.3, dict(amb=0.0, vo="vo4-jenga-cta.mp3", titles=[
