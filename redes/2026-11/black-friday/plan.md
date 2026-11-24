@@ -1,4 +1,6 @@
-# Black Friday 27-30 nov 2026 · piezas de redes
+# Black Friday 23-30 nov 2026 · piezas de redes
+
+> 24 nov: Black Friday adelantado (Daniel, 23 nov): la tienda lo tiene activo del lun 23 al lun 30 nov 23:59. Placas, carrusel, historias y reel re-renderizados con "Ya empezó · hasta el lunes 30" (antes "del 27 al 30").
 
 Descuento REAL del 15 % (precio de hoy → precio con descuento), solo del viernes 27 al lunes 30 de noviembre.
 Por tener fecha de cierre explícita, aquí sí van precios (pedido de Daniel, 15 nov).

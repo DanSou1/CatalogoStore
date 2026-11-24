@@ -75,18 +75,18 @@ if(V==='st_prod_spray') x.innerHTML=stp('PRODUCTO DEL DÍA','Spray','para él.',
 if(V==='st_prod_caramelo') x.innerHTML=stp('PRODUCTO DEL DÍA','Hidratante íntimo','caramelo.','recortes/caramelo_blur.png',560,'Sabor a caramelo · sensación cálida');
 if(V==='st_whatsapp') x.innerHTML=end(`<div class="t1" style="top:960px">¿Dudas?</div>`,`<div class="t2" style="top:1080px">Te asesoramos sin pena.</div><div class="foot" style="top:1260px">Pedidos por WhatsApp o en la web · link en la bio</div>`);
 if(V==='end_atreve') x.innerHTML=end(`<div class="t1" style="top:960px">Comenta</div>`,`<div class="pill" style="top:1110px">ATREVE</div><div class="foot" style="top:1260px">y sigue la parte 2</div>`);
-// Black Friday 27-30 nov 2026 (descuento real 15 %, fecha de cierre → aquí sí van precios). Historias y placas del reel.
+// Black Friday 23-30 nov 2026 (adelantado el 23 nov) (descuento real 15 %, fecha de cierre → aquí sí van precios). Historias y placas del reel.
 const bfseal=(top,right=90)=>`<div style="position:absolute;right:${right}px;top:${top}px;width:240px;height:240px;border-radius:50%;transform:rotate(-9deg);background:radial-gradient(circle at 35% 30%,#ff7cc6,#d02c8c);display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px rgba(255,79,179,.5);color:#1a0712"><b style="font-weight:900;font-size:92px;letter-spacing:-2px">-15</b><b style="font-weight:900;font-size:48px;margin-top:24px">%</b></div>`;
 const bfprice=(top,antes,ahora)=>`<div style="position:absolute;top:${top}px;width:100%;display:flex;justify-content:center;align-items:baseline;gap:28px"><s style="font-size:52px;color:#a796b3;text-decoration-color:#FF4FB3;text-decoration-thickness:5px">$${antes}</s><span style="font-family:Bodoni;font-size:110px">$${ahora}</span></div>`;
 const bfst=(eb,t1,t2,img,ih,foot,antes,ahora)=>`<div class="eb" style="top:270px">BLACK FRIDAY · ${eb}</div><div class="t1" style="top:320px">${t1}</div><div class="t2" style="top:420px">${t2}</div>
 <div class="ped" style="top:1130px"></div><img class="prod" src="${img}" style="top:${1190-ih}px;height:${ih}px">${bfseal(560)}
 <div class="foot" style="top:1300px;font-size:36px;color:#e9dcef">${foot}</div>${bfprice(1360,antes,ahora)}
-<div class="foot" style="top:1530px;letter-spacing:4px">SOLO DEL 27 AL 30 DE NOVIEMBRE · LINK EN LA BIO</div>`;
+<div class="foot" style="top:1530px;letter-spacing:4px">SOLO HASTA EL LUNES 30 DE NOVIEMBRE · LINK EN LA BIO</div>`;
 if(V==='st_bf_feromonas') x.innerHTML=bfst('PARA ÉL','Feromonas','sin olor.','recortes/feromonas_blur.png',560,'No cambian tu perfume · 10 ml','39.900','33.900');
 if(V==='st_bf_sling') x.innerHTML=bfst('PARA PROBAR ALGO NUEVO','Arnés de','posiciones.','recortes/sling_ilustracion.svg',520,'Correas regulables · talla única','126.000','107.100');
 if(V==='st_bf_jenga') x.innerHTML=bfst('PARA LA FIESTA','Jenga','Picante.','recortes/jenga_blur.png',590,'54 fichas con retos y shots','67.900','57.700');
 if(V==='st_bf_lychee') x.innerHTML=bfst('PARA ELLA Y PARA ÉL','Hidratante íntimo','lychee.','recortes/lychee_blur.png',500,'Sensación cálida · sabor lychee','38.900','33.100');
-if(V==='st_bf_cuenta') x.innerHTML=`<img class="logo" src="logo_alpha.png" style="top:260px;height:240px"><div class="eb" style="top:560px">VIERNES 27 AL LUNES 30 DE NOVIEMBRE</div><div class="t1" style="top:620px;font-size:120px;letter-spacing:4px">BLACK FRIDAY</div><div class="t2" style="top:760px;font-size:150px">15 % menos</div>
+if(V==='st_bf_cuenta') x.innerHTML=`<img class="logo" src="logo_alpha.png" style="top:260px;height:240px"><div class="eb" style="top:560px">YA EMPEZÓ · HASTA EL LUNES 30 DE NOVIEMBRE</div><div class="t1" style="top:620px;font-size:120px;letter-spacing:4px">BLACK FRIDAY</div><div class="t2" style="top:760px;font-size:150px">15 % menos</div>
 <div class="foot" style="top:940px;font-size:38px;color:#e9dcef">en 4 favoritos + <b style="color:#FF7CC6">regalo sorpresa</b> comprando en la web</div>
 <div style="position:absolute;left:140px;right:140px;top:1080px;height:360px;border:3px dashed rgba(246,238,248,.28);border-radius:36px"></div><div class="foot" style="top:1490px">Activa el recordatorio y no te lo pierdas</div>`;
 // Recordatorio (dom 29) y último día (lun 30). Zona libre para el sticker de cuenta regresiva o enlace.
@@ -97,7 +97,7 @@ const bfrec=(eb,t1,t2,foot,hint,fs=120)=>`<img class="logo" src="logo_alpha.png"
 if(V==='st_bf_quedan2') x.innerHTML=bfrec('BLACK FRIDAY · QUEDAN 2 DÍAS','HOY Y MAÑANA','15 % menos','en 4 favoritos + <b style="color:#FF7CC6">regalo sorpresa</b> comprando en la web','Se acaba el lunes 30 · link en la bio',96);
 if(V==='st_bf_ultimo') x.innerHTML=bfrec('BLACK FRIDAY · LUNES 30','ÚLTIMO DÍA','15 % menos','Solo por hoy · + <b style="color:#FF7CC6">regalo sorpresa</b> en la web','Toca el enlace y pídelo hoy');
 // Placas del reel de Black Friday (sin voz: texto en pantalla)
-if(V==='bf_gancho') x.innerHTML=`<div class="eb" style="top:430px">ESTE VIERNES 27</div><div class="t1" style="top:500px;font-size:132px;letter-spacing:4px">BLACK</div><div class="t1" style="top:650px;font-size:132px;letter-spacing:4px">FRIDAY</div><div class="t2" style="top:830px;font-size:170px">15 % menos</div><div class="foot" style="top:1050px;font-size:42px;color:#e9dcef">en 4 favoritos. Mira cuáles →</div>
+if(V==='bf_gancho') x.innerHTML=`<div class="eb" style="top:430px">YA EMPEZÓ</div><div class="t1" style="top:500px;font-size:132px;letter-spacing:4px">BLACK</div><div class="t1" style="top:650px;font-size:132px;letter-spacing:4px">FRIDAY</div><div class="t2" style="top:830px;font-size:170px">15 % menos</div><div class="foot" style="top:1050px;font-size:42px;color:#e9dcef">en 4 favoritos. Mira cuáles →</div>
 <div class="ped" style="top:1560px"></div><img class="prod" src="recortes/feromonas_blur.png" style="left:330px;top:1290px;height:330px"><img class="prod" src="recortes/jenga_blur.png" style="left:540px;top:1160px;height:460px"><img class="prod" src="recortes/lychee_blur.png" style="left:740px;top:1380px;height:240px">`;
 const bfr=(n,t1,t2,img,ih,antes,ahora)=>`<div class="eb" style="top:300px">FAVORITO ${n} DE 4</div><div class="t1" style="top:350px">${t1}</div><div class="t2" style="top:450px">${t2}</div>
 <div class="ped" style="top:1130px"></div><img class="prod" src="${img}" style="top:${1190-ih}px;height:${ih}px">${bfseal(600)}${bfprice(1320,antes,ahora)}`;
@@ -107,7 +107,7 @@ if(V==='bf_r3') x.innerHTML=bfr(3,'Hidratante íntimo','lychee.','recortes/lyche
 if(V==='bf_r4') x.innerHTML=bfr(4,'Arnés de','posiciones.','recortes/sling_ilustracion.svg',520,'126.000','107.100');
 if(V==='bf_regalo') x.innerHTML=`<div class="eb" style="top:520px">Y SI COMPRAS EN LA WEB</div><div class="t1" style="top:580px">te llega un</div><div class="t2" style="top:690px;font-size:150px">regalo sorpresa.</div>
 <div style="position:absolute;left:390px;top:950px;width:300px;height:260px;border-radius:16px;background:linear-gradient(160deg,#2a0f3d,#12061c);border:3px solid rgba(255,79,179,.7);box-shadow:0 0 50px rgba(255,79,179,.35)"><div style="position:absolute;left:0;right:0;top:110px;height:40px;background:#FF4FB3"></div><div style="position:absolute;left:130px;top:0;bottom:0;width:40px;background:#FF4FB3"></div></div>
-<div class="foot" style="top:1300px;font-size:38px;color:#e9dcef">Del viernes 27 al lunes 30 de noviembre</div>`;
+<div class="foot" style="top:1300px;font-size:38px;color:#e9dcef">Solo hasta el lunes 30 de noviembre</div>`;
 // Promos de juegos para tomar (aptas para Facebook: sin palabras sexuales, sin precio, leyenda de moderación)
 const LEG='Juego para mayores de 18 · Tomen con moderación';
 const fiestaProd=(eb,t1,t2,img,ih,chips)=>`<div class="eb" style="top:300px">${eb}</div><div class="t1" style="top:350px">${t1}</div><div class="t2" style="top:450px">${t2}</div>

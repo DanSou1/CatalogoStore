@@ -63,8 +63,8 @@ const S={
  conv4: conv(3,'¿Qué nos gustaría probar?','Sin presión y sin burla. <b>Un juego de preguntas</b> rompe el hielo cuando no saben por dónde empezar.'),
  conv5: prod('PARA LA CONVERSACIÓN 3','Baraja','Tántrica.','recortes/baraja_final.png',520,'Preguntas y retos para conocerse otra vez','JUEGO','<br>y te la mostramos'),
  conv6: end('Envíaselo a tu pareja','y empiecen hoy.'),
- // Black Friday 27-30 nov 2026 (descuento real 15 %, fecha de cierre explícita → aquí sí van precios)
- bf1: `<div class="pad ctr"><div class="eb">VIERNES 27 AL LUNES 30 DE NOVIEMBRE</div><div class="t1" style="font-size:118px;margin-top:40px;letter-spacing:4px">BLACK FRIDAY</div><div class="t2" style="font-size:120px">15 % menos</div><div class="a" style="font-size:40px;margin-top:6px">en 4 de nuestros favoritos</div></div>
+ // Black Friday 23-30 nov 2026, adelantado el 23 nov (descuento real 15 %, fecha de cierre explícita → aquí sí van precios)
+ bf1: `<div class="pad ctr"><div class="eb">YA EMPEZÓ · HASTA EL LUNES 30</div><div class="t1" style="font-size:118px;margin-top:40px;letter-spacing:4px">BLACK FRIDAY</div><div class="t2" style="font-size:120px">15 % menos</div><div class="a" style="font-size:40px;margin-top:6px">en 4 de nuestros favoritos</div></div>
   <div class="ped" style="top:1010px"></div>
   <img class="prod" src="recortes/feromonas_blur.png" style="left:250px;top:750px;height:300px;transform:none">
   <img class="prod" src="recortes/jenga_blur.png" style="left:500px;top:620px;height:440px;transform:none">
@@ -84,7 +84,7 @@ function bfp(eb,t1,t2,img,ih,foot,antes,ahora,n){return `<div class="pad ctr" st
  <div class="ped" style="top:840px"></div><img class="prod" src="${img}" style="top:${895-ih}px;height:${ih}px">${seal('-15','%').replace('top:560px','top:430px')}
  <div class="ctr" style="position:absolute;top:975px;width:100%"><div class="a" style="font-size:32px;margin:0;color:#d9c9e2">${foot}</div>
  <div style="margin-top:18px;display:flex;justify-content:center;align-items:baseline;gap:26px"><s style="font-size:44px;color:#a796b3;text-decoration-color:#FF4FB3;text-decoration-thickness:4px">$${antes}</s><span style="font-family:Bodoni;font-size:84px">$${ahora}</span></div>
- <div style="font-size:26px;color:#bfaecb;letter-spacing:3px;margin-top:4px">DEL 27 AL 30 DE NOVIEMBRE</div></div>${brand}<div class="swipe">${n}/6</div>`}
+ <div style="font-size:26px;color:#bfaecb;letter-spacing:3px;margin-top:4px">HASTA EL LUNES 30 DE NOVIEMBRE</div></div>${brand}<div class="swipe">${n}/6</div>`}
 function paso(n,t,s){return `<div style="display:flex;align-items:center;gap:34px;margin:22px 0"><div class="num" style="font-size:150px;width:110px;text-align:center">${n}</div><div><div style="font-family:Bodoni;font-size:52px">${t}</div><div style="font-size:32px;color:#d9c9e2;margin-top:6px">${s}</div></div></div>`}
 x.innerHTML=S[V]||'';
 </script></body></html>
