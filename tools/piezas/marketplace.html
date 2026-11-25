@@ -1,0 +1,56 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* Fotos para Facebook Marketplace (1080x1080): producto protagonista, toque de marca suave. ?v=principal | ?v=detalle */
+@font-face{font-family:Bodoni;src:url(fonts/BodoniModa.ttf)}
+@font-face{font-family:Corm;src:url(fonts/CormorantGaramond-Italic.ttf)}
+@font-face{font-family:Archivo;src:url(fonts/Archivo.ttf)}
+@font-face{font-family:AB;src:url(fonts/ArchivoBlack-Regular.ttf)}
+*{margin:0;box-sizing:border-box}
+.post{width:1080px;height:1080px;position:relative;overflow:hidden;font-family:Archivo;color:#2a1838;
+ background:radial-gradient(720px 560px at 50% 46%,#fff 0%,#fbf4fb 40%,#f1e1f1 75%,#e7d0ea 100%)}
+.glow{position:absolute;inset:0;background:radial-gradient(500px 260px at 50% 86%,rgba(168,85,247,.16),transparent 70%),radial-gradient(380px 300px at 84% 12%,rgba(255,79,179,.10),transparent 70%)}
+.brand{position:absolute;top:34px;left:38px;display:flex;align-items:center;gap:10px;padding:8px 18px 8px 8px;border-radius:40px;background:#140a1c;color:#f6eef8;font-size:21px;font-weight:600;letter-spacing:.3px;box-shadow:0 6px 18px rgba(40,10,60,.18)}
+.brand i{width:40px;height:40px;border-radius:50%;background:#07040b url(logo_alpha.png) center/125% no-repeat;border:1.5px solid #ff4fb3}
+.brand b{background:linear-gradient(90deg,#ff4fb3,#a855f7,#5b8cff);-webkit-background-clip:text;color:transparent}
+.age{position:absolute;top:38px;right:38px;width:62px;height:62px;border-radius:50%;border:2px solid #a855f7;color:#7b2fbf;font:22px AB;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.7)}
+.shadow{position:absolute;border-radius:50%;background:radial-gradient(closest-side,rgba(60,20,90,.32),rgba(60,20,90,.12) 60%,transparent);filter:blur(6px)}
+.prod{position:absolute;filter:drop-shadow(0 18px 24px rgba(40,15,70,.25))}
+.chips{position:absolute;left:0;right:0;display:flex;justify-content:center;gap:12px}
+.chip{padding:11px 22px;border-radius:30px;background:#fff;border:1.5px solid rgba(168,85,247,.35);font-size:21px;font-weight:600;color:#3b2150;box-shadow:0 4px 12px rgba(80,30,120,.08)}
+.chip.k{background:#140a1c;color:#fff;border-color:#140a1c}
+h1{font:400 64px/1 Bodoni;color:#1d1028}
+h1 em{display:block;font:italic 600 84px/1 Corm;background:linear-gradient(90deg,#ff4fb3,#a855f7,#5b8cff);-webkit-background-clip:text;color:transparent;margin-top:-4px}
+.eb{font-size:17px;letter-spacing:5px;font-weight:700;color:#a855f7;margin-bottom:12px}
+.sec{font:700 17px Archivo;letter-spacing:3px;color:#a855f7;margin:26px 0 10px}
+ul{list-style:none}
+li{font-size:24px;line-height:1.32;margin-bottom:9px;padding-left:34px;position:relative}
+li::before{content:"";position:absolute;left:4px;top:11px;width:13px;height:13px;border-radius:50%;background:linear-gradient(135deg,#ff4fb3,#a855f7)}
+ol{list-style:none;counter-reset:n}
+ol li::before{counter-increment:n;content:counter(n);top:1px;left:0;width:26px;height:26px;font:15px/26px AB;text-align:center;color:#fff}
+.card{position:absolute;width:196px;height:272px;border-radius:20px;background:radial-gradient(circle at 30% 20%,#4a3aa8,#2d2486 60%,#231c6e);color:#fff;font:21px/1.15 AB;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 16px;box-shadow:0 14px 26px rgba(30,20,80,.35)}
+.card.sm{width:170px;height:196px;font-size:15px;border-radius:14px;padding:12px}.card.sm .stop{width:44px;height:44px;font-size:11px;margin-top:8px}
+.card .pk{color:#ff6fc0}
+.stop{margin-top:14px;width:70px;height:70px;background:#e2267f;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);display:flex;align-items:center;justify-content:center;font-size:17px}
+.foot{position:absolute;bottom:30px;left:0;right:0;text-align:center;font-size:17px;color:#6d5a7c}
+</style></head><body><div class="post" id="p"></div><script>
+const V=new URLSearchParams(location.search).get('v'),p=document.getElementById('p');
+const head='<div class="glow"></div><div class="brand"><i></i><span><b>Xperience</b>Love</span></div><div class="age">+18</div>';
+if(V==='principal') p.innerHTML=head+`
+ <div class="shadow" style="left:230px;top:880px;width:640px;height:70px"></div>
+ <img class="prod" src="recortes/fondo_blanco_cut.png" style="left:212px;top:150px;width:672px">
+ <div class="chips" style="bottom:34px"><span class="chip k">58 cartas</span><span class="chip">Envío discreto</span><span class="chip">Contra entrega en Bogotá</span></div>`;
+if(V==='detalle') p.innerHTML=head+`
+ <div class="shadow" style="left:40px;top:690px;width:490px;height:60px"></div>
+ <img class="prod" src="recortes/fondo_blanco_cut.png" style="left:40px;top:180px;width:480px">
+ <div class="card sm" style="left:100px;top:742px;transform:rotate(-7deg)">Elige a alguien para que tome hasta que tú digas<div class="stop">STOP</div></div>
+ <div class="card sm" style="left:300px;top:736px;transform:rotate(5deg)">Elige a alguien y <span class="pk">pregúntale</span> lo que quieras…</div>
+ <div style="position:absolute;left:560px;top:150px;width:480px">
+  <div class="eb">JUEGO DE CARTAS PARA EL PARCHE</div>
+  <h1>Fondo<em>Blanco.</em></h1>
+  <div class="sec">QUÉ TRAE</div>
+  <ul><li>58 cartas con retos, preguntas y tragos</li><li>Carta de reglas para empezar de una</li><li>Caja de cartón para guardarlas</li></ul>
+  <div class="sec">CÓMO SE JUEGA</div>
+  <ol><li>Elijan una botella; juegan 3 o más</li><li>Cada uno saca una carta y la lee en voz alta</li><li>Cumple lo que dice. El Comodín lo guardas para cuando quieras</li></ol>
+ </div>
+ <div class="chips" style="bottom:72px"><span class="chip">Envío discreto</span><span class="chip">Contra entrega en Bogotá</span><span class="chip">Solo +18</span></div>
+ <div class="foot">Juego para mayores de 18 · Tomen con moderación</div>`;
+</script></body></html>
